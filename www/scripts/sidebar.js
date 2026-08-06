@@ -28,6 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <input type="color" id="setting-color" class="mat-input" value="#519E8A" style="width: 50px; padding: 0;">
                 </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-item-text">
+                        <span class="sidebar-item-label">Permissions</span>
+                        <span class="sidebar-item-desc">Notifications & Storage</span>
+                    </div>
+                    <button id="setting-permissions" class="mat-btn" style="padding: 5px 10px; font-size: 12px;">Grant</button>
+                </div>
             </div>
 
             <div class="sidebar-section">
@@ -78,11 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div class="sidebar-section">
                 <div class="sidebar-section-title">About</div>
-                <div class="sidebar-item-desc" style="line-height: 1.5;">
+                <div class="sidebar-item-desc" style="line-height: 1.5; font-size: 14px;">
                     <b>Name:</b> FastShare<br>
                     <b>Package:</b> com.crdy.fastshare<br>
-                    <b>Version:</b> 1.0.0<br>
+                    <b>Version:</b> 1.0.1<br>
                     <b>Contact:</b> <a href="mailto:ritikthakur@duck.com" style="color: var(--sidebar-primary);">ritikthakur@duck.com</a><br>
+                    <b>GitHub:</b> <a href="https://github.com/ritikthakur22/FastShare" target="_blank" style="color: var(--sidebar-primary);">ritikthakur22/FastShare</a><br>
+                    <b>Portfolio:</b> <a href="https://ritikthakur.com.np" target="_blank" style="color: var(--sidebar-primary);">ritikthakur.com.np</a><br>
                     <a href="#" style="color: var(--sidebar-primary);">Privacy Policy</a> | <a href="#" style="color: var(--sidebar-primary);">Terms of Use</a>
                 </div>
             </div>
@@ -121,8 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    loadSetting('setting-theme', 'auto');
     loadSetting('setting-color', '#519E8A');
+    // Load theme from the key that main app uses
+    const savedTheme = localStorage.getItem('theme');
+    document.getElementById('setting-theme').value = savedTheme ? savedTheme : 'auto';
     loadSetting('setting-gallery', false, true);
     loadSetting('setting-autodownload', false, true);
     loadSetting('setting-icon', 'auto');
@@ -130,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Apply color immediately
     const applyColor = () => {
-        document.documentElement.style.setProperty('--primary', document.getElementById('setting-color').value);
+        document.documentElement.style.setProperty('--primary-color', document.getElementById('setting-color').value);
     };
     applyColor();
 
@@ -138,14 +149,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveSetting = (e) => {
         const el = e.target;
         const isCheckbox = el.type === 'checkbox';
-        localStorage.setItem(el.id, isCheckbox ? el.checked : el.value);
         
+        // For theme, we want to save it as 'theme' for the rest of the app to pick up
         if (el.id === 'setting-theme') {
+            localStorage.setItem('theme', el.value);
             // Theme handled by existing main.js partially, but we trigger it
             if (el.value === 'light') document.getElementById('theme-light').click();
             if (el.value === 'dark') document.getElementById('theme-dark').click();
             if (el.value === 'auto') document.getElementById('theme-auto').click();
+        } else {
+            localStorage.setItem(el.id, isCheckbox ? el.checked : el.value);
         }
+        
         if (el.id === 'setting-color') {
             applyColor();
         }
@@ -154,6 +169,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.sidebar-drawer input, .sidebar-drawer select').forEach(el => {
         el.addEventListener('change', saveSetting);
         el.addEventListener('input', saveSetting);
+    });
+
+    document.getElementById('setting-permissions').addEventListener('click', () => {
+        if (typeof window.requestAppPermissions === 'function') {
+            window.requestAppPermissions();
+        } else {
+            alert('Permissions are natively managed by the App.');
+        }
     });
 
     document.getElementById('setting-restart').addEventListener('click', () => {

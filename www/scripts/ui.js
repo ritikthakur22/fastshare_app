@@ -1049,10 +1049,16 @@ class ReceiveFileDialog extends ReceiveDialog {
         this.$downloadBtn.innerText = Localization.getTranslation("dialogs.download");
         this.$downloadBtn.onclick = _ => {
             if (downloadZipped) {
-                let tmpZipBtn = document.createElement("a");
-                tmpZipBtn.download = filenameDownload;
-                tmpZipBtn.href = url;
-                tmpZipBtn.click();
+                if (typeof saveFileToCapacitor === 'function' && window.Capacitor && window.Capacitor.isNativePlatform()) {
+                    fetch(url).then(res => res.blob()).then(blob => {
+                        saveFileToCapacitor(blob, filenameDownload);
+                    });
+                } else {
+                    let tmpZipBtn = document.createElement("a");
+                    tmpZipBtn.download = filenameDownload;
+                    tmpZipBtn.href = url;
+                    tmpZipBtn.click();
+                }
             }
             else {
                 this._downloadFilesIndividually(files);
@@ -1101,9 +1107,13 @@ class ReceiveFileDialog extends ReceiveDialog {
     _downloadFilesIndividually(files) {
         let tmpBtn = document.createElement("a");
         for (let i=0; i<files.length; i++) {
-            tmpBtn.download = files[i].name;
-            tmpBtn.href = URL.createObjectURL(files[i]);
-            tmpBtn.click();
+            if (typeof saveFileToCapacitor === 'function' && window.Capacitor && window.Capacitor.isNativePlatform()) {
+                saveFileToCapacitor(files[i], files[i].name);
+            } else {
+                tmpBtn.download = files[i].name;
+                tmpBtn.href = URL.createObjectURL(files[i]);
+                tmpBtn.click();
+            }
         }
     }
 
@@ -2456,6 +2466,7 @@ class AboutUI {
     }
 
     async _evaluateBtnConfig($btn, config) {
+        if (!$btn) return;
         // if config is not set leave everything as default
         if (!Object.keys(config).length) return;
 

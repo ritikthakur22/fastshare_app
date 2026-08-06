@@ -1,15 +1,42 @@
-# FastShare App
+# 📱 FastShare Android App
 
-FastShare is a modern, minimalistic local file sharing app, powered by WebRTC. This repository contains the Capacitor/Android wrapper for the FastShare web application.
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ritikthakur22/FastShare/master/frontend/images/android-chrome-192x192.png" width="128" alt="FastShare Logo" />
+  
+  **The official native Android App for FastShare**
 
-- **Website / Web App**: [https://fastshare.ritikthakur.com.np](https://fastshare.ritikthakur.com.np)
-- **Web App Source Code**: [https://github.com/ritikthakur22/FastShare](https://github.com/ritikthakur22/FastShare)
+  [![Download APK](https://img.shields.io/badge/Download-APK-success.svg?style=for-the-badge&logo=android)](https://github.com/ritikthakur22/fastshare_app/releases/latest)
+</div>
 
-## Features
-- **Native Android App**: Wrapped using Capacitor for a fully native experience.
-- **Customizable UI**: Custom themes and colors using Material Design.
-- **Auto Download**: Bypass manual file acceptance.
-- **Custom Signaling**: Use the default Render backend or define your own WebRTC signaling server URL.
+---
 
-## Downloads
-You can download the latest Android Universal APK from the [Releases](https://github.com/ritikthakur22/fastshare_app/releases) section.
+This is the native Android application wrapper for **FastShare**, a seamless, ultra-fast method to share files and clipboard across devices. 
+
+While FastShare runs beautifully in any web browser, this Android app wraps the FastShare web application into a fully native experience using **Capacitor**.
+
+## ✨ App Exclusive Features
+- **Native File Downloads**: Bypasses browser restrictions to save files natively into your device's `Downloads` or `Pictures` folders.
+- **Save to Gallery**: Native setting to save received media files directly to the Android photo gallery.
+- **App Drawer & UI Customization**: Change the entire app's material UI color theme right from the sidebar.
+- **Native Notifications**: Fully integrated with Android's notification system.
+- **Standalone Experience**: Install FastShare as an app directly on your phone without relying on browser UI.
+
+## 🔗 Links
+
+- **Main Web App**: [https://fastshare.ritikthakur.com.np](https://fastshare.ritikthakur.com.np)
+- **FastShare Core Source Code**: [ritikthakur22/FastShare](https://github.com/ritikthakur22/FastShare)
+- **My Portfolio**: [ritikthakur.com.np](https://ritikthakur.com.np)
+
+## 🛠️ Build it yourself
+
+To build the app yourself, you need Android Studio and Node.js.
+
+```bash
+git clone https://github.com/ritikthakur22/fastshare_app.git
+cd fastshare_app
+
+npm install
+npx cap sync android
+
+# Build the app using Android Studio
+```
