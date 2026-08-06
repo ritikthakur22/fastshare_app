@@ -35,7 +35,8 @@ public class NativeFileSaverPlugin extends Plugin {
         try {
             Uri contentUri;
             ContentValues values = new ContentValues();
-            values.put(MediaStore.MediaColumns.DISPLAY_NAME, name);
+            String safeName = System.currentTimeMillis() + "_" + name;
+            values.put(MediaStore.MediaColumns.DISPLAY_NAME, safeName);
             values.put(MediaStore.MediaColumns.MIME_TYPE, mimeType);
 
             if (saveToGallery && mimeType.startsWith("image/")) {
@@ -72,7 +73,7 @@ public class NativeFileSaverPlugin extends Plugin {
                     }
                 }
             }
-            call.reject("Failed to create file");
+            call.reject("Failed to create file: MediaStore returned null");
         } catch (Exception e) {
             call.reject(e.toString());
         }

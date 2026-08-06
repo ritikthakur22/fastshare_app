@@ -4,7 +4,7 @@
     --sidebar-text: var(--text-color, #333333);
     --sidebar-width: 320px;
     --sidebar-overlay: rgba(0,0,0,0.5);
-    --sidebar-primary: var(--primary, #519E8A);
+    --sidebar-primary: var(--primary-color, #519E8A);
 }
 
 @media (prefers-color-scheme: dark) {

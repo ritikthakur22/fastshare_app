@@ -28,13 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <input type="color" id="setting-color" class="mat-input" value="#519E8A" style="width: 50px; padding: 0;">
                 </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-item-text">
-                        <span class="sidebar-item-label">Permissions</span>
-                        <span class="sidebar-item-desc">Notifications & Storage</span>
-                    </div>
-                    <button id="setting-permissions" class="mat-btn" style="padding: 5px 10px; font-size: 12px;">Grant</button>
-                </div>
             </div>
 
             <div class="sidebar-section">
@@ -131,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     loadSetting('setting-color', '#519E8A');
+    applyColor();
     // Load theme from the key that main app uses
     const savedTheme = localStorage.getItem('theme');
     document.getElementById('setting-theme').value = savedTheme ? savedTheme : 'auto';
@@ -141,9 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Apply color immediately
     const applyColor = () => {
-        document.documentElement.style.setProperty('--primary-color', document.getElementById('setting-color').value);
+        const color = document.getElementById('setting-color').value;
+        document.documentElement.style.setProperty('--primary-color', color);
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', color);
+        }
     };
-    applyColor();
+    // Removed applyColor() from here, it will be called after loading settings
 
     // Save Settings
     const saveSetting = (e) => {
@@ -169,14 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.sidebar-drawer input, .sidebar-drawer select').forEach(el => {
         el.addEventListener('change', saveSetting);
         el.addEventListener('input', saveSetting);
-    });
-
-    document.getElementById('setting-permissions').addEventListener('click', () => {
-        if (typeof window.requestAppPermissions === 'function') {
-            window.requestAppPermissions();
-        } else {
-            alert('Permissions are natively managed by the App.');
-        }
     });
 
     document.getElementById('setting-restart').addEventListener('click', () => {
