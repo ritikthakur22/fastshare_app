@@ -1,6 +1,63 @@
 // sidebar.js
 
 document.addEventListener('DOMContentLoaded', () => {
+    const defaultSeed = '#8FB996';
+    const presetColors = [
+        ['#84E6F8', 'Frosted blue'],
+        ['#DE4D86', 'Blush rose'],
+        ['#4545BA', 'Royal blue'],
+        ['#E8C2CA', 'Pastel petal'],
+        ['#C6CA53', 'Golden sand'],
+        ['#BE95C4', 'Lilac'],
+        ['#8FB996', 'Muted teal'],
+        ['#C98BB9', 'Orchid'],
+    ];
+
+    const toHex = (value) => Math.round(value).toString(16).padStart(2, '0');
+    const hexToHsl = (hex) => {
+        const value = hex.replace('#', '');
+        const r = parseInt(value.slice(0, 2), 16) / 255;
+        const g = parseInt(value.slice(2, 4), 16) / 255;
+        const b = parseInt(value.slice(4, 6), 16) / 255;
+        const max = Math.max(r, g, b), min = Math.min(r, g, b), delta = max - min;
+        let hue = 0;
+        if (delta) {
+            if (max === r) hue = ((g - b) / delta) % 6;
+            else if (max === g) hue = (b - r) / delta + 2;
+            else hue = (r - g) / delta + 4;
+            hue = Math.round(hue * 60 + 360) % 360;
+        }
+        const lightness = (max + min) / 2;
+        const saturation = delta ? delta / (1 - Math.abs(2 * lightness - 1)) : 0;
+        return { hue, saturation: Math.round(saturation * 100), lightness: Math.round(lightness * 100) };
+    };
+    const hsl = (hue, saturation, lightness) => `hsl(${(hue + 360) % 360} ${Math.max(0, Math.min(100, saturation))}% ${Math.max(0, Math.min(100, lightness))}%)`;
+    const contrastColor = (hex) => {
+        const value = hex.replace('#', '');
+        const channel = (offset) => parseInt(value.slice(offset, offset + 2), 16) / 255;
+        const linear = (channelValue) => channelValue <= 0.03928 ? channelValue / 12.92 : ((channelValue + 0.055) / 1.055) ** 2.4;
+        const luminance = 0.2126 * linear(channel(0)) + 0.7152 * linear(channel(2)) + 0.0722 * linear(channel(4));
+        return luminance > 0.45 ? '#111111' : '#ffffff';
+    };
+    const applyColor = () => {
+        const colorInput = document.getElementById('setting-color');
+        const color = /^#[0-9a-f]{6}$/i.test(colorInput.value) ? colorInput.value : defaultSeed;
+        const { hue, saturation, lightness } = hexToHsl(color);
+        const root = document.documentElement.style;
+        const roles = {
+            '--primary-color': color,
+            '--primary-on-color': contrastColor(color),
+            '--primary-container-color': hsl(hue, Math.min(100, saturation + 10), 92),
+            '--primary-container-on-color': hsl(hue, Math.max(25, saturation), 18),
+            '--paired-device-color': hsl(hue + 18, Math.max(45, saturation), Math.max(35, Math.min(55, lightness))),
+            '--public-room-color': hsl(hue + 56, Math.max(55, saturation), Math.max(42, Math.min(58, lightness))),
+            '--ws-peer-color': hsl(hue - 38, Math.max(55, saturation), Math.max(45, Math.min(62, lightness))),
+            '--btn-disabled-color': hsl(hue, Math.min(20, saturation), 42),
+        };
+        Object.entries(roles).forEach(([name, value]) => root.setProperty(name, value));
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
+        window.setNativeSystemBars?.(color);
+    };
     // Inject Sidebar HTML
     const sidebarHTML = `
         <div id="sidebar-overlay" class="sidebar-overlay"></div>
@@ -26,7 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="sidebar-item-text">
                         <span class="sidebar-item-label">App Color</span>
                     </div>
-                    <input type="color" id="setting-color" class="mat-input" value="#519E8A" style="width: 50px; padding: 0;">
+                    <div class="app-color-picker">
+                        <input type="hidden" id="setting-color" value="#8FB996">
+                        <div class="app-color-presets" role="group" aria-label="Preset app colors">
+                            ${presetColors.map(([color, label]) => `<button type="button" class="app-color-preset" data-color="${color}" title="${label}" aria-label="${label}" style="--preset-color: ${color};"></button>`).join('')}
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -123,7 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    loadSetting('setting-color', '#519E8A');
+    const savedColor = localStorage.getItem('setting-color');
+    loadSetting('setting-color', savedColor && savedColor.toUpperCase() !== '#519E8A' ? savedColor : defaultSeed);
+    if (!savedColor || savedColor.toUpperCase() === '#519E8A') {
+        localStorage.setItem('setting-color', defaultSeed);
+    }
     applyColor();
     // Load theme from the key that main app uses
     const savedTheme = localStorage.getItem('theme');
@@ -132,17 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSetting('setting-autodownload', false, true);
     loadSetting('setting-icon', 'auto');
     loadSetting('setting-wss', '');
-
-    // Apply color immediately
-    const applyColor = () => {
-        const color = document.getElementById('setting-color').value;
-        document.documentElement.style.setProperty('--primary-color', color);
-        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-        if (metaThemeColor) {
-            metaThemeColor.setAttribute('content', color);
-        }
-    };
-    // Removed applyColor() from here, it will be called after loading settings
 
     // Save Settings
     const saveSetting = (e) => {
@@ -168,6 +223,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.sidebar-drawer input, .sidebar-drawer select').forEach(el => {
         el.addEventListener('change', saveSetting);
         el.addEventListener('input', saveSetting);
+    });
+
+    document.querySelectorAll('.app-color-preset').forEach(button => {
+        button.addEventListener('click', () => {
+            const colorInput = document.getElementById('setting-color');
+            colorInput.value = button.dataset.color;
+            colorInput.dispatchEvent(new Event('input', { bubbles: true }));
+            colorInput.dispatchEvent(new Event('change', { bubbles: true }));
+        });
     });
 
     document.getElementById('setting-restart').addEventListener('click', () => {

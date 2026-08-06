@@ -1,1 +1,66 @@
-import { Toast } from '@capacitor/toast'; import { Capacitor, registerPlugin } from '@capacitor/core'; import { LocalNotifications } from '@capacitor/local-notifications'; const NativeFileSaver = registerPlugin('NativeFileSaver'); window.saveFileToCapacitor = async function(file, fileName) { if (!Capacitor.isNativePlatform()) return false; const reader = new FileReader(); reader.readAsDataURL(file); reader.onloadend = async () => { let base64data = reader.result; if (base64data.indexOf(',') !== -1) { base64data = base64data.split(',')[1]; } try { const saveToGallery = localStorage.getItem('setting-gallery') === 'true'; const result = await NativeFileSaver.save({ data: base64data, name: fileName, mimeType: file.type || 'application/octet-stream', saveToGallery: saveToGallery }); await Toast.show({text: 'Saved successfully at ' + result.path, duration: 'long'}); } catch (e) { console.error('Filesystem write error', e); await Toast.show({text: 'Failed to save: ' + (e.message || e)}); } }; return true; }; window.requestAppPermissions = async function() { if (!Capacitor.isNativePlatform()) return; try { await LocalNotifications.requestPermissions(); } catch(e) { console.error('Permission request failed', e); } }; document.addEventListener('DOMContentLoaded', () => { setTimeout(() => { if (typeof window.requestAppPermissions === 'function') window.requestAppPermissions(); }, 1500); });
+import { Toast } from '@capacitor/toast';
+import { Capacitor, registerPlugin } from '@capacitor/core';
+import { LocalNotifications } from '@capacitor/local-notifications';
+
+const NativeFileSaver = registerPlugin('NativeFileSaver');
+
+window.saveFileToCapacitor = async function saveFileToCapacitor(file, fileName) {
+    if (!Capacitor.isNativePlatform()) return false;
+
+    try {
+        const saveToGallery = localStorage.getItem('setting-gallery') === 'true';
+        const started = await NativeFileSaver.start({
+            name: fileName,
+            mimeType: file.type || 'application/octet-stream',
+            saveToGallery,
+        });
+        try {
+            const chunkSize = 256 * 1024;
+            for (let offset = 0; offset < file.size; offset += chunkSize) {
+                const dataUrl = await new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onerror = () => reject(new Error('Could not read the received file'));
+                    reader.onload = () => resolve(reader.result);
+                    reader.readAsDataURL(file.slice(offset, offset + chunkSize));
+                });
+                await NativeFileSaver.writeChunk({
+                    token: started.token,
+                    data: dataUrl.split(',', 2)[1],
+                });
+            }
+            const result = await NativeFileSaver.finish({ token: started.token });
+            await Toast.show({ text: `Saved ${started.displayName}`, duration: 'long' });
+            return result;
+        } catch (error) {
+            await NativeFileSaver.cancel({ token: started.token }).catch(() => {});
+            throw error;
+        }
+    } catch (error) {
+        console.error('Shared-storage write failed', error);
+        await Toast.show({ text: `Failed to save ${fileName}: ${error?.message || error}`, duration: 'long' });
+        return false;
+    }
+};
+
+window.setNativeSystemBars = async function setNativeSystemBars(color) {
+    if (!Capacitor.isNativePlatform()) return;
+    try {
+        await NativeFileSaver.setSystemBars({ color });
+    } catch (error) {
+        // The theme is still valid in a browser or an older native shell.
+        console.debug('Could not update Android system bars', error);
+    }
+};
+
+window.requestAppPermissions = async function requestAppPermissions() {
+    if (!Capacitor.isNativePlatform()) return;
+    try {
+        await LocalNotifications.requestPermissions();
+    } catch (error) {
+        console.error('Notification permission request failed', error);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => window.requestAppPermissions?.(), 1500);
+});

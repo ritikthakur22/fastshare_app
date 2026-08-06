@@ -921,6 +921,16 @@ x-peers:empty~x-instructions {
     --icon-size: 24px;
     --peer-width: 120px;
     color-scheme: light dark;
+    /* Material-inspired roles. App color settings override these on :root. */
+    --primary-color: #8FB996;
+    --primary-on-color: #ffffff;
+    --primary-container-color: #d7f4eb;
+    --primary-container-on-color: #00382d;
+    --paired-device-color: #00a69c;
+    --public-room-color: #ed9d01;
+    --accent-color: var(--primary-color);
+    --ws-peer-color: #ff6b6b;
+    --btn-disabled-color: #5B5B66;
 }
 
 /*
@@ -929,14 +939,6 @@ x-peers:empty~x-instructions {
 
 /* Default colors */
 body {
-    /* Constant colors */
-    --primary-color: #519E8A;
-    --paired-device-color: #00a69c;
-    --public-room-color: #ed9d01;
-    --accent-color: var(--primary-color);
-    --ws-peer-color: #ff6b6b;
-    --btn-disabled-color: #5B5B66;
-
     /* shadows */
     --shadow-color-rgb: var(--text-color);
     --shadow-color-cover-rgb: var(--bg-color);
@@ -1114,4 +1116,3 @@ See note here: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select */
     -webkit-user-select: text;
     user-select: text;
 }
-

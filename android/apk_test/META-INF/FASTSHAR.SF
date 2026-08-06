@@ -1,0 +1,1726 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA-256-Digest-Manifest: 9YQtU0kv+GjgWUa4hUPOWWr7onGkILsQ4EioyLnSxDM=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: rm4a1SZmbkx8FRk5QbvMZ6STmWEJ+RhYslSSCjHPXgY=
+
+Name: DebugProbesKt.bin
+SHA-256-Digest: z24Qek0s3U45IhPa9yzJnGupB/g3eWQtjgEztk6zcjU=
+
+Name: META-INF/androidx.activity_activity-ktx.version
+SHA-256-Digest: 0Q9tHcZWdp7EUdfrCXgceTHDh+b/LZ045jBHC2rwvtY=
+
+Name: META-INF/androidx.activity_activity.version
+SHA-256-Digest: 5Ag8DmqafXDfzGUbKxDjy08ZLq5Vl3HY+OV+v0kBkvM=
+
+Name: META-INF/androidx.annotation_annotation-experimental.version
+SHA-256-Digest: Vj2iwJvYfJ0r8T15iiytHU8+f2cYSF+FDx3SbArSMBs=
+
+Name: META-INF/androidx.appcompat_appcompat-resources.version
+SHA-256-Digest: 3uNJ6B+mh6kIGZl5JWkLB8U5U7jJgJArRxgyMrWvURE=
+
+Name: META-INF/androidx.appcompat_appcompat.version
+SHA-256-Digest: YQPdFSU+ZCduQ/KVEPnFtuHxe5V0XuQPUaYh4Beliko=
+
+Name: META-INF/androidx.arch.core_core-runtime.version
+SHA-256-Digest: Xk4gTfXbSoRbgEIAb7dJD1H+qZ+KHFOrQAuZz81pi5U=
+
+Name: META-INF/androidx.coordinatorlayout_coordinatorlayout.version
+SHA-256-Digest: yK4fXsIDZ2sgNbHsWK9GcQXC7MKzpbrPfWE6tPTYagg=
+
+Name: META-INF/androidx.core_core-ktx.version
+SHA-256-Digest: JC9t/tKTAZFWoMs345HaD/EQkZ6Zsgwro0s7Ry6VQ10=
+
+Name: META-INF/androidx.core_core-splashscreen.version
+SHA-256-Digest: Q6OA2mE16xZr0uu0b5ypkAyhhPilv8qDNhMr6Xje/Vw=
+
+Name: META-INF/androidx.core_core-viewtree.version
+SHA-256-Digest: 6OQiVV41hlBy+db5UdxWj+aKQeZW+trFrqyApqP16BM=
+
+Name: META-INF/androidx.core_core.version
+SHA-256-Digest: d+cV8Nx+Hedyq5cFbuy4YLHI6OWyeIkeN9xtHpguX4Y=
+
+Name: META-INF/androidx.cursoradapter_cursoradapter.version
+SHA-256-Digest: 9NVKlG7NeVnMyrB1WgWyxDka/xV6GCB5Deq12PVcRHg=
+
+Name: META-INF/androidx.customview_customview.version
+SHA-256-Digest: sBXfV6fOpm4gx92kOvMmYlDyT3/2yEwDvZwNUXog7ZY=
+
+Name: META-INF/androidx.drawerlayout_drawerlayout.version
+SHA-256-Digest: ev1cdi6MfVTvsmeg4DxA2GqCIaAFtLjdawfK+SddtJ0=
+
+Name: META-INF/androidx.emoji2_emoji2-views-helper.version
+SHA-256-Digest: 7rXmOHKkxHny+dTdLUPe+QVRd6n6IfnSrv8vc0rzzPY=
+
+Name: META-INF/androidx.emoji2_emoji2.version
+SHA-256-Digest: Kp4WdlYxXOKLS9QK2HXZtonDbD/FYHziPfs80Y01JI4=
+
+Name: META-INF/androidx.fragment_fragment.version
+SHA-256-Digest: /4UO+DYiRj/33IeSNGfKG4aGCzz8sWGTr4bONWgPEdw=
+
+Name: META-INF/androidx.interpolator_interpolator.version
+SHA-256-Digest: cXcB/K2AKR4NBsyLxMJm/YrOYXNSLW1iPNN+HpKtyZ4=
+
+Name: META-INF/androidx.lifecycle_lifecycle-livedata-core.version
+SHA-256-Digest: E8cIYkEealcOFzxGMg5xhOnTbk7g3W9ZU1dM703OTUQ=
+
+Name: META-INF/androidx.lifecycle_lifecycle-livedata.version
+SHA-256-Digest: /Q3gyGgaokN1fug5gDx1+yKezMDXo2Vw1G+aBmBmIcs=
+
+Name: META-INF/androidx.lifecycle_lifecycle-process.version
+SHA-256-Digest: ahLk6mEKqUdVMJ6ZdNUyycR/32MLgXP5MXyfqtvXaO4=
+
+Name: META-INF/androidx.lifecycle_lifecycle-runtime-ktx.version
+SHA-256-Digest: I0FT+P4hWLbUWH8hjmSO0D91UFYNG/vFGO/jw4rbKVI=
+
+Name: META-INF/androidx.lifecycle_lifecycle-runtime.version
+SHA-256-Digest: 8meXHK6M6JVL79XSrLYCvI3YWHkNe0BmbQI91mzrLgg=
+
+Name: META-INF/androidx.lifecycle_lifecycle-viewmodel-ktx.version
+SHA-256-Digest: udQDSiGNC1J2qI1v9JhJzEpZOBVMXcnpa15JQlczIwg=
+
+Name: META-INF/androidx.lifecycle_lifecycle-viewmodel-savedstate.versi
+ on
+SHA-256-Digest: J14A0CzPS3jnxvXmft5e5quhAiDrSqRpOYPoieF6KwM=
+
+Name: META-INF/androidx.lifecycle_lifecycle-viewmodel.version
+SHA-256-Digest: AY+3dVTJ6a9piGPUjPhrAQ/YtLGcC/LSJw9V3Yewj/I=
+
+Name: META-INF/androidx.loader_loader.version
+SHA-256-Digest: U/8Mggt0wI0pqD9haINJnmP8D0bZQQ02nLntwOd7zfc=
+
+Name: META-INF/androidx.profileinstaller_profileinstaller.version
+SHA-256-Digest: Ei1kNkN8l8rFnPC7Qk/UeY7PBkj+VcheDPr0S3PWRiY=
+
+Name: META-INF/androidx.savedstate_savedstate-ktx.version
+SHA-256-Digest: OPCbHb9nW72R1aYIlZ5RRtofCHa5yWpOYpiNXNMkZ+s=
+
+Name: META-INF/androidx.savedstate_savedstate.version
+SHA-256-Digest: oUrCOrSuWLFGZkgyZ1Kl35SmYjcht2O7omY+RLYD8JU=
+
+Name: META-INF/androidx.startup_startup-runtime.version
+SHA-256-Digest: WApCl2ZQ73cErBtpLBlMhj7v1xXQneilC5gXW/J6Ld0=
+
+Name: META-INF/androidx.tracing_tracing.version
+SHA-256-Digest: m5nVNs/LbonqguFThHKEaksaca6xCkHsPNz72IYNFTw=
+
+Name: META-INF/androidx.vectordrawable_vectordrawable-animated.version
+SHA-256-Digest: wqCaKhd9lUrhrwsPIu2b0kz+XlDwwNZPH+9GyrRtU+E=
+
+Name: META-INF/androidx.vectordrawable_vectordrawable.version
+SHA-256-Digest: SxJ5Gle3gvkgInXn6Ufnwb2kXx0fr2pgozqmeXMTFOs=
+
+Name: META-INF/androidx.versionedparcelable_versionedparcelable.versio
+ n
+SHA-256-Digest: s/0pgtuKcRTX+BvAcqcODytXp6q48QathsOscGo3Zzg=
+
+Name: META-INF/androidx.viewpager_viewpager.version
+SHA-256-Digest: vU90lQInBk3t53YggAT4tlv1ISvSbqeBYu+DYpKtTeQ=
+
+Name: META-INF/androidx.webkit_webkit.version
+SHA-256-Digest: zESRuTDaAi4/cHu8SZUixpsrQSlx/JbaDx9iIXQC5Io=
+
+Name: META-INF/com/android/build/gradle/app-metadata.properties
+SHA-256-Digest: ayWnfwEHNKMv8HrTS5f+LeXepfT1eA6foouOXMirYbQ=
+
+Name: META-INF/kotlinx_coroutines_android.version
+SHA-256-Digest: 2BPdHgej3yDE/aC2QjwWZaomrXXRRkY+CW5CGdmpzYM=
+
+Name: META-INF/kotlinx_coroutines_core.version
+SHA-256-Digest: XK22044vM3XkLrA+sfvU4r05kjZdk2LnHVsCUrQ8YTY=
+
+Name: META-INF/services/kotlinx.coroutines.CoroutineExceptionHandler
+SHA-256-Digest: mtzAhgWWbt+0H02kt4daMxSOhqxKfAGqpoJ3TAIFR3Q=
+
+Name: META-INF/services/kotlinx.coroutines.internal.MainDispatcherFact
+ ory
+SHA-256-Digest: CvpiKzNhVHqONkAL//lJVL9QOZGQGXeAZRDX9l7tM4E=
+
+Name: META-INF/version-control-info.textproto
+SHA-256-Digest: bGPYrKSsmb5tpmtltqs82gWayRJtXwCM3VXJFk8mnb8=
+
+Name: assets/capacitor.config.json
+SHA-256-Digest: DEzBGifZtrckWgWB0RafdfgKwh9S9l363ofkocRDqWk=
+
+Name: assets/capacitor.plugins.json
+SHA-256-Digest: 3ezRVmBhjxrutEVexQkO+4YPOpUS/JGMc2I1yuge/sQ=
+
+Name: assets/dexopt/baseline.prof
+SHA-256-Digest: SLbOIgoQTf16zE+6WdJGPeI+TfnmwVwNKm0TL3eRCkk=
+
+Name: assets/dexopt/baseline.profm
+SHA-256-Digest: pfN4fP2yiPjTnc0iSmS4YbK6ObFQ7TUNRH3by13ANAE=
+
+Name: assets/native-bridge.js
+SHA-256-Digest: 9rMPkW4/XIGNpxEaPw7i+W7rwjTNNiCmG1013o+DasE=
+
+Name: assets/public/cordova.js
+SHA-256-Digest: 86CbszcBoCbeVqKJV8x9SHXte/aGAd6iQ0KZVxu+Opo=
+
+Name: assets/public/cordova_plugins.js
+SHA-256-Digest: bk4hX0Rd06wkcP4sEY/k5Mwy4Q0wQnXhjJEcXWOyt0Y=
+
+Name: assets/public/fonts/OpenSans/OFL.txt
+SHA-256-Digest: MskOodGY92AOFlm7V6RGgH+6hk2uEhkkoX5lAHapxEU=
+
+Name: assets/public/fonts/OpenSans/OpenSans-Italic-VariableFont_wdth,w
+ ght.ttf
+SHA-256-Digest: qUfTfabryk7d3HD5yYsF5C7ue3KB8k2+L4VBEgqFdd8=
+
+Name: assets/public/fonts/OpenSans/OpenSans-VariableFont_wdth,wght.ttf
+SHA-256-Digest: 4kELIP3TIXw+jssAppq6fd0vOPN8GSpRd1N3ENYywUo=
+
+Name: assets/public/fonts/OpenSans/README.txt
+SHA-256-Digest: +g9l/UsgZ8eLSf4SqcIkXEymTPosGbQ1fnJSdaFbp8A=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-Bold.ttf
+SHA-256-Digest: 6FZtKa/IUFN7cLqzaVu4Af6pHuxsyUFf21JVyMsNXMw=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-BoldItalic.ttf
+SHA-256-Digest: 9Q63/QbREBm5vrIU/sXgFlD0TICpjScTME0Wzt7ykOU=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-ExtraBold.ttf
+SHA-256-Digest: IokHPMtjDbLyIqztziUSf7+8SClDgJUU9Dm1ZSPQhkM=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-ExtraBoldItalic.ttf
+SHA-256-Digest: 04yd9PFNmvEq3ehMER/y1WvWrqvDZ00GRsCJ5HeMyEo=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-Italic.ttf
+SHA-256-Digest: /ai475pXUx1/SRUmvXVW0s07gHoDg6BuPrwJszBA0zQ=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-Light.ttf
+SHA-256-Digest: 8XP9Fj8tX/YzrGeHdOUCwLvecJlWT4mTCPWiCAQDKyw=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-LightItalic.ttf
+SHA-256-Digest: r5DzFBJgybNsco4j2/ML8syhVi9jM4Cr+OMJMVUvWHE=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-Medium.ttf
+SHA-256-Digest: MGZ2UN1gUhOOKteElnmejBI0YQuQJ/y7NXxPcdusJKk=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-MediumItalic.ttf
+SHA-256-Digest: n6KqiswPT6MJ+8ihJ1/XqXonkg+wSiQdCmlClA72pMk=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-Regular.ttf
+SHA-256-Digest: qxmRKP00qTX9rUr0Osg9eOgB/jOawC3mbU4j+ysNDcA=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-SemiBold.ttf
+SHA-256-Digest: Qmje8DwdE5IKZ3keQoi3puLRR2T6FtmGFXtw7XnGexQ=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans-SemiBoldItalic.ttf
+SHA-256-Digest: RDO89gK8dR8/Um/uNm8oGDJc7CqovLoHowUxh/lmOTA=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-Bold.ttf
+SHA-256-Digest: 5m26qkXKaSCEEHRNOwR4kC08bY5IVi4w2PxDX9VgBCg=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-BoldItali
+ c.ttf
+SHA-256-Digest: ZIB721icraKlNniabInuKznmAzfRmldJL3hf8zq3Tsw=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-ExtraBold
+ .ttf
+SHA-256-Digest: iLgGxibhXQ5J2SjndogdvkhVpU/kq33aYRgXw2slOXA=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-ExtraBold
+ Italic.ttf
+SHA-256-Digest: XghN9cgJHWEbSDZS6gffqVTttK0d0fpA1831+qr2Lew=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-Italic.tt
+ f
+SHA-256-Digest: hP/4lZG/hRETpAoZ07g4R09/y2s+rYpjuWB4bZeZqNM=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-Light.ttf
+SHA-256-Digest: Xm8CXJ3bRQ0U6T//9dxU5Sepj4GfoVymTk+kTKHPTmg=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-LightItal
+ ic.ttf
+SHA-256-Digest: Nu8mrFHvjhGnASFnyjBRgw9BxwLAa5ZzRAOYhnjgtsk=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-Medium.tt
+ f
+SHA-256-Digest: wJWWc6d6M27hlR2g0whfvgWR41Y89EsVYJyGs3dg8Ks=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-MediumIta
+ lic.ttf
+SHA-256-Digest: BCifDTmJmtY+VZLkASKvMA9BZv/4DQ2nj0/HJ5KQxaE=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-Regular.t
+ tf
+SHA-256-Digest: WwASUES0a5O2leMZcGQklxrIyIKC0AniZ4z1HDyDcas=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-SemiBold.
+ ttf
+SHA-256-Digest: Xze8UG6CLVdHkd72qsEWQbhVTWFb8L15s8e9ngJApz0=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_Condensed-SemiBoldI
+ talic.ttf
+SHA-256-Digest: uxp1wX+7Odaa5arlTOUZ1ENxiyqp9XLB/2M3ELkhMuY=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Bold.
+ ttf
+SHA-256-Digest: 0V97fXhFWtwWiPxQqucwAotkYiEXyJzj4LgTjAGGhGM=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-BoldI
+ talic.ttf
+SHA-256-Digest: sOWYU363EyFHPqHoMfySvBa6ED6JmNfW6jl3aRzO20M=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Extra
+ Bold.ttf
+SHA-256-Digest: PpvwbKfCX6rAUMf8LR5YlcdhciTxKB1iNMnJjurPH4w=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Extra
+ BoldItalic.ttf
+SHA-256-Digest: W3Ttf1V6aGWYXT08NWc5jiSyovgz/xE1A/qXA1ld7JY=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Itali
+ c.ttf
+SHA-256-Digest: SZMcixJ25jPh+uRFjW6tcCCz0H+c0E2k1eq8XIorYbg=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Light
+ .ttf
+SHA-256-Digest: 8Lv7i8fVMjnGOg5LRugJY1Auz54K3smq8uhfOm7K934=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Light
+ Italic.ttf
+SHA-256-Digest: Yacx/q2iveODh8hQLFipetsRq9C4LZ1du6B6LKryNus=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Mediu
+ m.ttf
+SHA-256-Digest: e6T9E1RV2vgnCGKy9vvlhQu2U+EH3WwWLcqrNJ3htcc=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Mediu
+ mItalic.ttf
+SHA-256-Digest: 1maIcqZuX4H4KCE0y6MO68lIn1uy27xCrr06USApQIg=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-Regul
+ ar.ttf
+SHA-256-Digest: bDsRTVz2KRN/0S6EPJbKJh0f2qQfMnk7w7mYrZo6wVI=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-SemiB
+ old.ttf
+SHA-256-Digest: sd8hxZIVGNyrerbqhhgTVq0g3CiXvVXMngbQscKMHuM=
+
+Name: assets/public/fonts/OpenSans/static/OpenSans_SemiCondensed-SemiB
+ oldItalic.ttf
+SHA-256-Digest: 3cnT4EFXMeNcETKuF6BsaWIw1BOejHJz8hZxBcBVAZ8=
+
+Name: assets/public/images/android-chrome-192x192-maskable.png
+SHA-256-Digest: /chNWawMC2YhnvW9nLeeOtjXm5+vuW3njyyGLmSD/KE=
+
+Name: assets/public/images/android-chrome-192x192.png
+SHA-256-Digest: qzaM6awUcjNjNXzi+v1/HgadzBOeoiTsd7WCZKkVWp0=
+
+Name: assets/public/images/android-chrome-512x512-maskable.png
+SHA-256-Digest: Bq5rW/RFoVt4fUY5L+HA/28aN5quuonAQyehxJ6M9Zs=
+
+Name: assets/public/images/android-chrome-512x512.png
+SHA-256-Digest: cBscTnSxcc5V/bdJdz1SCI7xC2SBgcup8bQZTD+7i68=
+
+Name: assets/public/images/apple-touch-icon.png
+SHA-256-Digest: HIg99H68EvQT5r1L/6XNTfbaJ9wshWv412TxV1B4Oj0=
+
+Name: assets/public/images/favicon-96x96-notification.png
+SHA-256-Digest: 6bUpD7u0huv1Jz1mcWD6/eVQ45tbFyhEn3aeoHwp+dk=
+
+Name: assets/public/images/favicon-96x96.png
+SHA-256-Digest: dreXrdqohPXfLo1hcyy9DhieQTuKGrY70HkqMjsx0I0=
+
+Name: assets/public/images/logo_blue_512x512.png
+SHA-256-Digest: JGWEdo7UrhAFJICDwwRuG5YkqsS3MMLMufQkxyMQHyU=
+
+Name: assets/public/images/logo_transparent_512x512.png
+SHA-256-Digest: KdUKsUp3u3FZiuZapBS5EDlgN8+5rtzl30SfO/gZQb4=
+
+Name: assets/public/images/logo_transparent_white_512x512.png
+SHA-256-Digest: 45UkD3Neabvx+Wb5KA1uJ809OpqHs8QW0dYWUqvm/lI=
+
+Name: assets/public/images/mstile-150x150.png
+SHA-256-Digest: B6LRR/JcJCuhffKMynOpuB22jUrHS548F9OUElpsp8g=
+
+Name: assets/public/images/pairdrop_screenshot_mobile_1.png
+SHA-256-Digest: g4xBTa5+CQKCdPwfFnHDEvI5thQbU9t2p4mLh1U84c0=
+
+Name: assets/public/images/pairdrop_screenshot_mobile_2.png
+SHA-256-Digest: gHH39J/tejQLM3NovfiUuq8pzDoetWKt6jM7lzifc6Y=
+
+Name: assets/public/images/pairdrop_screenshot_mobile_3.png
+SHA-256-Digest: vJTNI0DpLiaf892pkbQUDypA+8pQjzGlESIYTUhOez4=
+
+Name: assets/public/images/pairdrop_screenshot_mobile_4.png
+SHA-256-Digest: cFyJipa6G5fDPC1zXeQTt9904yeDTSv9S3SWrXRMTUg=
+
+Name: assets/public/images/pairdrop_screenshot_mobile_5.png
+SHA-256-Digest: qeEV6gfUvdrdDKE+a11mOY+TH/RtR6+0A64DeqEw+aQ=
+
+Name: assets/public/images/pairdrop_screenshot_mobile_6.png
+SHA-256-Digest: unoLEjbdHYEEpngRZhw9jfu6V3pgAVMsAxsdcN4TjlU=
+
+Name: assets/public/images/pairdrop_screenshot_mobile_7.png
+SHA-256-Digest: ryCXldPo/6/vJEsIO2rtpCT/rhaHUhkT3wXwYYBkP64=
+
+Name: assets/public/images/pairdrop_screenshot_mobile_8.png
+SHA-256-Digest: AUA5SYaFgTBk3cCr0jqT0Xx/+gmQuFhrD0Mkv2+Eg/M=
+
+Name: assets/public/images/safari-pinned-tab.svg
+SHA-256-Digest: Kpf407902f5K2o20Fq4MqqfpPQUIXHaqnydmq3Q6O8k=
+
+Name: assets/public/images/snapdrop-graphics.sketch
+SHA-256-Digest: 8MwM6nfdmq4dPWxwxstBSJSUPjuQOht88CCEx/bmi6M=
+
+Name: assets/public/index.html
+SHA-256-Digest: De9KsW5OpvOlXVf3fj1ErsvXFlw8rRWAOMgyrQ37khU=
+
+Name: assets/public/lang/ar.json
+SHA-256-Digest: naQ+I0WOY2efVGeKuoxdxowhzz3T3kh7oPmGi2UPNeQ=
+
+Name: assets/public/lang/be.json
+SHA-256-Digest: 2hhMSqW6Ut/Z6d+Xp1io+UMQrPD5zuwb2k96ssI61dE=
+
+Name: assets/public/lang/bg.json
+SHA-256-Digest: 2ZnNfCn+8nlAnvCBUSk6w4W4Sh4RIRgHURkibzaK86Q=
+
+Name: assets/public/lang/bn.json
+SHA-256-Digest: mbjuKzjMdpSDrCF9U1tk0nL3Vzgf/COosZ5mX40bsfY=
+
+Name: assets/public/lang/ca.json
+SHA-256-Digest: 1y6Tc7aI9+Oqc4t+rSUGzXXZnuXDE/aEYP3aJlLp57U=
+
+Name: assets/public/lang/cs.json
+SHA-256-Digest: JlZgcKEnrIkTM1HaD1f66K4DluZVaEU+zum/b76f/J4=
+
+Name: assets/public/lang/da.json
+SHA-256-Digest: wfYnadBw8iLLvQPqtPP2IWojvWSIw+6RAsYzAwWTZ8g=
+
+Name: assets/public/lang/de.json
+SHA-256-Digest: NesPqWSdlcDG0Rm1zziVAV7EGPGkAihJ0ccVN4eP3xc=
+
+Name: assets/public/lang/en.json
+SHA-256-Digest: TSQ/T1JfXE/Eqz3btZQUOAr0iAPn70cVjdSyblrnSUQ=
+
+Name: assets/public/lang/es.json
+SHA-256-Digest: SGOrc24HGWD4atHHSCml5dtT9sRfzH+aBwxlp4SHbtE=
+
+Name: assets/public/lang/et.json
+SHA-256-Digest: d5S0ircrhl+8wVTPJSBxERKUYXi2ZfVqwEKKdKqwD14=
+
+Name: assets/public/lang/eu.json
+SHA-256-Digest: LeCvqFxT2p48ge++bJhkpvVTa8ZY+JiX4nTLfMT7Qa4=
+
+Name: assets/public/lang/fa.json
+SHA-256-Digest: 9UVPKkneHL8uVD3qwDot81GHMmdiXujRbl20Bseo2bA=
+
+Name: assets/public/lang/fi.json
+SHA-256-Digest: l7JarPvK48Kf0f35EwK504TvRJJdijDhb8LuQR8+L8k=
+
+Name: assets/public/lang/fr.json
+SHA-256-Digest: Ykv/oaxkU+2nBcHE5gSZgYDBm50tN0RXtF8gOelK8N0=
+
+Name: assets/public/lang/he.json
+SHA-256-Digest: CaNjxVNxXmwztAi6oesJregXzh8EiR6N+0Kq4j3yjVo=
+
+Name: assets/public/lang/hu.json
+SHA-256-Digest: BYF0Q4drTi97cgLuI0LTDtIyIsqdGLmv/ttt+QITnVA=
+
+Name: assets/public/lang/id.json
+SHA-256-Digest: waa5d411GtMCYVsZzD6f2cQeI3iWOV9qkjXggyJyvME=
+
+Name: assets/public/lang/it.json
+SHA-256-Digest: Lvp86O15Cgi6f1OPc9pWLuUdTzWhA8IcIfs2DjQXzdI=
+
+Name: assets/public/lang/ja.json
+SHA-256-Digest: J9hqPs+YTJgKKa4QL5MKrTC17b9Dmokv7HGMA6XfGHk=
+
+Name: assets/public/lang/kab.json
+SHA-256-Digest: lg4OBhiEhVutYpvN4EQmH1GIjy3Lbu0F/LdGzjERiZQ=
+
+Name: assets/public/lang/kn.json
+SHA-256-Digest: cUkKd5ckTpvtHYKQUGs00/TzOpqi2upr1hdPdJfsuIc=
+
+Name: assets/public/lang/ko.json
+SHA-256-Digest: 5xwwftNOebJPdFMqmo11k9N1oOL3nuWfAiIFaW9jPL0=
+
+Name: assets/public/lang/nb.json
+SHA-256-Digest: jn6gAxa+/FwHDlUIdOvKd3EamuS0xou4Qk0VFrBb/d4=
+
+Name: assets/public/lang/nl.json
+SHA-256-Digest: oHeu1hW+zK42hd+Hwipy1D/SZq08Lozqyx+N7oTixws=
+
+Name: assets/public/lang/nn.json
+SHA-256-Digest: cUSRH7g8NLwaqTOKSr/LRyeV9M3Vhvu4CTC636+f2jI=
+
+Name: assets/public/lang/pl.json
+SHA-256-Digest: wkAuU4mNvMy+en/4nf/TzCC873EAv05NsdNgcECWqyo=
+
+Name: assets/public/lang/pt-BR.json
+SHA-256-Digest: 3CplJzq8nZJuI3Y85W/4G/25eBplMi6lZqlbmxjHbkE=
+
+Name: assets/public/lang/ro.json
+SHA-256-Digest: MIZQdXJmYExDxE7nDKSB2dhzjD0zjUpE15XM2aRwPsw=
+
+Name: assets/public/lang/ru.json
+SHA-256-Digest: /At1eayCCOTqzsprKd1eMYWrOLp3MFcbqsDALCyS7nc=
+
+Name: assets/public/lang/sk.json
+SHA-256-Digest: c9j/u+YhWEvW/SJVoxgImJh38ZsfLBA3TqEHYMzGR/c=
+
+Name: assets/public/lang/ta.json
+SHA-256-Digest: uUiMTBc0nruMdFZRNPxPA+O8MKa8v8Gs6pjrwL4cBnU=
+
+Name: assets/public/lang/th.json
+SHA-256-Digest: fg8yTxIG6QnjA8MUoC7QQSGRexjtAeoXqpoOvmGaF4k=
+
+Name: assets/public/lang/tr.json
+SHA-256-Digest: CKY8czho8psIXXVKVjIGsmxQY2zfhr2dnL5fGY5HvdQ=
+
+Name: assets/public/lang/uk.json
+SHA-256-Digest: WjdB+L1mT/XZ6UIlBVwA7LFZwxL2PNbX4qSaz4BX3Fo=
+
+Name: assets/public/lang/zh-CN.json
+SHA-256-Digest: ITv8Ics7Ur3fLSIIblvcVkzOyChvUarxnvQXqXGm0R0=
+
+Name: assets/public/lang/zh-HK.json
+SHA-256-Digest: u3R6UvD53MMuHiX0jSk6+zRpQ1V6f1C15X5GCmDRuPg=
+
+Name: assets/public/lang/zh-TW.json
+SHA-256-Digest: qMefWm7ioWSPdHh9jDTZ+daf8hxaFZXt6YLllkBClyU=
+
+Name: assets/public/manifest.json
+SHA-256-Digest: lWETL+1VdL30H3Hy4SLQiATe88SJtzXHVV2WG5wWm6o=
+
+Name: assets/public/robots.txt
+SHA-256-Digest: HoBbKpQeV2eRi+Lz792afLTOQvWC0gZx9UH/A2AP8qs=
+
+Name: assets/public/scripts/browser-tabs-connector.js
+SHA-256-Digest: XgLvdpxJHteM7CIBlrskB9AGW2VRoBSotxDH7znD9Xk=
+
+Name: assets/public/scripts/capacitor-fs.js
+SHA-256-Digest: o4b8rf+ZxziKb0yMos0ecjcaeAWe9R6mGa8O2ySjwwE=
+
+Name: assets/public/scripts/libs/heic2any.min.js
+SHA-256-Digest: 8IwXq2oovSylFHL9IR2Ppv8Bw/YfIw1CgddggJE5qdQ=
+
+Name: assets/public/scripts/libs/no-sleep.min.js
+SHA-256-Digest: n8fToj0LecLFp93wVdZ8duWpLW+HjiA6iIWAlYjMbZA=
+
+Name: assets/public/scripts/libs/qr-code.min.js
+SHA-256-Digest: j4u9BaPtXWuAIlT0UKugaJAvYbbpHFXLY7cOOhScEi4=
+
+Name: assets/public/scripts/libs/zip.min.js
+SHA-256-Digest: xkqVHx4CbFQpSZFIk6B9/WEI2FUVpnM2MbzG+kdwMog=
+
+Name: assets/public/scripts/localization.js
+SHA-256-Digest: zvCAvDgrkpBKvA1MhpZpWK46iZ3PNNkrZA/JgeYg5zA=
+
+Name: assets/public/scripts/main.js
+SHA-256-Digest: RLJM9uXZr0QPcN8NvO85PHDpm0uuQWDQ9TNLLgAVCuM=
+
+Name: assets/public/scripts/network.js
+SHA-256-Digest: DSzULtgvzrzaVf7ElwBu3HVfsH2OEePO7Dq3Aq1y7Do=
+
+Name: assets/public/scripts/persistent-storage.js
+SHA-256-Digest: pGVuz10YSfJhT+V3+Q3WPEB2cZhRZbwbF+SHqzM0P00=
+
+Name: assets/public/scripts/sidebar.js
+SHA-256-Digest: ajBHAsVgelN1FmMsBDa2HlYE918l+ds8bHmZySrYGJI=
+
+Name: assets/public/scripts/ui-main.js
+SHA-256-Digest: HaxGiZK9jBR7K7navQlz+Pw5/NcPCF41KQwRX3cn+ZM=
+
+Name: assets/public/scripts/ui.js
+SHA-256-Digest: IM1E90TJ/Gtt49Fjfw/fxqqazrNqMr4pnwYDqW3XGaE=
+
+Name: assets/public/scripts/util.js
+SHA-256-Digest: 9IdO4IXJFygAQKH7811egFFvdmhnOAv61rUYxOkOvsg=
+
+Name: assets/public/scripts/worker/canvas-worker.js
+SHA-256-Digest: 8thQeEf3A3p81/ekQepZePiCzOBnLFqaBsyUnNqQOJI=
+
+Name: assets/public/service-worker.js
+SHA-256-Digest: wDYleAIS+Mnzih7sq8zNr6C6cKYiioAn6MAwJdZoHqE=
+
+Name: assets/public/sounds/blop.mp3
+SHA-256-Digest: b8k9kTLVUv9nFC58WZOBLTRnw9szFJT8zs0U4JsbOhs=
+
+Name: assets/public/sounds/blop.ogg
+SHA-256-Digest: qKo57+/TQQh56N0DXg6Z5CkiWr/SZJXfZtdTwAbDlEg=
+
+Name: assets/public/styles/sidebar.css
+SHA-256-Digest: KkuRQ2WZYcDhQlrnOEnmIlzR7rziGxCUTvavaz/laug=
+
+Name: assets/public/styles/styles-deferred.css
+SHA-256-Digest: qCRrvMZBsWqXRJ5F0AtponLlqhWxUiJR2AsO8DNgm04=
+
+Name: assets/public/styles/styles-main.css
+SHA-256-Digest: q9cIY9Ciix+5dVkVlMNQVsBsVAeItiMAN+WHvBosqqw=
+
+Name: classes.dex
+SHA-256-Digest: bkWLXaHpqvJuTO3SyqPWgYrCr6TXMiaPZaQvEtvjLQc=
+
+Name: kotlin/annotation/annotation.kotlin_builtins
+SHA-256-Digest: bQ8ghTWMoMFxVR1ZfUxySUhEo2EIkWfttb5/5hOgiy4=
+
+Name: kotlin/collections/collections.kotlin_builtins
+SHA-256-Digest: KdiT3rQdrSBCcMQO/ZdRoi01uCRn7JHU1nGR7E+8QWM=
+
+Name: kotlin/concurrent/atomics/atomics.kotlin_builtins
+SHA-256-Digest: WIs8vorA+L0Uvh8MX4O46qj+IcVdoAWTRkOGQ7PIMnw=
+
+Name: kotlin/coroutines/coroutines.kotlin_builtins
+SHA-256-Digest: nPTP8Gxvf6S4p6d8sm9SkCsciBbGBPbYiuzBBo1a+50=
+
+Name: kotlin/internal/internal.kotlin_builtins
+SHA-256-Digest: 7hGZIyaIVYwJBDQPWXJXoIK2bWLdDGwhaKq4Vud8mhs=
+
+Name: kotlin/kotlin.kotlin_builtins
+SHA-256-Digest: kPdvpGCH7NrVHAzFs5Qk9azYqxT3KTqWwM9QqhaEadA=
+
+Name: kotlin/ranges/ranges.kotlin_builtins
+SHA-256-Digest: N0/4snlKQATA1mZbpAy9mCbH/NBX5kwQXB2wGlWX3/E=
+
+Name: kotlin/reflect/reflect.kotlin_builtins
+SHA-256-Digest: P4muotrTRNQI9baXc/ebtRvLxjmMUNSTp72fM4z2KN0=
+
+Name: org/apache/cordova/allowlist/index.html
+SHA-256-Digest: PU0QUUn2Fh3v6pIUypGTcj8rsYjeZVXXYXOk3Oij1Sk=
+
+Name: org/apache/cordova/allowlist/index2.html
+SHA-256-Digest: 7FVA9zEqWJBOG31VYPW4a2P0dOjanSMO2NEgA+MzjE8=
+
+Name: res/-B.png
+SHA-256-Digest: 693/TU/b5Nsd+jSbaHDZwMlIlNsuO+tg3Db99Gtnygs=
+
+Name: res/-N.png
+SHA-256-Digest: GNv5/03/Jkjho9Cg6qZbwInCcAIY5+A+xSHhi7M8Cms=
+
+Name: res/-j.png
+SHA-256-Digest: zsfAfGgDF+7rUCL8osTOLwCCU1OinpVz7VY4hRS2oDo=
+
+Name: res/-u.png
+SHA-256-Digest: RP2hSl9JQ7och/YMxpXkmVf7DNtOl92khye68xIzjeU=
+
+Name: res/0K.xml
+SHA-256-Digest: TanRKHSQaDjUpThGJOcbfqz9REUAYEao0uNEjREL6IY=
+
+Name: res/0M.xml
+SHA-256-Digest: OQUhXNhljLeENtXM2KDMym7UK1RdGvmQrnI7KDrTkuU=
+
+Name: res/0c.9.png
+SHA-256-Digest: 0vfw/V8x2IBbmtvf8q+oHMZMrmLAb2dqB139Z006yp0=
+
+Name: res/0w.xml
+SHA-256-Digest: jwgmgCyjklhu2LOp2nwCYPa9PHWgxgs5UpBS74sMIHw=
+
+Name: res/0x.9.png
+SHA-256-Digest: RnerMtACGMsEKIlas6T0ES6BsB/Mt1ULseWZNJNGQgM=
+
+Name: res/1I.9.png
+SHA-256-Digest: 494xj/XiSlX92X5whx2uJGO/MQe1s4ggKkv7Wdtp9+U=
+
+Name: res/1J.9.png
+SHA-256-Digest: VC/P005thIC0uamZjRcPyXdSxbPKH5EsfzO6FeMmkZQ=
+
+Name: res/1e.9.png
+SHA-256-Digest: OARrZwTN3P80YKAcpJ9vNpPaTkVenCIAcqCTzkY2djM=
+
+Name: res/27.xml
+SHA-256-Digest: cD8vn4bPGSfpMRr6SE085wAWSaoCpkpNuIt16KHRsZE=
+
+Name: res/2K.9.png
+SHA-256-Digest: K7u4405PiqGIX9ZQhXQSUhr6pHWaZtt5rv4saMLE62I=
+
+Name: res/2P.png
+SHA-256-Digest: htKxcb0yktUXVs3Y5KYzdC0hzs5b0dhrlb6q6REvd5U=
+
+Name: res/2d.png
+SHA-256-Digest: 5xptaQY3PQqXlHu2/PpxIhK30Y3sCd/27Rxqr/8WpZA=
+
+Name: res/2f.xml
+SHA-256-Digest: 2OsqNIDXOTfVPAFATlPRm2LH9+qp2mzfxVBqnxagqsw=
+
+Name: res/2j.xml
+SHA-256-Digest: 2QjLUDZLguQvrT62wQDMdmqbEmBZ2ujmwkFTGVIJ0jc=
+
+Name: res/33.9.png
+SHA-256-Digest: WU2BC+ZX3jyNqjJ17aMVRC0ULq6djRe/a08OnM388y4=
+
+Name: res/3A.xml
+SHA-256-Digest: 4iek0zHzts7pryUYLSgRwdLIbOMBtyxjxMB/D3VZCpM=
+
+Name: res/3u.9.png
+SHA-256-Digest: 8jbpwRZ2eNsoXr4GMeBKa3H86mMDXDtpD8elGvrvpLE=
+
+Name: res/42.9.png
+SHA-256-Digest: HKh/p9KAjqxRXfnpdOWOkLTDbZyUYo7c65LgWwCFfp8=
+
+Name: res/46.xml
+SHA-256-Digest: khcTaTzVNf5utRhGjb2g2kwyC0BB9cRaFFQURXGS42U=
+
+Name: res/49.png
+SHA-256-Digest: FO78gkm1guhzdgL3iIs7lf96hVanGWfmSM+FsnYGcbw=
+
+Name: res/4B.xml
+SHA-256-Digest: Xa9MzcxzgVO0FCEACYi21IBMiSZg1OlnRV9PwJahSpU=
+
+Name: res/4_.xml
+SHA-256-Digest: qdatqu+MO9fBjCDCve0CVIBxZ3rFYACk62NyJvoVTPo=
+
+Name: res/4k.png
+SHA-256-Digest: 7I1H/NJFYsO4b9xu7VYF5LluiN5Ocs04hITdSQlmXkA=
+
+Name: res/4u.xml
+SHA-256-Digest: q7D3HxsqI65hEM5LOad8COo2VYESjL66YmONNrsGMck=
+
+Name: res/4z.xml
+SHA-256-Digest: MJar8MVK4HqiBsZmMozPYJdYHw5cwyYXB0itQxu/NZI=
+
+Name: res/5D.9.png
+SHA-256-Digest: BNcgpRq9f+upDY19GbdNcqxgLaYIpvUaZsQs722Pqeo=
+
+Name: res/5T.xml
+SHA-256-Digest: y65JaYYnlQLLGxTzLKVO6CV+PpCe6TA6H+wjqc5IG1E=
+
+Name: res/5U.png
+SHA-256-Digest: Hs3T4nPFTnfSIl1k3heFHJIBDAlwYWdq4t4q23rCISU=
+
+Name: res/5c.png
+SHA-256-Digest: aLrjDp+xZuvgXXoiS+XbHI3MKtQvV0zn4UhCWp/AWgA=
+
+Name: res/5z.xml
+SHA-256-Digest: M89N1Ifk1P7AI1BLbWKTZs7QbXup5NNZjAj+7px3lHE=
+
+Name: res/62.9.png
+SHA-256-Digest: UDXvjsoD9O83885xFNdHvwO4RXqXxS81hElRBkVUiUM=
+
+Name: res/65.9.png
+SHA-256-Digest: rc+Y0DbH862+wh8Fg25t9OCp2RFzqtFqnQdXMaMo+Uc=
+
+Name: res/6Q.xml
+SHA-256-Digest: R/99TJSD3ks1KlAHZkV3FmVQU5VTYPyT+zDY1EQuvQY=
+
+Name: res/6t.png
+SHA-256-Digest: mV16iRHtjxv2iHPJw7VuluvzRDmLQJDoU95rxnRQHw0=
+
+Name: res/7C.9.png
+SHA-256-Digest: XzHmQ7YodmUpYaHQE4LYhI5zLZxVKIXEPxYUe/Pl13Y=
+
+Name: res/7G.xml
+SHA-256-Digest: t2FRS4aiC/pXZ2HRNME0rSVWZqN4w6QBugKrj0f0zQg=
+
+Name: res/7H.xml
+SHA-256-Digest: JPpMNBlWEh032hv1/aKYZOfakQhloXb8aRjO+sV3DYE=
+
+Name: res/7I.9.png
+SHA-256-Digest: +j/tS0bkraYAWzrawbvcfFFQKKOJgusvFnw6fDpKh/U=
+
+Name: res/7N.xml
+SHA-256-Digest: kaHOzKFMnDeuAC5cYA0sQs9jEXdtN12frDHCmK67qRQ=
+
+Name: res/7_.9.png
+SHA-256-Digest: 59szZKte8qyjsGqyE67O0K7npNuOz4c0uQAmCW5C9NA=
+
+Name: res/7i.png
+SHA-256-Digest: 8JfakyuZPQ1rtkoyErqGjhNrBNwGGw+nRKjMlEkRbow=
+
+Name: res/7o.9.png
+SHA-256-Digest: Qo/mfQfqJNBbVqvVdCtJ6Q82wKLXbOUqVICfc9RK5Hk=
+
+Name: res/80.xml
+SHA-256-Digest: qD5FR4RPRJPsyPNJhKL44LyOtPptmwa8BM/P1lU/nIs=
+
+Name: res/8K.xml
+SHA-256-Digest: ZdMDLwvkZVUxA7kmSgz1I8bdiqduw1f5TBqWt5uHknc=
+
+Name: res/8c.png
+SHA-256-Digest: RyyhzXF0RwSF2eXgQn3CvGlUHJa9tnTH8v2c0ABcAdY=
+
+Name: res/8h.9.png
+SHA-256-Digest: APAL4kC0GxjHdgKa81GDVnY4PHvCTiJidX1O14BnoU0=
+
+Name: res/8h.png
+SHA-256-Digest: S35hiskWnvniopet3Gn0hZhIY9pxJfBYtB1XtyPkFFQ=
+
+Name: res/9N.9.png
+SHA-256-Digest: 4ySXcU6DBKwza3jEyo2s9P9ta0buJ/2dJKYxYLpGaWs=
+
+Name: res/9P.xml
+SHA-256-Digest: lzKf0qcVmuXwKQ6Z6EBKkWIHt+5A2zKKPPnvkvVQ3Iw=
+
+Name: res/9T.xml
+SHA-256-Digest: IIIz6qpA6V8CQcd0g+uOtKrgM+VVem/u+m6xt7ZGMSo=
+
+Name: res/9T1.xml
+SHA-256-Digest: Myz2mPCAGYo3SA6Fh1FfoQO9MqVcEv9YomuloirTPFc=
+
+Name: res/9T2.xml
+SHA-256-Digest: DW1z4EeJHZe0T+4zMklV0tWNzAFZXUGzacW20uzL3Bc=
+
+Name: res/9V.xml
+SHA-256-Digest: FkY570Y4vMzggysc9AQKAayScYqm07N5VP8KfnC0Z44=
+
+Name: res/9X.9.png
+SHA-256-Digest: P4jnF4dpTGWIYlcSGtmVtWR9Cg7buwJBE/syvar1paA=
+
+Name: res/9m.xml
+SHA-256-Digest: pzTNJ0e9bOKlQObtm5vmNm8CxXQM2qVIvsfiegm9vBY=
+
+Name: res/9n.9.png
+SHA-256-Digest: We203VPHqNuhPSAPfb8qop+DBW+ntVGQQX3m8KJuzeg=
+
+Name: res/9w.png
+SHA-256-Digest: 5PQZ9nI7f1wMvYy6o3wRh0SdM2pvxdmJTjBbELWVn8I=
+
+Name: res/9z.png
+SHA-256-Digest: S762h9ET47g/8Z05pe6n7BYooTu+CkyHOcfhcF5zoi0=
+
+Name: res/9z.xml
+SHA-256-Digest: feqV+dQC9XtK5/hwzCX411W87yVJvne9kl3oWxmYz5k=
+
+Name: res/A1.xml
+SHA-256-Digest: d3MIkdljjRq2JCT73QoMdKrdvvpsX+P09uTPYihxfSE=
+
+Name: res/A4.xml
+SHA-256-Digest: S0hr0ayzirZpM/B7mwkBEpAoynu/K3FDvVv2UYivzIk=
+
+Name: res/B3.xml
+SHA-256-Digest: vzqVYN73BF1m9mMt5WS2cW4ME7ShOyPnuPBJPQSP+DA=
+
+Name: res/BG.9.png
+SHA-256-Digest: sN/+rTQ6nr2M99rwMsaOgLJ5RfOZeE9cAdEtl1RDCtA=
+
+Name: res/BJ.xml
+SHA-256-Digest: exFvbFn/ORpLO4R5HRBYvbe2cdNZda/yHmttRZ3rvzc=
+
+Name: res/BJ1.xml
+SHA-256-Digest: xi6ImvwyXDZ4WndMfE9JqjAbpwpT9WBwbwAb8kaoy7g=
+
+Name: res/BJ2.xml
+SHA-256-Digest: tf3as71Gq32aJuZAcD+aLXUmmhCUBJnKzXHSozoJTJU=
+
+Name: res/BL.9.png
+SHA-256-Digest: hCk0TulmFqm0XS/GD9AlcRKb9zlm7OIQnPF31qOoIn4=
+
+Name: res/BM.png
+SHA-256-Digest: URCSjiKNEz4tjer8bZ07jvy2hvfR36DMrVRN9MvW0SQ=
+
+Name: res/BW.xml
+SHA-256-Digest: KDlMhiJKb2yOAwq1DoZovotsa8dnoRyit+JVU/4D6FY=
+
+Name: res/Bb.xml
+SHA-256-Digest: UhsSMMrgmwUzbDDftHhk1vkSc8J2rjSBcRjXtYgvNkE=
+
+Name: res/Bd.xml
+SHA-256-Digest: yiN0GfXo6jw6D09635/KwdKX6fUHC95W1CnUGRitGtM=
+
+Name: res/Be.xml
+SHA-256-Digest: AQoW01kl4SCC2Te5UOvZOBKkey+cTHXw0t2akIxNKcA=
+
+Name: res/CK.9.png
+SHA-256-Digest: XFlhrLNQ4ThclnBL/50N0m38+Ctwvuitx+Z9unahJCU=
+
+Name: res/CK.png
+SHA-256-Digest: TH7Z1N7HmKbON9zoI+gM3uQ3XYvKrjGNCrs6Xj/Aod8=
+
+Name: res/C_.9.png
+SHA-256-Digest: KqNsJYE303rLfOjfpEjO+VIOaRcrrfyPI29zjsf7H7s=
+
+Name: res/Ce.xml
+SHA-256-Digest: VEhbYLAnQvkSVRStEdxiHGHXsF/q61xDsWFAjdNQmRI=
+
+Name: res/Cg.xml
+SHA-256-Digest: lSoMc7Kx4nGdWYAqLJMMA47QA6HPMbnrdXIauWkW00c=
+
+Name: res/D5.xml
+SHA-256-Digest: N3Esc0FjmAaucJy3IFIcPHUSRseYVk0VQsEs+5Mo6sI=
+
+Name: res/DL.9.png
+SHA-256-Digest: 4hxRaSg+dLTD6poVUkj0o1yWSFdnDwh4ZlAvYT4Ex3M=
+
+Name: res/DV.xml
+SHA-256-Digest: B9P2awEPBn8CSN/Eqd5Ppp9YVlzp8eYGbRGvWXBq0e4=
+
+Name: res/DZ.xml
+SHA-256-Digest: NjzOVg7ycOb43qV9d7CNMt0rxPw8Dx4oaGkDOaCHBiY=
+
+Name: res/D_.9.png
+SHA-256-Digest: PSCoLIgG0KxHY0NSXzL6EpkRKBtjr4APfKnVCWVPniQ=
+
+Name: res/EA.9.png
+SHA-256-Digest: ZIQWlV2eUmKf08UUaWKp+4Xo3qVEpc3SPsOpU/I0dog=
+
+Name: res/EP.png
+SHA-256-Digest: uUJ+CIpRjUWV7Fem86usNiedy3eZQV15oho+xWxwRME=
+
+Name: res/EZ.xml
+SHA-256-Digest: dJXOEu457Txh7UOnAyRwAnnd6is/MkgsQ/MZLFC5wU4=
+
+Name: res/Eg.xml
+SHA-256-Digest: Fo+87jx7Z1ydHFKuL28GT0WBTeEPZFJRhGG8VRC7KWM=
+
+Name: res/Em.png
+SHA-256-Digest: ueotqgFxn63RvoC96X15gHfAZjS7g8JnCRNFz0sPD3Y=
+
+Name: res/F8.xml
+SHA-256-Digest: cV1Pm6SNBDcyS7i3HBjOUAdv/cjCrUsEDJDZsGIe4Z8=
+
+Name: res/FS.png
+SHA-256-Digest: aGutM+G6+XC3aesUEl0pz7Dl4B8Jyg7ODWAPOn2v9p4=
+
+Name: res/FT.xml
+SHA-256-Digest: oPa/ubNQpPpMXjDpnoVCBeWcEQdAemYwtWVn6HBKiD0=
+
+Name: res/FW.png
+SHA-256-Digest: I0mHsgcMePmrZW3sqq2tHFDILsZrdqseM2AJLKhRn4Q=
+
+Name: res/Fu.xml
+SHA-256-Digest: jWa4ySJJ5qWPXVlW+J0hXfuxgHyIjtoz2Heg98Lhd0g=
+
+Name: res/G2.9.png
+SHA-256-Digest: rhQtL7m8AFRm4wki8gnTsxD1F3rsUA/EayfakDbRhHU=
+
+Name: res/GC.xml
+SHA-256-Digest: ZRPqwyqoIUHJzZ+EzmPqncA9IDyDjJNE6bzrLKKXBqM=
+
+Name: res/GD.xml
+SHA-256-Digest: WZ7dRAyQyB0qHuE261Rkma87dTMGK9sUMkm0hkpBUVo=
+
+Name: res/GE.png
+SHA-256-Digest: VWXG8w92lDXVogIaOSkIEpJNZPxPSAqCHPg2OstHq3g=
+
+Name: res/GF.xml
+SHA-256-Digest: lnU8/2wgD1S/BG+sOJb1fhPreDmATtBFJmsSsSiF+eo=
+
+Name: res/GK.xml
+SHA-256-Digest: cbq9/ewvTWimAbbXH6FgdAoDC6mezljyj0Y64UoCq34=
+
+Name: res/GR.xml
+SHA-256-Digest: iL5dBlSrobZljp+ccq/sUkiEF54T3ymzEF+1hy0/aLg=
+
+Name: res/Gc.png
+SHA-256-Digest: ZW5OZZAvMyl4lahQBSTNhfWv17/RSi/9HUr/obusmJo=
+
+Name: res/Gf.png
+SHA-256-Digest: FwQKhY2gGg1Qsnz9prHwsdAgo26VOPVePPPNvrLCDjo=
+
+Name: res/Gt.9.png
+SHA-256-Digest: iPg2YqbwmnGZ254iJz9U1iORSWvBanPShRy7x05go9E=
+
+Name: res/Gt.xml
+SHA-256-Digest: VMq0RIsWT10KWNeks3THDeFamNKuE8EXZ8DLloRbHLg=
+
+Name: res/H-.png
+SHA-256-Digest: Cv3qOd36Xy6wmkUdNrbyXfFMZ7vUSzTwkbvBukBrhHo=
+
+Name: res/Hd.xml
+SHA-256-Digest: KpF47Ar6UDOJkg4wGZhNQ/Cj+rpp/FK/ghesvPUvdqo=
+
+Name: res/II.xml
+SHA-256-Digest: 4Eqj2hUtfyZnQeoDIkQ4UXxKxFkXzgCPG8f9uw402/A=
+
+Name: res/IX.9.png
+SHA-256-Digest: /y0CbypE/nbs4ByRJMO4I1TtcpTLjV5r/o4WOetYq0s=
+
+Name: res/In.xml
+SHA-256-Digest: SPoXarqtHhokBHBKlf31rpIRZ6Okt6+fqb+VEtP/HLY=
+
+Name: res/JJ.9.png
+SHA-256-Digest: oelVa0uUK8YR7/74AA2E9dvr6GsbggnYNbLl93XxhEo=
+
+Name: res/Jl.xml
+SHA-256-Digest: NvON5JMTB/ARRXqNHwFNq8Jwx+oh45UmbDK49HMwvRg=
+
+Name: res/K5.xml
+SHA-256-Digest: zxc6UPyUVxk9BZ287GRenuqeYvQrGGiKJDFfbc68ELA=
+
+Name: res/KH.9.png
+SHA-256-Digest: fTe5YR+yFRQ/zvweTI6jBnFFv1YnjdN3H/98tgWPx0U=
+
+Name: res/KM.png
+SHA-256-Digest: 2viGStT/lc092uvEHmpxHbDgffpl5GUcnuzCM/zYZxQ=
+
+Name: res/K_.9.png
+SHA-256-Digest: bitBpiCSQ0qFtcbnfoe6DXtZQqYfSmv02N/BmWyU9u4=
+
+Name: res/Ke.xml
+SHA-256-Digest: qonSq+qH1w+ywZ8FUj2Zok9S7qMb8jTgzhgYBsVaJtw=
+
+Name: res/L_.xml
+SHA-256-Digest: 5CQc0RRZdlXnkQGfvAZYa/ZndgQZ5A7r59Tao4c0RnA=
+
+Name: res/Lf.png
+SHA-256-Digest: K0OjwYqN7rkA9zlOZK2SlRz8Y+ctN8Mc0FlnptalP4Q=
+
+Name: res/Lf.xml
+SHA-256-Digest: XTn8hMGB7V40Z0aq3MmKl1Z6QU5pVrCeEHhiYNLUsJo=
+
+Name: res/Li.9.png
+SHA-256-Digest: yVPDwUR7i6LkfVVNclBSctv48Zwc3suJ+8KLM7gdzD8=
+
+Name: res/M7.xml
+SHA-256-Digest: 4QzwIaWJah73LpSOQStb/EmJGA0LFsFPWG/iy8D09qU=
+
+Name: res/MF.9.png
+SHA-256-Digest: 1a7bDchK9Bbq6D8q+roMvqE8RX3j0RywMllcRNT/wfY=
+
+Name: res/MH.png
+SHA-256-Digest: 1Ltz34cSrnpnk933bBRyOZs0JBP29vRSizF21UmsOG8=
+
+Name: res/MO.xml
+SHA-256-Digest: rV1Tn03zkoJjaKe4RDF7TV2Ou61O0j2owP/Gjbdkd0s=
+
+Name: res/MQ.png
+SHA-256-Digest: SrErxNoHPvTqRDz6qI7CBqVDfX4KNL0nWX24Hj3729Y=
+
+Name: res/Ma.9.png
+SHA-256-Digest: zGtEc0eefgJ2VuL4Kx+BGs56hIIxTW1+ix/JPCdxkfI=
+
+Name: res/Mp.xml
+SHA-256-Digest: xhagmv+C+khrFPvLl/iBY+SD8uJh2One3jymjsEWszM=
+
+Name: res/N3.xml
+SHA-256-Digest: HoIBaJ7bg9Az5E8OtoTN1EnpYF5qycE1V5DmSw5YFTo=
+
+Name: res/NA.9.png
+SHA-256-Digest: JwGgVWJaETRVZvW//fqOSTK1pCVF7USG/Y47774eMqQ=
+
+Name: res/NF.xml
+SHA-256-Digest: WByN2gA0masR+zvEeOZ7WYFMn1p3H9uRFb3VfUUSYME=
+
+Name: res/NG.png
+SHA-256-Digest: pqzAmsD3HlY0TzhBXTH+cuaCFByA8dKhBmMKaWbAGPM=
+
+Name: res/NM.xml
+SHA-256-Digest: x1n5PSeKezsWTUndNgX6jCAb9qPd4GR/gT0P3hUlyLU=
+
+Name: res/NZ.9.png
+SHA-256-Digest: PZBz0tiwdoj//fpgSprK+v0hTyLVsjSzsdCVhFNteKo=
+
+Name: res/Nk.9.png
+SHA-256-Digest: ctu2r21E+HfAqcegj5g94eTyPrKyImUItOVFHTXOxxQ=
+
+Name: res/No.9.png
+SHA-256-Digest: nG7viGVVLuxN2h5+2j38RsFA5lo8rg6A5TglKIt6X3A=
+
+Name: res/Nu.xml
+SHA-256-Digest: KnlWGz41PRUSdzzHPFxwy3xfXlITRuVtt6gGj/4xyCE=
+
+Name: res/Ol.xml
+SHA-256-Digest: Ez88jWpFoMcBd7JAROTe5wlDERBcU7bmwFwfe0NC4A4=
+
+Name: res/Pa.9.png
+SHA-256-Digest: ZTsoHep8Pov/dJUQTX+bW+6g1nC2/pKUDZ6bpfKv4+A=
+
+Name: res/Pb.png
+SHA-256-Digest: 48EOgGYzw6UVJsZ86+m6C4Y5EHykRncya0wcrnGCzSQ=
+
+Name: res/Pg.9.png
+SHA-256-Digest: Whj+dzVITjIe0ZI9tDQaPNIY/45Mx8GverUUZ7IuksQ=
+
+Name: res/QJ.9.png
+SHA-256-Digest: TsvYx2yll+ejeqRdaK4xs+62bxvOWH7Kc8pQ5xF1FVg=
+
+Name: res/QZ.png
+SHA-256-Digest: csD9nk4gojEAyXTRyElefBUzd70KLodd4/YatrtW+bI=
+
+Name: res/QZ.xml
+SHA-256-Digest: qk1LGdih92nszInN61/0fNnJVaLQTFJcxLOKwkeOVME=
+
+Name: res/Qd.xml
+SHA-256-Digest: g0VKO/K2E4E/im+kb6HEzWPQuWBHZlh+MGJWpW25c/U=
+
+Name: res/Qt.xml
+SHA-256-Digest: YDh0wlUeXH5PLB6hSaHMCK72JB03bX2LWeoZvPUZhHs=
+
+Name: res/RD.xml
+SHA-256-Digest: /RyoWhgmD6UEeCfAPeKE93TlEHVMI8y7cxc2cvf5gcA=
+
+Name: res/RH.xml
+SHA-256-Digest: zYtwpnfr5rVwDG8bZ32e4I3aSTfsyjsWMri0EZiHCOs=
+
+Name: res/RJ.png
+SHA-256-Digest: mD7l6rzbiJh+HK5o0ZFRnUk+093ebT2nfr0X9FYXt6M=
+
+Name: res/RV.png
+SHA-256-Digest: gGc2b4HdfVn0K6V7WgfgztiQCCF+aZW62gHgv/lJM60=
+
+Name: res/S8.xml
+SHA-256-Digest: zlbNZE6lDWIJD0PWA4RuGuVjthUfTRpUwwlikbrjg2I=
+
+Name: res/SV.9.png
+SHA-256-Digest: c4eVlTyde5ddRn6+bdpUKofmntuuR+d6aBKJQ3K+tU4=
+
+Name: res/Sc.xml
+SHA-256-Digest: t8vgmQGHdHXCj4fWSb7ou+ABgiy8tZ0S5cCzLOyfExM=
+
+Name: res/Su.9.png
+SHA-256-Digest: FvdUzyNAca55kOereoTsspgMbpeceJtQJaOq1ToMCnI=
+
+Name: res/Th.png
+SHA-256-Digest: Ciwr3md1nfyS54Ao1LXVTKh/sJdKj1Dx7kQiMJGFGpg=
+
+Name: res/Tj.9.png
+SHA-256-Digest: ERTxMjRH/Esqy/3uenilAc0c8jhYq1t6VsNHuMt/s5Q=
+
+Name: res/Tn.xml
+SHA-256-Digest: 7rnpeDEzdAHgIapb9pUvBUVRM29u+bdze6lZrtatjHE=
+
+Name: res/U-.9.png
+SHA-256-Digest: Bbj/nfzv3sMlr+j4XrtnATxkTlu+Q/nppgYN7fquNG8=
+
+Name: res/U8.xml
+SHA-256-Digest: htXHfK2V+Hceqsv/87YgavjrKMMH7ChbSMMq5pinZxk=
+
+Name: res/UE.9.png
+SHA-256-Digest: JcrMC00jD3cqVwEMJiVaegnSwbASl6eomfI6KIO/l1c=
+
+Name: res/UE.png
+SHA-256-Digest: ed6CVwnXubPFk1gSBxTujSMEanDRJ/6+shUQSlYu1hM=
+
+Name: res/UR.png
+SHA-256-Digest: YMX2GpSPqkQvHwk4CuTA0LxAne+3R/vLDWxtnipbZ78=
+
+Name: res/UX.xml
+SHA-256-Digest: +0svjAXK72lsWJChRXx12i6HG4Ctz7hTVHZVHmlfXaI=
+
+Name: res/V1.xml
+SHA-256-Digest: 37Ddvz4DAMYsKRqO7gOuc0P1a730EvuHa0von4vmzRY=
+
+Name: res/V7.xml
+SHA-256-Digest: xcv3qvCoSzbncXsUfi24e5GPhXcoqqFRFGPGwCklP9s=
+
+Name: res/VM.xml
+SHA-256-Digest: uqw4qdoC8VfkGiLRJg3MZ94AqyrBmxxSOz4uLiDagx8=
+
+Name: res/VN.xml
+SHA-256-Digest: 7Xj//T5IGLEz7IYiXyrR/+tvuM0YF3SGHG3P6voVtNA=
+
+Name: res/VT.xml
+SHA-256-Digest: k4ZaCrEWa7xI07nazYdrXLrQ4xuc98QGJXFIWKra/J4=
+
+Name: res/W4.9.png
+SHA-256-Digest: LT/AkT4nh2evbMSWxAUvtBVRVRe5iV77xg1h2zbuDFc=
+
+Name: res/WU.xml
+SHA-256-Digest: 7z1w/Wfx6midoGSe42H2HCIF2iqIEe8Wg2JCYE8mJ6c=
+
+Name: res/Wh.png
+SHA-256-Digest: 1ssVVPW0aB3JWl129uVaLmwE+jNAMmADOTjqGXIB+1s=
+
+Name: res/Wr.png
+SHA-256-Digest: rX5ctEWb7/lpjpcJU5n3yLknaj7zWxj8nDC3XC3FptE=
+
+Name: res/Ws.xml
+SHA-256-Digest: 824z0zYRpmR3KQf2tOybwJTSoi0uAzZSNc2Rsy1/zUE=
+
+Name: res/Wz.png
+SHA-256-Digest: CQsGDP85kI0loMHZzOc6AnIW9ZgX2k1UaD/6HCQfy1A=
+
+Name: res/X3.9.png
+SHA-256-Digest: AWFnOjThX49WOflxGS8Kvo7T13nFKfLI2CwSKg/RiQk=
+
+Name: res/X4.9.png
+SHA-256-Digest: 0wfx4Rlt9rFyJVyVUZYtsaAg+FYVZrS2m2o3I77gR2s=
+
+Name: res/XK.xml
+SHA-256-Digest: CNkmzNh4taEPsA+FCEVwbgf9J6LKoXUWbxYdYX3sDzU=
+
+Name: res/XW.xml
+SHA-256-Digest: rT8n5oSPMAwjK0RzvZwlJFSNK58hpkbeEURjfUaGrvE=
+
+Name: res/XY.xml
+SHA-256-Digest: n60JCBAbx/bGgGv8YHrrXt3hXCo5QR92M6tIXYtY2Dk=
+
+Name: res/Xk.xml
+SHA-256-Digest: sYWZp6KWzuyrzh9cEXMyKol6dhdH06wIRUzjhPOMvyY=
+
+Name: res/Xx.xml
+SHA-256-Digest: lfoYdKGtpdgjpxokXvqYItAcDz441wlO0th4fFNzH5g=
+
+Name: res/Y7.9.png
+SHA-256-Digest: uy/Xnm0Q4m9LzfhRWHxobDSFKKznxpqWnFtA1ncSpsY=
+
+Name: res/YG.9.png
+SHA-256-Digest: UhyfF4bD9k2qWpA7WyHKy1n9PREDHe1REyVcJ4xsiM4=
+
+Name: res/YH.png
+SHA-256-Digest: XcbOv4pppDLuS+kh2giOmhZ+qIxwN0YTd5DldRELons=
+
+Name: res/YW.xml
+SHA-256-Digest: cTaKZzReIbiIlJm2j19qET3PMn3iJPti4MNxVUqjyEI=
+
+Name: res/Yt.9.png
+SHA-256-Digest: 1AJUNtHrS3tV5oSqJjjWPr3R3/OWhOJJBrjRG5h3G0M=
+
+Name: res/Yw.9.png
+SHA-256-Digest: FofyqkiPjBBxEEPZNw7rlgmlJ0ALsICVu5wNH3+t0Ag=
+
+Name: res/Z8.png
+SHA-256-Digest: p9EnT21NvOHREMDOXZXVLVuEnmq3e6kNS2ipHzW/jaI=
+
+Name: res/ZL.xml
+SHA-256-Digest: qP7ehYlxBD5NKQtJ41dseBn0cE4icHDEThGDH7ARqS4=
+
+Name: res/ZN.9.png
+SHA-256-Digest: aLG4XozSAqIbJt2c2lWH73AlL1QD0pZilTqMrkfEKmM=
+
+Name: res/ZN.xml
+SHA-256-Digest: LwnyO2K0rwOkHdm3D3j+25wjXwmNPubw+YImXGRRc/g=
+
+Name: res/ZW.xml
+SHA-256-Digest: F9J+h1GoKPkdDVFZpArpt0T4NrokdxAPg/59a0aqKC0=
+
+Name: res/Zd.png
+SHA-256-Digest: JWp4Jv+lZgVxV+cB0Cy9K8BrDlkqVqFP3AlN8CelW9k=
+
+Name: res/Zg.xml
+SHA-256-Digest: inja9OiPU/XRkprun56IXjqYLyRW6uX2a1GXngqZ03A=
+
+Name: res/Zp.png
+SHA-256-Digest: qEsop45oGlbGcLlJrpFsrA5sRFE1w1Hp6edH6DOIXsA=
+
+Name: res/_G.xml
+SHA-256-Digest: BTNZNYUmFZg8IoJc3D7Ph1akcucs7r+KwWMgYtOxU8w=
+
+Name: res/_o.xml
+SHA-256-Digest: akoUazxw1+U4p9nuh0FITrDvqL1JPlWKWAtDh577izc=
+
+Name: res/_q.png
+SHA-256-Digest: q+dkX0S+Bc995LUON/0udv+oJXuLPMiOv221nOrPiKI=
+
+Name: res/_y.xml
+SHA-256-Digest: nwsUS8OVX0tR1TvD0MM1mc8F2KHo47gm9fugT5LgAlA=
+
+Name: res/a0.xml
+SHA-256-Digest: SiteopIQ4fgYnqCi5X1/ZUSG7vUWapuTmWR7hmCEaWE=
+
+Name: res/aG.xml
+SHA-256-Digest: 9WmQIXNxshN1+x5ajzprhtQtrhFmvhsQekGsACNWH5c=
+
+Name: res/aM.xml
+SHA-256-Digest: gvX00QVQkfmd2VjoxlSIeE7nbuy6admpPyv+e8P8x18=
+
+Name: res/aU.9.png
+SHA-256-Digest: Pl9GGSNDtQnT+T8E6hz4FEISV9YvprlLuWwdqF2S5uE=
+
+Name: res/aW.xml
+SHA-256-Digest: DYWcHaIj6hY4vxaRLTM37UYUAj5yXOvLFqaxSo37bbk=
+
+Name: res/ar.png
+SHA-256-Digest: TaL2/g+zAk/qYGIragj/xcY8HoU14F13l+b+PWe0RvI=
+
+Name: res/as.png
+SHA-256-Digest: vXzaR1ZMwnrTH+Lw3BfJTAObhnwHADwGjnA9GToQrMc=
+
+Name: res/bL.xml
+SHA-256-Digest: /YsKuNHcZPprCRmrpwrUKuwt6k9hjCLH7vwIwSJiTYQ=
+
+Name: res/bX.9.png
+SHA-256-Digest: ghvjHRnIhHYIZ5Urwn21+c8v5/E/lPd4qZu+TVDWOLo=
+
+Name: res/bX.xml
+SHA-256-Digest: FxHKrYpKc2GekmchUWjKJujOPvrCAiRuWmYPf0VjjB4=
+
+Name: res/bb.xml
+SHA-256-Digest: 7tYovuvWAeDpagTzkR12aprwlymK9vTHoU0yMSCvJIo=
+
+Name: res/bt.xml
+SHA-256-Digest: KdgDkVPZ4nrT7TRqEE9iHoPlSV8ExVRdnJYMwRmfW04=
+
+Name: res/c5.xml
+SHA-256-Digest: yXP2CKvflwXHFRaSleIRBuc8T3082ShRu5DP8d5FfWA=
+
+Name: res/c6.xml
+SHA-256-Digest: ObNNoL22jpHkaUHvw9QAobxGcoDKlyVjPv1g7Oc0eu4=
+
+Name: res/cL.xml
+SHA-256-Digest: ItHnxwteFD9NYQUQYQF1CtGp0E/PIaxArw1AJPkOZ/Y=
+
+Name: res/cV.xml
+SHA-256-Digest: 9e19jnh224QM0HawxJ6N/ObB3Uvr+SqdJDmMQ8ZBZTM=
+
+Name: res/cm.xml
+SHA-256-Digest: nDFK2WFZmJ/bEHxDKaUx5mkhGqDvSgJZzcbJulO0imc=
+
+Name: res/color-v23/abc_btn_colored_borderless_text_material.xml
+SHA-256-Digest: FXlE8pvTwKGoWBhid5tmfpWoXmJ428le7nMQZx0tXbY=
+
+Name: res/color-v23/abc_btn_colored_text_material.xml
+SHA-256-Digest: RKRxfXYiPKx0LwIt7sC8hUzf8MJJ4dZMB/5qg9YJZDI=
+
+Name: res/color-v23/abc_color_highlight_material.xml
+SHA-256-Digest: SFP/b198N1iK7CHnIZCCUYwfqlpdxjRPWg/+j5a07ms=
+
+Name: res/color-v23/abc_tint_btn_checkable.xml
+SHA-256-Digest: MWATlSnMTW3Je2tLTz9yZ5M7CSyjxpEREYMQDPjhJx4=
+
+Name: res/color-v23/abc_tint_default.xml
+SHA-256-Digest: Gl3uBJ+7crZoyWjFMVX+R+hmhbGAXywevdXVAkg4a+Q=
+
+Name: res/color-v23/abc_tint_edittext.xml
+SHA-256-Digest: IBaT/duxNEF3jZz/8xB1FwhKq5annI4Hd/gTskhQqow=
+
+Name: res/color-v23/abc_tint_seek_thumb.xml
+SHA-256-Digest: EOmmpjda2f+RCLpkEzGh/GwaWrYszlbxv6k4E2QfG4o=
+
+Name: res/color-v23/abc_tint_spinner.xml
+SHA-256-Digest: xwG2ATofcPzMbqXw8JilrZCHeLmD9X9HWxmi+aLJBo8=
+
+Name: res/color-v23/abc_tint_switch_track.xml
+SHA-256-Digest: zg17rfhbVTUeBMaLa5lu/ehj2IHwK1rwlV06Fe6G+rQ=
+
+Name: res/color/abc_background_cache_hint_selector_material_dark.xml
+SHA-256-Digest: cN7AU1Czqx01R7XorjJJLAZsK6SqRLlPkqeXjRbM9xs=
+
+Name: res/color/abc_background_cache_hint_selector_material_light.xml
+SHA-256-Digest: OmfGvx+Ee4/pRCvB2SoHVpjLpv8+dB+6M8jIB56E8OU=
+
+Name: res/color/abc_hint_foreground_material_dark.xml
+SHA-256-Digest: /xsrapbLe1rlpPSP55IhiZu5qKavTiIIjsmyblbEolw=
+
+Name: res/color/abc_hint_foreground_material_light.xml
+SHA-256-Digest: cRGEvwe/ZfkhYGo4gAxAN6/rJGg2FKJ9EmKKPvbnmrI=
+
+Name: res/color/abc_primary_text_disable_only_material_dark.xml
+SHA-256-Digest: SqFfFOA7yy0kZy32P8J9OpUndtP1yqLKaPoT9L8vgRc=
+
+Name: res/color/abc_primary_text_disable_only_material_light.xml
+SHA-256-Digest: MaTBAJxNUUVUb2lAXaSr/T8jyh4h4NwgcvTYzDfnMHA=
+
+Name: res/color/abc_primary_text_material_dark.xml
+SHA-256-Digest: WbrcfxVfltMyPA5gcm+OWuETL989rHYu3l/3cgu1Q5A=
+
+Name: res/color/abc_primary_text_material_light.xml
+SHA-256-Digest: FaW3dm0JMNug8b9JpbRtWcMiurYUKI2hly2bJgPUvl0=
+
+Name: res/color/abc_search_url_text.xml
+SHA-256-Digest: sZ4gh9WZJeEaUGorb/UFC6zp3B5fWAcmn9iXhsFMdGs=
+
+Name: res/color/abc_secondary_text_material_dark.xml
+SHA-256-Digest: klwIWDFq7uEtlkqZPQGD97G0y8QE5Ns5CTVv4W1+kAY=
+
+Name: res/color/abc_secondary_text_material_light.xml
+SHA-256-Digest: E5w6YH5tTuY9SuJOkUfrSzw15qo/OvwRgJ9WQTA8Jcs=
+
+Name: res/color/switch_thumb_material_dark.xml
+SHA-256-Digest: Hzw36WIzaSFhvs99afGJhc73EmIPB+XsOopyNEJOzUM=
+
+Name: res/color/switch_thumb_material_light.xml
+SHA-256-Digest: oug/4K+GOVKVRoI3LMI3YVuoj8xFgqVfQS0QRKIxN7U=
+
+Name: res/cr.xml
+SHA-256-Digest: /FrN59eEUv3ngbTo5OsBFA5EvW680xLgtcDp3RVUcn8=
+
+Name: res/d3.png
+SHA-256-Digest: NCYYDOvEgXsklHVTLweUuTO2SfLeiHI0MV20ebYmyhQ=
+
+Name: res/d5.9.png
+SHA-256-Digest: tPf3ZO5npkufdyt38rQ03RYH166wJ3wnRy6xoYRETP0=
+
+Name: res/dO.xml
+SHA-256-Digest: Z7God9aYAUo0B9cr/GcD9vepwbXkbvccx57yZs1TKA8=
+
+Name: res/dW.png
+SHA-256-Digest: qBndlSPWfKF2sPxfWYxES+d0kAMqhQxztYd2l41C8TI=
+
+Name: res/dY.png
+SHA-256-Digest: rcX8x/LWlT3N5foU4mTkrgGQrSQflxwIJP1HLu9ZMRM=
+
+Name: res/df.xml
+SHA-256-Digest: qM8zz6sHlqYaVDt2bXr1+EPOdVgYDf6kAFRRvBVpaFU=
+
+Name: res/eA.xml
+SHA-256-Digest: ZFB18m2Vp4lfiGwOaPTcYHSxlz6iX2UJTwFqVbHgLg4=
+
+Name: res/eR.png
+SHA-256-Digest: 8Lt1PhOw5Ghs/assiwNEe9czT3GN9N551sxFzIQwaHE=
+
+Name: res/eT.9.png
+SHA-256-Digest: XskZ9NYaQlmuOeFiFcmK75nt6OwV4E9kktYgM+5T30c=
+
+Name: res/ej.9.png
+SHA-256-Digest: I01gUKYW+vBTI5TWE5iAGmHj2AFVuhFSNMFAGICVfAQ=
+
+Name: res/ev.9.png
+SHA-256-Digest: fY4g8MPDUNGZtHtS6DwMIQdjqqAM280DqJg6ID7Eh/0=
+
+Name: res/fM.9.png
+SHA-256-Digest: 4wVioI/t45QEfryrOKZmu/e1EA2H6mH0Im4qZXNA5vc=
+
+Name: res/fO.png
+SHA-256-Digest: 1aRyom1Egj48w9bdeoaqE3zE0ngs1WUySVCawq+rcdo=
+
+Name: res/fj.xml
+SHA-256-Digest: 2IPhDBz+HlLH7u7LUiSZRk7wtJSY3uLGAQPttxDPNOM=
+
+Name: res/g-.png
+SHA-256-Digest: LS3urIt7a9QlSwUYL8ngsbj8mulFXLdbfrtZzf3BlAw=
+
+Name: res/gK.9.png
+SHA-256-Digest: 1oQuhzjcBlhintcgUlNOmOVvDUMlB7PkncmdSFCBZ4o=
+
+Name: res/gR.xml
+SHA-256-Digest: CMXk7pTVozyol3XxbgJ2lUZqoCqjv0+6dMIXo8gB+DE=
+
+Name: res/gZ.9.png
+SHA-256-Digest: aoglcMM9FncWpotVo1GuHYbNVotwHFbBdelA6UA3lAs=
+
+Name: res/gj.9.png
+SHA-256-Digest: 3LGM/WrL1x5Uaitr70P00Njhnb9NtsVkFLYQHET4tvc=
+
+Name: res/gt.9.png
+SHA-256-Digest: 4d6M3JwChFP8QHgrNOjZavxWlGvRuPwnqXQ8gWk3UmM=
+
+Name: res/h4.xml
+SHA-256-Digest: /hwWsdZofElRsKxRzhxHtHwavo5yHfYehU9BNrYKAKA=
+
+Name: res/h7.9.png
+SHA-256-Digest: q1qmcC3eFk7zmzez8e8hxqREBolHG6oKAuhNeawrdNs=
+
+Name: res/hP.xml
+SHA-256-Digest: s6We6vD0VlLg9zIwRQuvmBsT+y1uCUKOVw9O5RTRBYs=
+
+Name: res/hP1.xml
+SHA-256-Digest: F7avobQBPT3kspHL+XYQwqfrvi3O1wsrg6wXIqVs4Fg=
+
+Name: res/hQ.xml
+SHA-256-Digest: 7LKLr1w8MNjHaGysnwJ0ws6icpJU7E08GG8nD2JQf3s=
+
+Name: res/hZ.9.png
+SHA-256-Digest: RCS3zaJUq49+WpXv4fsm1vD/QAx+j0Q7zuQ4PXSh0sE=
+
+Name: res/hh.9.png
+SHA-256-Digest: VgNwO+zQL7GURQAi8FCEGOLOYWo7QXsiQ8U1NL8x/Xg=
+
+Name: res/hq.xml
+SHA-256-Digest: gAZ05+9Jv3/TS68T85v8wKxL7YXWhmx01V+HKSPiLeA=
+
+Name: res/i6.9.png
+SHA-256-Digest: S6jZLJr02Tws4b6OymohGU6ldnCOxGkRowXkIKBtvLU=
+
+Name: res/iO.png
+SHA-256-Digest: mV106r14DlWm/SooDNFe20t/wRrgTSKJJjyjD6Tkl2g=
+
+Name: res/iQ.xml
+SHA-256-Digest: ZbOK5F0n+AKCG4FytFFArVrBnlAeJsMWkawlOzsUdzk=
+
+Name: res/iR.9.png
+SHA-256-Digest: JMwKAWY5QFHreFRLTLNB/8EdIdex+lgXj00j4kR5bZk=
+
+Name: res/io.9.png
+SHA-256-Digest: XK25bgy6/zlGE5KTnf8JpfONRzqbzDQ0Alzc5hrCqkE=
+
+Name: res/j3.xml
+SHA-256-Digest: psaHJbo0Wm05IHadC9Mahxc0jwGBiXoE6zhg5Yd5iok=
+
+Name: res/j4.png
+SHA-256-Digest: PSFxYzJjWwRemBa+d1Qr1Wvjnq/4rSnTZFxVO67hxPs=
+
+Name: res/jB.xml
+SHA-256-Digest: GRMNUC4IJluR/a55BicUhC42UmJ83zQ1u57+VY9/H4c=
+
+Name: res/jS.9.png
+SHA-256-Digest: WcVqjrbM5WPnz5osrFHxWJMQSXBgs6psU03nKJdwC7s=
+
+Name: res/jS1.9.png
+SHA-256-Digest: PQ3o4/om1u/2mf/aTtFUJlwH3q2zL6/4lG4dawoSRH8=
+
+Name: res/jW.png
+SHA-256-Digest: t7MjLPLGykRRw3OQNuMi6wBIvc8yjDpMHU0PtUZwr1A=
+
+Name: res/je.9.png
+SHA-256-Digest: qkYOEIWrVQGtqq99Thr/zixMLMFrMqbNqPkq/kHOfaI=
+
+Name: res/k8.xml
+SHA-256-Digest: FhZpeNCXmylcQp8h+kWn/V+c/wRYMPqpCf2tw1BLjlk=
+
+Name: res/kJ.9.png
+SHA-256-Digest: +m8t8ZR76OBYAy4mGJHaQn/Q1FptpH6jF5Kjsucqfpg=
+
+Name: res/k_.xml
+SHA-256-Digest: NOQEJUeocYT+rn8xQo8MzkYaFH5pZTOyKH9ksyIv4hM=
+
+Name: res/kj.xml
+SHA-256-Digest: rT1XFXsPqTxjobccca2T8UfRDhFLWkkOLaWwioa87c8=
+
+Name: res/kn.xml
+SHA-256-Digest: tvBJPj4S02W48z3pzQ/CbQ5ePIDLu0DNaflLREwJFzI=
+
+Name: res/kp.png
+SHA-256-Digest: YEaKcdQth9RyJ2RfuftJe+d1V/nJY1q5yNAtqxrTFaM=
+
+Name: res/lN.xml
+SHA-256-Digest: zUznUuBtjr1o4iu5Df/Od8/L+Cb+YQm85WDHg14+SCA=
+
+Name: res/lP.9.png
+SHA-256-Digest: KCvU3ykYr7krKLqWNjD3baXFUF5m4inJ65hEElNc+eE=
+
+Name: res/lR.xml
+SHA-256-Digest: jZ58Rf1kLm4EDVHGo8ZwZuHMl0sYWBTyu1sLWIe3DYg=
+
+Name: res/lp.png
+SHA-256-Digest: 4zPP9x31hX6q3LrO766EGNPk/dAXvB2WX/+/xMp3JEo=
+
+Name: res/ly.png
+SHA-256-Digest: rrL+wtLArisyMqHR1ezau0XEWxvBsLaizEKbtXtkYjQ=
+
+Name: res/m0.png
+SHA-256-Digest: atw/xjQc0I0fSDPRcrLA0S/my+PEUAhmTufzrBLpIZA=
+
+Name: res/mm.9.png
+SHA-256-Digest: jZomT77lydUhMKhGgB+G2CJGVawn0T8tceVT3Xxiy3U=
+
+Name: res/nI.9.png
+SHA-256-Digest: mCy9jp27FJcWlR1hMhZhR4Zay+eyDqAJ7mYki5c5w7M=
+
+Name: res/nT.xml
+SHA-256-Digest: VNjNU7ot9zlCwWcsCWRVpYk5yxdwccd19F0tGC9YEbg=
+
+Name: res/nf.png
+SHA-256-Digest: XAZjHpXnRUpVPTObUa94SCgQPJ0YgBHhu6NbiYJhmxw=
+
+Name: res/nz.xml
+SHA-256-Digest: AtrbbLnnNv7vwaD7f6VSM2cXIw5IJBB1OYlBPQZtgM8=
+
+Name: res/o-.png
+SHA-256-Digest: kR7EF7kGMFC3tYyfVOjjRW52739mTgLznrl5eh7ahQU=
+
+Name: res/o9.9.png
+SHA-256-Digest: xN70i+wsu8UBAw9Derk4SWbkIR1Q9mtvGw0RTzo8UA4=
+
+Name: res/oP.xml
+SHA-256-Digest: VCZdTVZwK7Nca5vM3u+jtAJxxUGhSe29ixWEwgexRWY=
+
+Name: res/o_.9.png
+SHA-256-Digest: NeDBpkAPpqDg2Eyj3rkLlrUg4ONjjxUAP/9ALll9pNU=
+
+Name: res/o_.png
+SHA-256-Digest: a1VUR0HebYM+WOO1lN52i0Q7KXq6Ff+6NGszN/3G7/g=
+
+Name: res/op.9.png
+SHA-256-Digest: WAQabzuYIT9miCon49clywXPSaVbAooj5s3EEClaqEc=
+
+Name: res/pU.xml
+SHA-256-Digest: VwGBNHTMUhUxauVBnTgBIqvdgS4PEkLQ5sAlIbpNJcw=
+
+Name: res/pY.png
+SHA-256-Digest: comdJbPREOxyXJIQlwzV3MQCgF/npLS+fAUpq/6i7RY=
+
+Name: res/pk.png
+SHA-256-Digest: VkrnWSCHxisUz19xwVW1N0b/CxXRPc7QDiLMgXZ+gx4=
+
+Name: res/ps.9.png
+SHA-256-Digest: pO2yppPYxVpyQeTpaNVsr5ARLyr/U6wzNtMdddx4JI4=
+
+Name: res/pu.png
+SHA-256-Digest: tPSaouQ6cB/WHsgXs3+II0hiSvX0bAMfMCfYrtTyJ2I=
+
+Name: res/py.9.png
+SHA-256-Digest: V5ZrrZLQIZQ2ErvsYrjxRsVPoU22avbk3unxGP/WyaM=
+
+Name: res/q6.xml
+SHA-256-Digest: 4dCbxpnCcYpC4M52hYUNgSKUEzO8rKE1XkZEUIqGGGQ=
+
+Name: res/qA.xml
+SHA-256-Digest: 3G+en6dh+P8ck1WMrS040SlKIpXVO2MZltwyn4mTKis=
+
+Name: res/qD.9.png
+SHA-256-Digest: nXF+UhFbEQ2XlG8QtmpaeJw0fX30i+/pjWFrjoZnR8I=
+
+Name: res/qp.png
+SHA-256-Digest: esME+NF4/6BMMVI9Pzoz6BomytfxAoAYJfjS7WWTlPo=
+
+Name: res/qx.xml
+SHA-256-Digest: PIaBQWScABqaZAf/tjolWuHmsQtkWYZRgBzuSFZDtiI=
+
+Name: res/qz.xml
+SHA-256-Digest: b37nCf0/oDVs07FwNLCPDy+YarvfWFKddccbJM9Qkks=
+
+Name: res/rW.xml
+SHA-256-Digest: 3JBGEqfVS2SpokX+0A/LZ9Yu5RzjjJ5atYbcywJ+w6k=
+
+Name: res/rY.xml
+SHA-256-Digest: a7M+a3OKAHsSi4DmUuB9L7MgVejiHnH0TcPdrK4DaCg=
+
+Name: res/rj.9.png
+SHA-256-Digest: 1pBtpYAP5gj09a6EY/0IwuGHfb9B9x0+mZDLmJqtxH4=
+
+Name: res/rx.xml
+SHA-256-Digest: EDJOV81ei4LNHK9mjCwQsi1Lyb7o2BGDa/nvm7TdKP0=
+
+Name: res/rz.xml
+SHA-256-Digest: OzDIP1R4lEe9fHIJTFk8QrVqB0O2834J6d1+yJd9baw=
+
+Name: res/s0.png
+SHA-256-Digest: q3rr/PR2A3pE6XpoI6Z5LgpcNbDz9RC5oMyrXJBKjC0=
+
+Name: res/s3.9.png
+SHA-256-Digest: WNh8iwrR1U/5T32YarUg0ZIdr1ucWiRdL95x2rvPKys=
+
+Name: res/s4.png
+SHA-256-Digest: 1eXEOpJvzeOHckSW+ACyXe+a9z+xaM2pinDRyuMYSmo=
+
+Name: res/sA.9.png
+SHA-256-Digest: eP6XrXoWy++VZcHXGbJ/V7udKuczEDhJSUizW+coS44=
+
+Name: res/sA.xml
+SHA-256-Digest: GNpTsUkrvB6OKYQ6nOYpd/ATRwuRDDwdb3tHmJ5emXM=
+
+Name: res/sg.9.png
+SHA-256-Digest: hmScwoMSCNPloImOa6Fh0DDzYy+zLOAKDXjTdhteQE4=
+
+Name: res/sn.xml
+SHA-256-Digest: I7FZpL9VLPoTOSGXv3/VGfoUGr/q/2BxI62JbVj0I28=
+
+Name: res/t8.xml
+SHA-256-Digest: Pz8S9Vxia24OsuoG2bzVsggBjJn2fV24r+rkTY5VH98=
+
+Name: res/tG.png
+SHA-256-Digest: uIRo51uH7XkQ6z362qocQa+gVNAjiWt1SC5LPqS8QWo=
+
+Name: res/tL.xml
+SHA-256-Digest: OzOOql2vHeJRAOnLY6aX7GJdXwdWD/61dvvnTcJ7CP8=
+
+Name: res/tS.png
+SHA-256-Digest: 94aujbwAE+U5j6QKpKDDrKPS3tHrsAsVfLJLeotsf8A=
+
+Name: res/tU.9.png
+SHA-256-Digest: oYX08RGCq9wlF6CbVlpLi5VspcisfGVxk9hygk9lKQE=
+
+Name: res/tZ.9.png
+SHA-256-Digest: E84rdvt2/1v5JPozgr7NIf4TJI5dcohfkeOtzs84Els=
+
+Name: res/te.png
+SHA-256-Digest: QIyCvAb/d9RW0h28cH0jOlWJ1y+QtqJ2ArqFiSaLiPU=
+
+Name: res/u0.xml
+SHA-256-Digest: bFXEbmaa7YVNjs9ejAl9kbF5W94L0D6+t7LvpdpfkZc=
+
+Name: res/u3.png
+SHA-256-Digest: j6Q3usKXZVC5eAiHwvB+z1pTC5lzW8bgf3jMY3f8D8M=
+
+Name: res/uJ.xml
+SHA-256-Digest: seK1r3xNAEwwxS5UGimdGNyye+50+eA5AOxDqGRbelM=
+
+Name: res/uL.9.png
+SHA-256-Digest: fSR1qC6c2ScHNRvCFPVlas73FxEC8Sy43yP+X1KQB98=
+
+Name: res/uj.9.png
+SHA-256-Digest: RMkQN7yTi0NvsiMuunYBMlv60XNmsiHvwt8puofDvMs=
+
+Name: res/ut.9.png
+SHA-256-Digest: OY+LCeN1RV7C37AFvzZP+vfgc6eljkotZ6PDRmk4eWs=
+
+Name: res/uu.9.png
+SHA-256-Digest: A5W74bnGqEmOCpkZmReX+eKLzCpakfkUbgbE/Dq7glg=
+
+Name: res/v4.9.png
+SHA-256-Digest: 3x2B3orVHd2hVQTy1lDgC4eIgqepk3qwOe5BaUNnsxU=
+
+Name: res/v9.xml
+SHA-256-Digest: YBw72kSXrCDCaJj9Kp9gh+4iIhfuJF3L6x/DuSulmyM=
+
+Name: res/vG.xml
+SHA-256-Digest: U1Po2mKek6o7k/JXG+p6rRFXpbMnjk2trYXk+5DmiO8=
+
+Name: res/vJ.xml
+SHA-256-Digest: y1OX2rtlQ7OhaazjP3wB/jWKamPXF7KJTYT7HTrdXsA=
+
+Name: res/vL.9.png
+SHA-256-Digest: iJF/Ed3DFFXUw+nUfPXolEt1Mj6bZDWEhvfEdWFa0mQ=
+
+Name: res/vZ.xml
+SHA-256-Digest: aQcUQzHvelQPWHbOcdAz6bsVJWdPopczHMWEfaQYAeE=
+
+Name: res/vq.xml
+SHA-256-Digest: SP80MiVVSo/qD3cuHPIMHlm30UDzU5Zf6HlI8Em6xbI=
+
+Name: res/vz.9.png
+SHA-256-Digest: J2noqmXS2MtHRGGRkAdQYSXts+I/zs0DNb5+VqEWSyM=
+
+Name: res/wL.9.png
+SHA-256-Digest: Fnczj8a7Pt9a5F72PWQNjepEis1aN4FQq1q4yXNpao4=
+
+Name: res/wN.9.png
+SHA-256-Digest: 89kX0D6bRPilfdJq5rkoDf5tOwqnusUjkeIuHqtESUY=
+
+Name: res/w_.png
+SHA-256-Digest: tRmXhX07KXNRrAoS80/0Onw3EjmYv7fg/NNnb2RVYZ0=
+
+Name: res/wb.png
+SHA-256-Digest: iqfsc9+uzPqi1ChQPXW5mgblfzCykRw3jkWc4ApPerc=
+
+Name: res/wv.png
+SHA-256-Digest: bXYL/nZw4PEwVNi1JzWSNIOOMXJxLe1AZX35KSWqxPg=
+
+Name: res/x3.9.png
+SHA-256-Digest: MU/akWxWMAEIl/024QQgSW/eVlDhadYJrjkIZvHPnlg=
+
+Name: res/x4.xml
+SHA-256-Digest: lwUBV/uDyZu9qAivFohaqrR3qeb2SwnArk242JVETiE=
+
+Name: res/xC.xml
+SHA-256-Digest: sngt6s5xftgomXP3gkcXRUTv3+8isW1ZK0PHPQHU4I8=
+
+Name: res/xH.png
+SHA-256-Digest: Q7KyYDgm7W/8n1GPZuc7tW6Vvw6W81UdQZO2S+rGUgo=
+
+Name: res/xN.xml
+SHA-256-Digest: z7ET0CsV2jUlkZgVourfKuX5Z2xzKkXVjoHscKj1Uro=
+
+Name: res/xR.9.png
+SHA-256-Digest: 1E7IrsHDLrRgk8W5CFawM36QRR0RwXQTKyMwpy79Uj4=
+
+Name: res/xa.9.png
+SHA-256-Digest: Qq/IjmwORChdawoFmh4tWSYG0FGFsfWI365Xd+wZqeg=
+
+Name: res/xj.xml
+SHA-256-Digest: 7jpgRdISwMKKmUJCB2gbRp6GvE8eKg/c8ErRMvYl5CE=
+
+Name: res/y-.xml
+SHA-256-Digest: gyNnkro59cQqIpqFAfgvP3hzSWa9A+pEQlPHANSzwdE=
+
+Name: res/y4.xml
+SHA-256-Digest: Xnhsz4VJZhQki9OhNRWfRapb3ZHZgoM2r/ETljxh9nY=
+
+Name: res/yH.9.png
+SHA-256-Digest: n1JX502WrhvijjJVvj8g2/tLO4V5iYGiUVs5QJhvpRg=
+
+Name: res/yV.xml
+SHA-256-Digest: dQhWZEhdDh4/TH9DeX6fBYz+xWH6cT/CihzSuURbTlA=
+
+Name: res/yY.9.png
+SHA-256-Digest: JAadyijeLuRr5HjIH/e9l3d/psNgb4zAjoMorAjGnfE=
+
+Name: res/yg.9.png
+SHA-256-Digest: ArRY6Ps1HdM1o/JQyqJFYOF3Hd4LB0/ALJZ5bbizeLU=
+
+Name: res/yn.png
+SHA-256-Digest: YsPuQ050EF6PwNvMU0/0cSmW4TIE0UbtQegjJcKlWmc=
+
+Name: res/z-.9.png
+SHA-256-Digest: uxQm1BnumCR1dbsj/FBNwlX+1eV+s88sj2I/mP1rpVI=
+
+Name: res/z9.9.png
+SHA-256-Digest: HSatBZUQDwsjDhyX/txtDssKOBP34/Sg79rzmrMV7mY=
+
+Name: res/zE.png
+SHA-256-Digest: 5QtjamV0mxPTAYFh9U3+J/9TPajgVookP947r5Ul5QE=
+
+Name: res/zR.png
+SHA-256-Digest: /73xvEdFpdnXhqC7I2HdldjQq+cTFKv1PWR/V3R/E7M=
+
+Name: res/zV.9.png
+SHA-256-Digest: hWpJFQLYmckZMFNpD9BetIwdJYcREZR4rTV41MWo3DQ=
+
+Name: res/zp.xml
+SHA-256-Digest: Xt9mi8U4+Lu6h931M0SV0HHZQv+PmhHp9TeaGxPm5SE=
+
+Name: res/zq.xml
+SHA-256-Digest: IwRAsgCjidYwDUpPIlvXcrrqTvBFFYjmRkwLRDgn1g8=
+
+Name: res/zr.png
+SHA-256-Digest: LCJlpE7ZuKC9E1GcpgTopJUJTY4vnVppfjdTjDcSYjU=
+
+Name: resources.arsc
+SHA-256-Digest: tuwu6elmy5NnNcS6iRFOELhTjAlXgNI7VIwyBAWm8rU=
+

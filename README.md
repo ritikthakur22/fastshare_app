@@ -15,9 +15,9 @@ This is the native Android application wrapper for **FastShare**, a seamless, ul
 While FastShare runs beautifully in any web browser, this Android app wraps the FastShare web application into a fully native experience using **Capacitor**.
 
 ## ✨ App Exclusive Features
-- **Native File Downloads**: Bypasses browser restrictions to save files natively into your device's `Downloads` or `Pictures` folders.
-- **Save to Gallery**: Native setting to save received media files directly to the Android photo gallery.
-- **App Drawer & UI Customization**: Change the entire app's material UI color theme right from the sidebar.
+- **Native File Downloads**: Bypasses browser restrictions to securely save files natively into your device's `Downloads` or `Pictures` folders utilizing the Android MediaStore API.
+- **Chunked File Transfer**: Advanced chunked native transfer system that efficiently saves massive files without crashing the WebView.
+- **Material Theme Engine**: Dynamically customize the entire app's material UI color theme right from the sidebar using handcrafted presets. Fully synchronizes with the Android native status bar.
 - **Native Notifications**: Fully integrated with Android's notification system.
 - **Standalone Experience**: Install FastShare as an app directly on your phone without relying on browser UI.
 

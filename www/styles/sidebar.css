@@ -4,7 +4,7 @@
     --sidebar-text: var(--text-color, #333333);
     --sidebar-width: 320px;
     --sidebar-overlay: rgba(0,0,0,0.5);
-    --sidebar-primary: var(--primary-color, #519E8A);
+    --sidebar-primary: var(--primary-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -125,7 +125,7 @@
     position: absolute;
     cursor: pointer;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc;
+    background-color: color-mix(in srgb, var(--sidebar-text) 25%, var(--sidebar-bg));
     transition: .4s;
     border-radius: 24px;
 }
@@ -136,7 +136,7 @@
     width: 18px;
     left: 3px;
     bottom: 3px;
-    background-color: white;
+    background-color: var(--primary-on-color);
     transition: .4s;
     border-radius: 50%;
 }
@@ -156,6 +156,43 @@ input:checked + .mat-slider:before {
     color: var(--sidebar-text);
     font-family: inherit;
     font-size: 0.9rem;
+    outline: none;
+}
+
+.app-color-picker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-color-picker input[type="color"] {
+    width: 42px;
+    height: 34px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.app-color-presets {
+    display: grid;
+    grid-template-columns: repeat(4, 22px);
+    gap: 6px;
+}
+
+.app-color-preset {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 2px solid color-mix(in srgb, var(--sidebar-text) 30%, transparent);
+    border-radius: 50%;
+    background: var(--preset-color);
+    cursor: pointer;
+    transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.app-color-preset:hover,
+.app-color-preset:focus-visible {
+    border-color: var(--sidebar-primary);
+    transform: scale(1.15);
     outline: none;
 }
 .mat-select {

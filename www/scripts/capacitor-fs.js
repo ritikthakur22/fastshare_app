@@ -786,37 +786,63 @@
       init_dist();
       init_esm2();
       var NativeFileSaver = registerPlugin("NativeFileSaver");
-      window.saveFileToCapacitor = async function(file, fileName) {
+      window.saveFileToCapacitor = async function saveFileToCapacitor(file, fileName) {
         if (!Capacitor.isNativePlatform()) return false;
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = async () => {
-          let base64data = reader.result;
-          if (base64data.indexOf(",") !== -1) {
-            base64data = base64data.split(",")[1];
-          }
+        try {
+          const saveToGallery = localStorage.getItem("setting-gallery") === "true";
+          const started = await NativeFileSaver.start({
+            name: fileName,
+            mimeType: file.type || "application/octet-stream",
+            saveToGallery
+          });
           try {
-            const saveToGallery = localStorage.getItem("setting-gallery") === "true";
-            const result = await NativeFileSaver.save({ data: base64data, name: fileName, mimeType: file.type || "application/octet-stream", saveToGallery });
-            await Toast.show({ text: "Saved successfully at " + result.path, duration: "long" });
-          } catch (e) {
-            console.error("Filesystem write error", e);
-            await Toast.show({ text: "Failed to save " + fileName });
+            const chunkSize = 256 * 1024;
+            for (let offset = 0; offset < file.size; offset += chunkSize) {
+              const dataUrl = await new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onerror = () => reject(new Error("Could not read the received file"));
+                reader.onload = () => resolve(reader.result);
+                reader.readAsDataURL(file.slice(offset, offset + chunkSize));
+              });
+              await NativeFileSaver.writeChunk({
+                token: started.token,
+                data: dataUrl.split(",", 2)[1]
+              });
+            }
+            const result = await NativeFileSaver.finish({ token: started.token });
+            await Toast.show({ text: `Saved ${started.displayName}`, duration: "long" });
+            return result;
+          } catch (error) {
+            await NativeFileSaver.cancel({ token: started.token }).catch(() => {
+            });
+            throw error;
           }
-        };
-        return true;
+        } catch (error) {
+          console.error("Shared-storage write failed", error);
+          await Toast.show({ text: `Failed to save ${fileName}: ${(error == null ? void 0 : error.message) || error}`, duration: "long" });
+          return false;
+        }
       };
-      window.requestAppPermissions = async function() {
+      window.setNativeSystemBars = async function setNativeSystemBars(color) {
+        if (!Capacitor.isNativePlatform()) return;
+        try {
+          await NativeFileSaver.setSystemBars({ color });
+        } catch (error) {
+          console.debug("Could not update Android system bars", error);
+        }
+      };
+      window.requestAppPermissions = async function requestAppPermissions() {
         if (!Capacitor.isNativePlatform()) return;
         try {
           await LocalNotifications.requestPermissions();
-        } catch (e) {
-          console.error("Permission request failed", e);
+        } catch (error) {
+          console.error("Notification permission request failed", error);
         }
       };
       document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
-          if (typeof window.requestAppPermissions === "function") window.requestAppPermissions();
+          var _a;
+          return (_a = window.requestAppPermissions) == null ? void 0 : _a.call(window);
         }, 1500);
       });
     }
