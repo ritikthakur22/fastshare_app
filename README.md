@@ -21,7 +21,17 @@ While FastShare runs beautifully in any web browser, this Android app wraps the 
 - **Native Notifications**: Fully integrated with Android's notification system.
 - **Standalone Experience**: Install FastShare as an app directly on your phone without relying on browser UI.
 
+## 🚀 Why FastShare? (FastShare vs PairDrop / Snapdrop)
+
+While FastShare is inspired by the amazing work of PairDrop and Snapdrop, it introduces major architectural improvements and exclusive features making it far more advanced:
+
+- **True Native Android App**: Unlike a standard PWA web wrapper, FastShare's Android app uses custom native Capacitor plugins. It natively interfaces with the Android MediaStore API to download files directly into your `Downloads` and `Pictures` folder, completely bypassing the browser's storage and memory limits.
+- **Chunked File Transfers**: Typical WebRTC web apps crash when transferring large files due to RAM limits. FastShare implements an advanced chunked transfer system. It splits files into smaller pieces and stitches them together natively, allowing for **massive (Gigabyte+) file transfers** without crashing the app or running out of memory.
+- **Advanced Theming Engine**: FastShare isn't just a simple dark/light mode toggle. It includes a dynamic Material Theme engine. You can change the entire application's color palette on the fly, and the Android App will instantly synchronize the native OS status bar to match your custom theme.
+- **Improved Connection & Standalone Experience**: FastShare operates as a powerful standalone tool with native Android notifications and performance optimizations that bridge the gap between web and native technologies, providing a much more robust local network sharing experience.
+
 ## 🔗 Links
+
 
 - **Main Web App**: [https://fastshare.ritikthakur.com.np](https://fastshare.ritikthakur.com.np)
 - **FastShare Core Source Code**: [ritikthakur22/FastShare](https://github.com/ritikthakur22/FastShare)

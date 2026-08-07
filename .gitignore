@@ -7,3 +7,5 @@ android/local.properties
 android/*.iml
 android/.idea/
 releases/
+*.keystore
+*.jks
