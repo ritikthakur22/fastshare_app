@@ -8,6 +8,11 @@
   [![Download APK](https://img.shields.io/badge/Download-APK-success.svg?style=for-the-badge&logo=android)](https://github.com/ritikthakur22/fastshare_app/releases/latest)
 </div>
 
+<div align="center">
+  <h2>🌟 Introducing FastShare Pro</h2>
+  <img src="assets/pro.png" alt="FastShare Pro" width="100%" />
+</div>
+
 ---
 
 This is the native Android application wrapper for **FastShare**, a seamless, ultra-fast method to share files and clipboard across devices. 
