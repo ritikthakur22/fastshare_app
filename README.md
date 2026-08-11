@@ -15,6 +15,21 @@
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="assets/screenshots/112.png" width="30%" />
+  <img src="assets/screenshots/113.png" width="30%" />
+  <img src="assets/screenshots/114.png" width="30%" />
+</p>
+<p align="center">
+  <img src="assets/screenshots/115.png" width="30%" />
+  <img src="assets/screenshots/117.png" width="30%" />
+  <img src="assets/screenshots/118.png" width="30%" />
+</p>
+
+---
+
 This is the native Android application wrapper for **FastShare**, a seamless, ultra-fast method to share files and clipboard across devices. 
 
 While FastShare runs beautifully in any web browser, this Android app wraps the FastShare web application into a fully native experience using **Capacitor**.
