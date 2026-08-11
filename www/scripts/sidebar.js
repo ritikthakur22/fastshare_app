@@ -206,9 +206,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // For theme, we let the button click handlers update localStorage and apply the theme
         if (el.id === 'setting-theme') {
-            if (el.value === 'light') document.getElementById('theme-light').click();
-            if (el.value === 'dark') document.getElementById('theme-dark').click();
-            if (el.value === 'auto') document.getElementById('theme-auto').click();
+            const currentTheme = localStorage.getItem('theme') || 'auto';
+            if (currentTheme !== el.value) {
+                if (el.value === 'light') document.getElementById('theme-light').click();
+                if (el.value === 'dark') document.getElementById('theme-dark').click();
+                if (el.value === 'auto') document.getElementById('theme-auto').click();
+            }
         } else {
             localStorage.setItem(el.id, isCheckbox ? el.checked : el.value);
         }
