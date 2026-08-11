@@ -145,9 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <b>Package:</b> com.crdy.fastshare<br>
                     <b>Version:</b> 1.0.1<br>
                     <b>Contact:</b> <a href="mailto:ritikthakur@duck.com" style="color: var(--sidebar-primary);">ritikthakur@duck.com</a><br>
-                    <b>GitHub:</b> <a href="https://github.com/ritikthakur22/FastShare" target="_blank" style="color: var(--sidebar-primary);">ritikthakur22/FastShare</a><br>
-                    <b>Portfolio:</b> <a href="https://ritikthakur.com.np" target="_blank" style="color: var(--sidebar-primary);">ritikthakur.com.np</a><br>
-                    <a href="https://docs.google.com/document/d/1oFZcr9ay7BewS7WNaIM0HNQDbZHaV-uLAxA7LTQDOIQ/edit?usp=sharing" target="_blank" style="color: var(--sidebar-primary);">Privacy Policy</a> | <a href="https://docs.google.com/document/d/1Wv_7CyEoj02Tlq5ygovSfIkPNRyaaUTh8cdrSaS7rtk/edit?usp=sharing" target="_blank" style="color: var(--sidebar-primary);">Terms of Use</a>
+                    <b>GitHub:</b> <a href="https://github.com/ritikthakur22/FastShare" onclick="window.open(this.href, '_system'); return false;" style="color: var(--sidebar-primary);">ritikthakur22/FastShare</a><br>
+                    <b>Portfolio:</b> <a href="https://ritikthakur.com.np" onclick="window.open(this.href, '_system'); return false;" style="color: var(--sidebar-primary);">ritikthakur.com.np</a><br>
+                    <a href="https://docs.google.com/document/d/1oFZcr9ay7BewS7WNaIM0HNQDbZHaV-uLAxA7LTQDOIQ/edit?usp=sharing" onclick="window.open(this.href, '_system'); return false;" style="color: var(--sidebar-primary);">Privacy Policy</a> | <a href="https://docs.google.com/document/d/1Wv_7CyEoj02Tlq5ygovSfIkPNRyaaUTh8cdrSaS7rtk/edit?usp=sharing" onclick="window.open(this.href, '_system'); return false;" style="color: var(--sidebar-primary);">Terms of Use</a>
                 </div>
             </div>
         </div>
