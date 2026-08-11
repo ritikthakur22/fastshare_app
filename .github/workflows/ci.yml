@@ -1,0 +1,44 @@
+name: App CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Sync Capacitor
+        run: npx cap sync
+        
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          
+      - name: Make Gradle executable
+        run: chmod +x ./android/gradlew
+        
+      - name: Run Android Lint Checks
+        working-directory: ./android
+        run: ./gradlew lint
+        
+      - name: Build Debug APK (Dry Run)
+        working-directory: ./android
+        run: ./gradlew assembleDebug
