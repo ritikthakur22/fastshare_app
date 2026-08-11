@@ -18,10 +18,15 @@ android {
     }
     signingConfigs {
         release {
+            def localProperties = new Properties()
+            def localPropertiesFile = rootProject.file("local.properties")
+            if (localPropertiesFile.exists()) {
+                localProperties.load(new FileInputStream(localPropertiesFile))
+            }
             storeFile file("release.keystore")
-            storePassword "password123"
-            keyAlias "release"
-            keyPassword "password123"
+            storePassword System.getenv("KEYSTORE_PASSWORD") ?: localProperties.getProperty("KEYSTORE_PASSWORD")
+            keyAlias System.getenv("KEY_ALIAS") ?: localProperties.getProperty("KEY_ALIAS") ?: "release"
+            keyPassword System.getenv("KEY_PASSWORD") ?: localProperties.getProperty("KEY_PASSWORD")
         }
     }
     buildTypes {
