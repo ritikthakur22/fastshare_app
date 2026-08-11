@@ -48,10 +48,14 @@ class ThemeUI {
         localStorage.setItem('theme', theme);
     }
 
+    isMobileToggle() {
+        return window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    }
+
     onClickAuto() {
         if (this.getCurrentTheme()) {
             this.setModeToAuto();
-        } else {
+        } else if (this.isMobileToggle()) {
             this.setModeToDark();
         }
     }
@@ -59,7 +63,7 @@ class ThemeUI {
     onClickLight() {
         if (this.getCurrentTheme() !== 'light') {
             this.setModeToLight();
-        } else {
+        } else if (this.isMobileToggle()) {
             this.setModeToAuto();
         }
     }
@@ -67,7 +71,7 @@ class ThemeUI {
     onClickDark() {
         if (this.getCurrentTheme() !== 'dark') {
             this.setModeToDark();
-        } else {
+        } else if (this.isMobileToggle()) {
             this.setModeToLight();
         }
     }

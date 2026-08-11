@@ -204,10 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = e.target;
         const isCheckbox = el.type === 'checkbox';
         
-        // For theme, we want to save it as 'theme' for the rest of the app to pick up
+        // For theme, we let the button click handlers update localStorage and apply the theme
         if (el.id === 'setting-theme') {
-            localStorage.setItem('theme', el.value);
-            // Theme handled by existing main.js partially, but we trigger it
             if (el.value === 'light') document.getElementById('theme-light').click();
             if (el.value === 'dark') document.getElementById('theme-dark').click();
             if (el.value === 'auto') document.getElementById('theme-auto').click();

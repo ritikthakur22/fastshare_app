@@ -138,16 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveSetting = (e) => {
         const el = e.target;
         const isCheckbox = el.type === 'checkbox';
-        localStorage.setItem(el.id, isCheckbox ? el.checked : el.value);
         
+        // For theme, we let the button click handlers update localStorage and apply the theme
         if (el.id === 'setting-theme') {
-            // Theme handled by existing main.js partially, but we trigger it
             if (el.value === 'light') document.getElementById('theme-light').click();
             if (el.value === 'dark') document.getElementById('theme-dark').click();
             if (el.value === 'auto') document.getElementById('theme-auto').click();
-        }
-        if (el.id === 'setting-color') {
-            applyColor();
+        } else {
+            localStorage.setItem(el.id, isCheckbox ? el.checked : el.value);
+            if (el.id === 'setting-color') {
+                applyColor();
+            }
         }
     };
 
