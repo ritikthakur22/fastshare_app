@@ -1,0 +1,51 @@
+name: Build and Release Android App
+
+on:
+  push:
+    tags:
+      - 'v*' # Triggers workflow on tag push (e.g. v1.1.9)
+
+jobs:
+  build:
+    name: Build APK and AAB
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Sync Capacitor
+        run: npx cap sync
+        
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          
+      - name: Make Gradle executable
+        run: chmod +x ./android/gradlew
+        
+      - name: Build Android Release (APK & AAB)
+        working-directory: ./android
+        run: ./gradlew assembleRelease bundleRelease
+        
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            android/app/build/outputs/apk/release/app-release.apk
+            android/app/build/outputs/bundle/release/app-release.aab
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
