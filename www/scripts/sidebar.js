@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <b>Contact:</b> <a href="mailto:ritikthakur@duck.com" style="color: var(--sidebar-primary);">ritikthakur@duck.com</a><br>
                     <b>GitHub:</b> <a href="https://github.com/ritikthakur22/FastShare" target="_blank" style="color: var(--sidebar-primary);">ritikthakur22/FastShare</a><br>
                     <b>Portfolio:</b> <a href="https://ritikthakur.com.np" target="_blank" style="color: var(--sidebar-primary);">ritikthakur.com.np</a><br>
-                    <a href="#" style="color: var(--sidebar-primary);">Privacy Policy</a> | <a href="#" style="color: var(--sidebar-primary);">Terms of Use</a>
+                    <a href="https://docs.google.com/document/d/1oFZcr9ay7BewS7WNaIM0HNQDbZHaV-uLAxA7LTQDOIQ/edit?usp=sharing" target="_blank" style="color: var(--sidebar-primary);">Privacy Policy</a> | <a href="https://docs.google.com/document/d/1Wv_7CyEoj02Tlq5ygovSfIkPNRyaaUTh8cdrSaS7rtk/edit?usp=sharing" target="_blank" style="color: var(--sidebar-primary);">Terms of Use</a>
                 </div>
             </div>
         </div>
