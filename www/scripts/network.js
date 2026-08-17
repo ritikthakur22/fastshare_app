@@ -261,6 +261,11 @@ class ServerConnection {
 
         wsUrl.searchParams.append('webrtc_supported', window.isRtcSupported ? 'true' : 'false');
 
+        const customIcon = localStorage.getItem('setting-icon');
+        if (customIcon && customIcon !== 'auto') {
+            wsUrl.searchParams.append('device_icon', customIcon);
+        }
+
         const peerId = sessionStorage.getItem('peer_id');
         const peerIdHash = sessionStorage.getItem('peer_id_hash');
         if (peerId && peerIdHash) {
