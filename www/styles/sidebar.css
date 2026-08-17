@@ -1,17 +1,10 @@
 /* sidebar.css */
 :root {
-    --sidebar-bg: var(--bg-color, #ffffff);
-    --sidebar-text: var(--text-color, #333333);
+    --sidebar-bg: rgb(var(--bg-color));
+    --sidebar-text: rgb(var(--text-color));
     --sidebar-width: 320px;
     --sidebar-overlay: rgba(0,0,0,0.5);
     --sidebar-primary: var(--primary-color);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --sidebar-bg: var(--bg-color, #1a1a1a);
-        --sidebar-text: var(--text-color, #eeeeee);
-    }
 }
 
 .sidebar-overlay {

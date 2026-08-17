@@ -41,6 +41,20 @@ While FastShare runs beautifully in any web browser, this Android app wraps the 
 - **Native Notifications**: Fully integrated with Android's notification system.
 - **Standalone Experience**: Install FastShare as an app directly on your phone without relying on browser UI.
 
+## 🌐 Custom Signaling Server (Self-Hosting)
+
+FastShare relies on a central **Signaling Server** to help devices find each other and establish a secure, peer-to-peer WebRTC connection. Once connected, files are transferred directly between devices and never touch the server.
+
+By default, FastShare uses our public signaling server hosted on Render (`wss://fastshare-ja1a.onrender.com`). **For most users, simply leave the "Signaling Server URL" setting blank.** The app will automatically connect and work seamlessly out of the box.
+
+### Why use a custom server?
+Privacy-conscious users or corporate networks can self-host the FastShare backend on their own hardware (like a Raspberry Pi, NAS, or local server). 
+1. Run the backend using Node.js or Docker on your local network.
+2. Open the FastShare settings on your devices.
+3. Enter your local server's WebSocket URL (e.g., `ws://192.168.1.50:3000`) in the **Signaling Server URL** field.
+
+This allows FastShare to work **entirely offline** without an internet connection, provided the devices are connected to the same local router.
+
 ## 🚀 Why FastShare? (FastShare vs PairDrop / Snapdrop)
 
 While FastShare is inspired by the amazing work of PairDrop and Snapdrop, it introduces major architectural improvements and exclusive features making it far more advanced:
@@ -57,6 +71,11 @@ While FastShare is inspired by the amazing work of PairDrop and Snapdrop, it int
 - **FastShare Core Source Code**: [ritikthakur22/FastShare](https://github.com/ritikthakur22/FastShare)
 - **My Portfolio**: [ritikthakur.com.np](https://ritikthakur.com.np)
 
+### Human-Centric Intelligent Engineering
+
+A human-driven engineering approach enhanced by intelligent computational assistance throughout the software development lifecycle, with human judgment governing architecture, implementation, validation, and final outcomes.
+
+
 ## 🛠️ Build it yourself
 
 To build the app yourself, you need Android Studio and Node.js.
@@ -67,6 +86,7 @@ cd fastshare_app
 
 npm install
 npx cap sync android
+
 
 # Build the app using Android Studio
 ```
