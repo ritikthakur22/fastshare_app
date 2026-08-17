@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="sidebar-item-desc" style="line-height: 1.5; font-size: 14px;">
                     <b>Name:</b> FastShare<br>
                     <b>Package:</b> com.crdy.fastshare<br>
-                    <b>Version:</b> 1.0.1<br>
+                    <b>Version:</b> 1.0.2<br>
                     <b>Contact:</b> <a href="mailto:ritikthakur@duck.com" style="color: var(--sidebar-primary);">ritikthakur@duck.com</a><br>
                     <b>GitHub:</b> <a href="https://github.com/ritikthakur22/FastShare" onclick="window.open(this.href, '_system'); return false;" style="color: var(--sidebar-primary);">ritikthakur22/FastShare</a><br>
                     <b>Portfolio:</b> <a href="https://ritikthakur.com.np" onclick="window.open(this.href, '_system'); return false;" style="color: var(--sidebar-primary);">ritikthakur.com.np</a><br>
