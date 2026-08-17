@@ -29,15 +29,13 @@ export ANDROID_HOME=/home/crdy/Android/Sdk
 
 echo "Signing APKs..."
 cd /home/crdy/testing/app/fastshare
-cp android/app/build/outputs/apk/release/app-universal-release-unsigned.apk releases/fastshare-universal.apk
-cp android/app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk releases/fastshare-arm64-v8a.apk
-cp android/app/build/outputs/apk/release/app-armeabi-v7a-release-unsigned.apk releases/fastshare-armeabi-v7a.apk
+cp android/app/build/outputs/apk/release/app-release.apk releases/fastshare-universal.apk
 cp android/app/build/outputs/bundle/release/app-release.aab releases/fastshare-universal.aab
 
 cd releases
 BUILD_TOOLS="/home/crdy/Android/Sdk/build-tools/35.0.0"
 
-for file in fastshare-universal.apk fastshare-arm64-v8a.apk fastshare-armeabi-v7a.apk fastshare-universal.aab; do
+for file in fastshare-universal.apk fastshare-universal.aab; do
     if [[ "$file" == *.apk ]]; then
         $BUILD_TOOLS/zipalign -p -f 4 "$file" "${file%.apk}-aligned.apk"
         $BUILD_TOOLS/apksigner sign --ks release.keystore --ks-pass pass:fastshare123 --key-pass pass:fastshare123 "${file%.apk}-aligned.apk"
