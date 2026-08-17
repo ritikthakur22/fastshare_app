@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*' # Triggers workflow on tag push (e.g. v1.1.9)
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build APK and AAB
