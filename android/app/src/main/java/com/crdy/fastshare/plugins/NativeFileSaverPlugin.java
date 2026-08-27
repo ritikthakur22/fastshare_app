@@ -62,8 +62,8 @@ public class NativeFileSaverPlugin extends Plugin {
         String name = call.getString("name");
         String mimeType = call.getString("mimeType", "application/octet-stream");
         boolean saveToGallery = call.getBoolean("saveToGallery", false);
-        Number sizeNum = call.getNumber("size");
-        long totalSize = sizeNum != null ? sizeNum.longValue() : 0;
+        Long sizeObj = call.getLong("size");
+        long totalSize = sizeObj != null ? sizeObj : 0L;
         
         if (name == null || name.trim().isEmpty()) {
             call.reject("Must provide a file name");

@@ -1,4 +1,4 @@
-const cacheVersion = 'v1.1.18';
+const cacheVersion = 'v1.1.19';
 const cacheTitle = `fastshare-cache-${cacheVersion}`;
 const relativePathsToCache = [
     './',
