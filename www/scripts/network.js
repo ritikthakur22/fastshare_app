@@ -1266,7 +1266,8 @@ class FileChunker {
 
     constructor(file, onChunk, onPartitionEnd) {
         this._chunkSize = 64000; // 64 KB
-        this._maxPartitionSize = 1e6; // 1 MB
+        this._readSize = 4 * 1024 * 1024; // 4 MB read block
+        this._maxPartitionSize = Infinity; // Disable partition pausing
         this._offset = 0;
         this._partitionSize = 0;
         this._file = file;
@@ -1282,17 +1283,21 @@ class FileChunker {
     }
 
     _readChunk() {
-        const chunk = this._file.slice(this._offset, this._offset + this._chunkSize);
+        const chunk = this._file.slice(this._offset, this._offset + this._readSize);
         this._reader.readAsArrayBuffer(chunk);
     }
 
-    async _onChunkRead(chunk) {
-        this._offset += chunk.byteLength;
-        this._partitionSize += chunk.byteLength;
-        
-        const result = this._onChunk(chunk);
-        if (result instanceof Promise) {
-            await result;
+    async _onChunkRead(largeChunk) {
+        // largeChunk is up to 4MB. Split it into 64KB chunks
+        for (let i = 0; i < largeChunk.byteLength; i += this._chunkSize) {
+            const chunk = largeChunk.slice(i, i + this._chunkSize);
+            this._offset += chunk.byteLength;
+            this._partitionSize += chunk.byteLength;
+            
+            const result = this._onChunk(chunk);
+            if (result instanceof Promise) {
+                await result;
+            }
         }
         
         if (this.isFileEnd()) return;
