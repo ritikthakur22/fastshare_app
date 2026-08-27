@@ -1,4 +1,4 @@
-const cacheVersion = 'v1.11.2';
+const cacheVersion = 'v1.1.15';
 const cacheTitle = `fastshare-cache-${cacheVersion}`;
 const relativePathsToCache = [
     './',
@@ -6,6 +6,7 @@ const relativePathsToCache = [
     'manifest.json',
     'styles/styles-main.css',
     'styles/styles-deferred.css',
+    'styles/sidebar.css',
     'scripts/browser-tabs-connector.js',
     'scripts/localization.js',
     'scripts/main.js',
@@ -13,6 +14,7 @@ const relativePathsToCache = [
     'scripts/persistent-storage.js',
     'scripts/ui.js',
     'scripts/ui-main.js',
+    'scripts/sidebar.js',
     'scripts/util.js',
     'scripts/worker/canvas-worker.js',
     'scripts/libs/heic2any.min.js',
