@@ -817,6 +817,7 @@ class RTCPeer extends Peer {
         console.log('RTC: channel opened with', this._peerId);
         const channel = event.channel || event.target;
         channel.binaryType = 'arraybuffer';
+        channel.bufferedAmountLowThreshold = 1024 * 1024; // 1 MB limit
         channel.onmessage = e => this._onMessage(e.data);
         channel.onclose = _ => this._onChannelClosed();
         this._channel = channel;
@@ -912,8 +913,25 @@ class RTCPeer extends Peer {
         console.error(error);
     }
 
-    _send(message) {
+    async _send(message) {
         if (!this._channel) this.refresh();
+        
+        if (this._channel.bufferedAmount > 1024 * 1024) {
+            await new Promise(resolve => {
+                const listener = () => {
+                    this._channel.removeEventListener('bufferedamountlow', listener);
+                    resolve();
+                };
+                this._channel.addEventListener('bufferedamountlow', listener);
+                
+                // Backup resolution if channel closes
+                this._channel.addEventListener('close', () => {
+                    this._channel.removeEventListener('bufferedamountlow', listener);
+                    resolve();
+                }, { once: true });
+            });
+        }
+        
         this._channel.send(message);
     }
 
@@ -1268,10 +1286,15 @@ class FileChunker {
         this._reader.readAsArrayBuffer(chunk);
     }
 
-    _onChunkRead(chunk) {
+    async _onChunkRead(chunk) {
         this._offset += chunk.byteLength;
         this._partitionSize += chunk.byteLength;
-        this._onChunk(chunk);
+        
+        const result = this._onChunk(chunk);
+        if (result instanceof Promise) {
+            await result;
+        }
+        
         if (this.isFileEnd()) return;
         if (this._isPartitionEnd()) {
             this._onPartitionEnd(this._offset);
