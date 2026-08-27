@@ -134,7 +134,21 @@ public class NativeFileSaverPlugin extends Plugin {
             }
             JSObject result = new JSObject();
             result.put("uri", pending.uri.toString());
-            getNotificationManager().cancel(pending.notificationId);
+            
+            androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(getContext(), "download_channel")
+                .setSmallIcon(android.R.drawable.stat_sys_download_done)
+                .setContentTitle(pending.displayName)
+                .setContentText("Download complete")
+                .setAutoCancel(true);
+            
+            android.content.Intent intent = new android.content.Intent(android.content.Intent.ACTION_VIEW);
+            intent.setDataAndType(pending.uri, resolver.getType(pending.uri));
+            intent.addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            android.app.PendingIntent pendingIntent = android.app.PendingIntent.getActivity(
+                    getContext(), pending.notificationId, intent, android.app.PendingIntent.FLAG_IMMUTABLE | android.app.PendingIntent.FLAG_UPDATE_CURRENT);
+            builder.setContentIntent(pendingIntent);
+            
+            getNotificationManager().notify(pending.notificationId, builder.build());
             call.resolve(result);
         } catch (Exception error) {
             resolver.delete(pending.uri, null, null);

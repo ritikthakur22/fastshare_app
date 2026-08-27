@@ -131,7 +131,7 @@
         "display-name-changed-permanently": "Display name is changed permanently",
         "display-name-changed-temporarily": "Display name is changed for this session only",
         "display-name-random-again": "Display name is randomly generated again",
-        "download-successful": "{{descriptor}} downloaded",
+        "download-successful": "{{descriptor}} Received",
         "pairing-tabs-error": "Pairing two web browser tabs is impossible",
         "pairing-success": "Devices paired",
         "pairing-not-persistent": "Paired devices are not persistent",
