@@ -793,6 +793,7 @@
           const started = await NativeFileSaver.start({
             name: fileName,
             mimeType: file.type || "application/octet-stream",
+            size: file.size,
             saveToGallery
           });
           try {

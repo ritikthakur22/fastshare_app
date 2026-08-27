@@ -33,12 +33,16 @@ public class NativeFileSaverPlugin extends Plugin {
         final OutputStream output;
         final String displayName;
         final int notificationId;
+        final long totalSize;
+        long bytesWritten = 0;
+        long lastNotifyTime = 0;
 
-        PendingFile(Uri uri, OutputStream output, String displayName, int notificationId) {
+        PendingFile(Uri uri, OutputStream output, String displayName, int notificationId, long totalSize) {
             this.uri = uri;
             this.output = output;
             this.displayName = displayName;
             this.notificationId = notificationId;
+            this.totalSize = totalSize;
         }
     }
 
@@ -58,6 +62,9 @@ public class NativeFileSaverPlugin extends Plugin {
         String name = call.getString("name");
         String mimeType = call.getString("mimeType", "application/octet-stream");
         boolean saveToGallery = call.getBoolean("saveToGallery", false);
+        Number sizeNum = call.getNumber("size");
+        long totalSize = sizeNum != null ? sizeNum.longValue() : 0;
+        
         if (name == null || name.trim().isEmpty()) {
             call.reject("Must provide a file name");
             return;
@@ -78,13 +85,13 @@ public class NativeFileSaverPlugin extends Plugin {
             String token = UUID.randomUUID().toString();
             String displayName = values.getAsString(MediaStore.MediaColumns.DISPLAY_NAME);
             int notificationId = token.hashCode();
-            pendingFiles.put(token, new PendingFile(item, output, displayName, notificationId));
+            pendingFiles.put(token, new PendingFile(item, output, displayName, notificationId, totalSize));
             
             createNotificationChannel();
             androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(getContext(), "download_channel")
                 .setSmallIcon(android.R.drawable.stat_sys_download)
                 .setContentTitle("Downloading " + displayName)
-                .setProgress(0, 0, true)
+                .setProgress(100, 0, totalSize <= 0)
                 .setOngoing(true);
             getNotificationManager().notify(notificationId, builder.build());
             JSObject result = new JSObject();
@@ -107,7 +114,24 @@ public class NativeFileSaverPlugin extends Plugin {
             return;
         }
         try {
-            pending.output.write(Base64.decode(base64Data, Base64.DEFAULT));
+            byte[] chunk = Base64.decode(base64Data, Base64.DEFAULT);
+            pending.output.write(chunk);
+            pending.bytesWritten += chunk.length;
+            
+            if (pending.totalSize > 0) {
+                long now = System.currentTimeMillis();
+                // Update notification at most once per second to avoid spamming the system
+                if (now - pending.lastNotifyTime > 1000) {
+                    pending.lastNotifyTime = now;
+                    int progress = (int) ((pending.bytesWritten * 100) / pending.totalSize);
+                    androidx.core.app.NotificationCompat.Builder builder = new androidx.core.app.NotificationCompat.Builder(getContext(), "download_channel")
+                        .setSmallIcon(android.R.drawable.stat_sys_download)
+                        .setContentTitle("Downloading " + pending.displayName)
+                        .setProgress(100, progress, false)
+                        .setOngoing(true);
+                    getNotificationManager().notify(pending.notificationId, builder.build());
+                }
+            }
             call.resolve();
         } catch (Exception error) {
             discard(token, pending);
