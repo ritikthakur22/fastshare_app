@@ -62,7 +62,7 @@ jobs:
         working-directory: ./ios/App
         run: |
           xcodebuild clean build \
-            -workspace App.xcworkspace \
+            -project App.xcodeproj \
             -scheme App \
             -configuration Debug \
             -sdk iphoneos \
