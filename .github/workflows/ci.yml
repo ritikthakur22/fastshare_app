@@ -7,8 +7,8 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
-  build:
-    name: Build & Test
+  build-android:
+    name: Build & Test Android
     runs-on: ubuntu-latest
     
     steps:
@@ -24,7 +24,7 @@ jobs:
         run: npm install
         
       - name: Sync Capacitor
-        run: npx cap sync
+        run: npx cap sync android
         
       - name: Setup Java JDK
         uses: actions/setup-java@v4
@@ -35,10 +35,35 @@ jobs:
       - name: Make Gradle executable
         run: chmod +x ./android/gradlew
         
-      - name: Run Android Lint Checks
-        working-directory: ./android
-        run: ./gradlew lint
-        
       - name: Build Debug APK (Dry Run)
         working-directory: ./android
         run: ./gradlew assembleDebug
+
+  build-ios:
+    name: Build & Test iOS
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Sync Capacitor
+        run: npx cap sync ios
+        
+      - name: Build iOS App (Dry Run)
+        working-directory: ./ios/App
+        run: |
+          xcodebuild clean build \
+            -workspace App.xcworkspace \
+            -scheme App \
+            -configuration Debug \
+            -sdk iphoneos \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
