@@ -710,7 +710,7 @@ class PeerUI {
 class Dialog {
     constructor(id) {
         this.$el = $(id);
-        this.$autoFocus = this.$el.querySelector('[autofocus]');
+        this.$autoFocus = this.$el.querySelector('[data-autofocus="true"]');
         this.$xBackground = this.$el.querySelector('x-background');
         this.$closeBtns = this.$el.querySelectorAll('[close]');
 

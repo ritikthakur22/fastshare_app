@@ -1,6 +1,8 @@
 import Foundation
 import Capacitor
 import UserNotifications
+import Photos
+import UIKit
 
 @objc(NativeFileSaverPlugin)
 public class NativeFileSaverPlugin: CAPPlugin {
@@ -40,11 +42,9 @@ public class NativeFileSaverPlugin: CAPPlugin {
         
         let pendingFile = PendingFile(id: id, name: name, mimeType: mimeType, totalSize: totalSize)
         
-        // Use Documents directory (accessible to users if UIFileSharingEnabled is true)
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileURL = documentsDirectory.appendingPathComponent(name)
         
-        // Remove file if it already exists
         if FileManager.default.fileExists(atPath: fileURL.path) {
             do {
                 try FileManager.default.removeItem(at: fileURL)
@@ -54,7 +54,6 @@ public class NativeFileSaverPlugin: CAPPlugin {
             }
         }
         
-        // Create empty file
         FileManager.default.createFile(atPath: fileURL.path, contents: nil, attributes: nil)
         
         do {
@@ -80,7 +79,6 @@ public class NativeFileSaverPlugin: CAPPlugin {
             return
         }
         
-        // Remove data URI prefix if present
         var base64String = dataString
         if let commaIndex = dataString.firstIndex(of: ",") {
             base64String = String(dataString[dataString.index(after: commaIndex)...])
@@ -101,25 +99,6 @@ public class NativeFileSaverPlugin: CAPPlugin {
             }
             
             pendingFile.bytesWritten += Int64(data.count)
-            
-            // Notification logic (optional, keeping it simple for iOS)
-            let now = Date()
-            if now.timeIntervalSince(pendingFile.lastNotifyTime) >= 1.0 {
-                pendingFile.lastNotifyTime = now
-                var progress = 0
-                if pendingFile.totalSize > 0 {
-                    progress = Int((Double(pendingFile.bytesWritten) / Double(pendingFile.totalSize)) * 100)
-                }
-                
-                let content = UNMutableNotificationContent()
-                content.title = "Downloading \(pendingFile.name)"
-                content.body = "\(progress)% complete"
-                content.sound = nil
-                
-                let request = UNNotificationRequest(identifier: "download_\(id)", content: content, trigger: nil)
-                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-            }
-            
             call.resolve()
         } catch {
             call.reject("Error writing data: \(error)")
@@ -144,14 +123,17 @@ public class NativeFileSaverPlugin: CAPPlugin {
                 pendingFile.fileHandle?.closeFile()
             }
             
-            // Final success notification
-            let content = UNMutableNotificationContent()
-            content.title = "Download Complete"
-            content.body = "Saved \(pendingFile.name) to Files"
-            content.sound = UNNotificationSound.default
-            
-            let request = UNNotificationRequest(identifier: "download_\(id)", content: content, trigger: nil)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            if pendingFile.mimeType.starts(with: "image/") {
+                if let fileURL = pendingFile.fileURL, let image = UIImage(contentsOfFile: fileURL.path) {
+                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                }
+            } else if pendingFile.mimeType.starts(with: "video/") {
+                if let fileURL = pendingFile.fileURL {
+                    if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(fileURL.path) {
+                        UISaveVideoAtPathToSavedPhotosAlbum(fileURL.path, nil, nil, nil)
+                    }
+                }
+            }
             
             call.resolve()
         } catch {
