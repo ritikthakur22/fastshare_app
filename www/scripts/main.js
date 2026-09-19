@@ -12,6 +12,7 @@ class FastShare {
         this.deferredScripts = [
             "scripts/browser-tabs-connector.js",
             "scripts/util.js",
+            "scripts/localmode.js",
             "scripts/network.js",
             "scripts/ui.js",
             "scripts/libs/heic2any.min.js",

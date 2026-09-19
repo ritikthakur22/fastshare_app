@@ -9,3 +9,6 @@ android/.idea/
 releases/
 *.keystore
 *.jks
+
+# Fastlane
+play-store-key.json

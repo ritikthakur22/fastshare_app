@@ -1,0 +1,9 @@
+default_platform(:android)
+
+platform :android do
+  desc "Deploy a new production release to the Google Play Store"
+  lane :deploy do
+    gradle(task: "bundle", build_type: "Release")
+    upload_to_play_store(track: "production")
+  end
+end

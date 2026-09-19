@@ -1,0 +1,4 @@
+   FastShare v1.1.23 Update:
+    - Native iOS Support Added: Full support for Apple iOS! Files downloaded through FastShare on iPhones will now natively save directly into the iOS
+  "Files" app.
+    - Performance improvements and reliability fixes.
