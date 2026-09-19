@@ -50,13 +50,18 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: ./gradlew assembleRelease bundleRelease
         
+      - name: Flatten Android Artifacts
+        run: |
+          cp android/app/build/outputs/apk/release/app-release.apk ./
+          cp android/app/build/outputs/bundle/release/app-release.aab ./
+          
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: android-release
           path: |
-            android/app/build/outputs/apk/release/app-release.apk
-            android/app/build/outputs/bundle/release/app-release.aab
+            app-release.apk
+            app-release.aab
 
   build-ios:
     name: Build Unsigned IPA
@@ -95,11 +100,14 @@ jobs:
           cp -r build/Build/Products/Release-iphoneos/App.app Payload/
           zip -r app-release.ipa Payload
           
+      - name: Flatten iOS Artifact
+        run: cp ios/App/app-release.ipa ./
+          
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ios-release
-          path: ios/App/app-release.ipa
+          path: app-release.ipa
 
   release:
     name: Create GitHub Release
