@@ -170,7 +170,9 @@
         "rate-limit-join-key": "Rate limit reached. Wait 10 seconds and try again.",
         "selected-peer-left": "Selected peer left",
         "offline-mode-title": "FastShare offline sharing",
-        "offline-mode-text": "Nearby devices on this Wi-Fi can find you"
+        "offline-mode-text": "Nearby devices on this Wi-Fi can find you",
+        "files-saved": "Saved {{count}} file(s) to your device",
+        "offline-mode-started": "Offline sharing is on: devices on this Wi-Fi can find you"
     },
     "document-titles": {
         "file-received": "File Received",

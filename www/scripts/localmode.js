@@ -20,9 +20,14 @@ if (window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlat
             this._lifecycle = Promise.resolve(); // serializes start/stop
 
             Events.on('display-name', e => this._serverDisplayName = e.detail.displayName);
+            Events.on('connection-mode-changed', _ => this._applyMode());
             Events.on('ws-connected', _ => this._onWsConnected());
-            Events.on('ws-disconnected', _ => this._scheduleStart());
-            Events.on('offline', _ => this._scheduleStart());
+            Events.on('ws-disconnected', _ => this._onWsDown());
+            Events.on('offline', _ => this._onWsDown());
+            // Android blocks starting the foreground service from the background: retry once the app is visible
+            Events.on(window.visibilityChangeEvent || 'visibilitychange', _ => {
+                if (!document[window.hiddenProperty || 'hidden'] && !this.running) this._applyMode();
+            });
 
             HttpServer.addListener('request', e => this._onRequest(e));
             HttpServer.addListener('server-error', e => {
@@ -34,20 +39,49 @@ if (window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlat
             this._scheduleStart();
         }
 
+        // Sidebar "Connection Mode": auto (offline only when the server is unreachable), online, offline
+        _mode() {
+            try {
+                return localStorage.getItem('setting-mode') || 'auto';
+            }
+            catch (e) {
+                return 'auto';
+            }
+        }
+
+        _applyMode() {
+            clearTimeout(this._startTimer);
+            this._startTimer = null;
+            const mode = this._mode();
+            if (mode === 'online' || (mode === 'auto' && this._wsConnected)) this._enqueue(() => this._stop());
+            else this._scheduleStart();
+        }
+
         _onWsConnected() {
             this._wsConnected = true;
+            if (this._mode() === 'offline') return;
             clearTimeout(this._startTimer);
             this._startTimer = null;
             this._enqueue(() => this._stop());
         }
 
-        _scheduleStart() {
+        _onWsDown() {
             this._wsConnected = false;
+            this._scheduleStart();
+        }
+
+        _scheduleStart() {
+            const mode = this._mode();
+            if (mode === 'online') return;
+            if (mode === 'offline') {
+                this._enqueue(() => this._start());
+                return;
+            }
             // ws-disconnected fires on every failed reconnect (~1/s): don't restart the timer
             if (this._startTimer || this.running) return;
             this._startTimer = setTimeout(() => {
                 this._startTimer = null;
-                if (!this._wsConnected) this._enqueue(() => this._start());
+                if (!this._wsConnected && this._mode() === 'auto') this._enqueue(() => this._start());
             }, START_DELAY_MS);
         }
 
@@ -56,7 +90,8 @@ if (window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlat
         }
 
         async _start() {
-            if (this.running || this._wsConnected) return;
+            const mode = this._mode();
+            if (this.running || mode === 'online' || (mode === 'auto' && this._wsConnected)) return;
             this.running = true;
             try {
                 await HttpServer.start({
@@ -72,6 +107,7 @@ if (window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlat
                 // Android delivers watch results through this callback, not through a 'discover' event
                 await ZeroConf.watch(SERVICE, result => this._onDiscover(result));
                 console.log('LocalMode: started as ' + this.myId);
+                Events.fire('notify-user', Localization.getTranslation('notifications.offline-mode-started'));
             }
             catch (e) {
                 console.error('LocalMode: start failed', e);

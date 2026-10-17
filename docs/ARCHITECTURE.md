@@ -34,7 +34,10 @@ The UI does not wait for the server: without a connection it just shows no peers
 3. `PeersManager` creates an `RTCPeer` per peer (or a `WSPeer` relay if WebRTC is missing and the server allows fallback).
 4. SDP/ICE go through the server as `{type:'signal', to, roomType, roomId, ...}`; the server adds `sender`.
 5. Once the data channel opens: `peer-connected` → `PeerUI` is drawn, display names are exchanged peer-to-peer.
-6. Transfer: `request` → receiver accepts (`ReceiveRequestDialog`) → `header` + `FileChunker` partitions with backpressure → `FileDigester` reassembles → `ReceiveFileDialog` → native save via `window.saveFileToCapacitor` (capacitor-fs.js → NativeFileSaver plugin).
+6. Transfer: `request` → receiver accepts (`ReceiveRequestDialog`) → `header` + `FileChunker` (64 KB chunks, DataChannel backpressure, 16 MB partitions acked by the receiver) → digester → `files-received`.
+   - **Under 50 MB, or on the web:** `FileDigester` collects the file in memory → `ReceiveFileDialog` (preview, share, zip) → native save via `window.saveFileToCapacitor`.
+   - **50 MB or more in the native app:** `NativeFileDigester` writes ~1 MB pieces to `window.nativeFileSink` (capacitor-fs.js: Android NativeFileSaver start/writeChunk/finish → Downloads/Pictures; iOS `Filesystem` → Documents, visible in the Files app) while receiving. The receiver acks a partition only after the previous one is on disk, so memory stays ~32 MB at most (bridge writes measured at ~5 MB/s on a real Android phone in a release-like build, slower than Wi-Fi). No dialog; a "Saved N file(s)" toast instead.
+   - Senders from older app versions or the website don't send partitions, so they can still outrun a native receiver's storage. Port the `FileChunker` partition size to the website too.
 
 ## Offline local flow (roomType `local`)
 
@@ -53,7 +56,9 @@ Hook points: `ServerConnection.send()` asks `window.localMode.sendMessage(msg.to
 
 ### How it behaves (Phase 1, Android only)
 
-- **When:** `localmode.js` waits 10 s after the WebSocket is down (or `offline` fires) before starting, so a cold Render server doesn't trigger it. Repeated `ws-disconnected` events (one per failed reconnect) don't push that timer back. On `ws-connected` it stops everything, so the Android foreground notification ("FastShare offline sharing") appears only while offline.
+- **Mode:** `localStorage['setting-mode']` = `auto` | `online` | `offline` (sidebar, Android only; change fires `connection-mode-changed`). `offline` also makes `ServerConnection` disconnect and refuse to reconnect.
+- **Background:** Android 12+ refuses to start the foreground service while the app is in the background (`mAllowStartForeground false`). A failed start is retried on the next `visibilitychange` to visible.
+- **When (auto):** `localmode.js` waits 10 s after the WebSocket is down (or `offline` fires) before starting, so a cold Render server doesn't trigger it. Repeated `ws-disconnected` events (one per failed reconnect) don't push that timer back. On `ws-connected` it stops everything, so the Android foreground notification ("FastShare offline sharing") appears only while offline.
 - **Discovery:** each device registers `_fastshare._tcp.` with id `local-xxxxxxxx` and `props.displayName`. Android delivers results through the `ZeroConf.watch(options, callback)` callback (`{action, service}`); `resolved` adds a peer, `removed` fires `peer-left`.
 - **Peer shape:** standard `{ peer: {id, name, rtcSupported}, roomType: 'local', roomId: 'local' }`. Both devices discover each other, so the lower id is the caller (`peers` event) and the other waits (`peer-joined`).
 - **Sending:** `Capacitor.Plugins.CapacitorHttp.post` (native, avoids WebView mixed-content blocking; needs `usesCleartextTraffic`). One queue per peer keeps SDP before ICE. A `409` means "they haven't discovered me yet", so it retries every 500 ms, up to 20 times.

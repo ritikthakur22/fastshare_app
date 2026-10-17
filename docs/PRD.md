@@ -21,7 +21,7 @@ Web users get the same first three modes through the website; offline local is a
 
 ## Requirements
 
-- Send any number of files of any size; large files must not crash the WebView (chunked native saving).
+- Send any number of files of any size; large files must not crash the WebView. In the native app, transfers of 50 MB or more are written to storage while receiving (no iOS 200 MB limit in the app).
 - Receiver must accept/decline unless auto-accept is enabled for a paired device.
 - Received files are saved natively (Android MediaStore Downloads/Pictures; iOS Files/Photos).
 - Send/receive text and keep clipboard history.
@@ -33,7 +33,7 @@ Web users get the same first three modes through the website; offline local is a
 
 - Scope: devices on the **same Wi-Fi or one phone's hotspot, no internet**. Not Wi-Fi Direct, not Bluetooth.
 - Transfer still uses WebRTC; only signaling moves to ZeroConf discovery + a local HTTP server.
-- Turns on **automatically** when the signaling server is unreachable; turns off when it is back.
+- **Connection Mode** setting in the sidebar (Android only, the eligible platform): **Auto** (default: offline turns on when the signaling server is unreachable, off when it is back), **Online** (never offline), **Offline** (local only, no signaling server).
 - The Android foreground-service notification must be visible **only while offline mode is running**, with a clear title.
 - Android first; iOS after Android works.
 
@@ -41,7 +41,6 @@ Web users get the same first three modes through the website; offline local is a
 
 - Cloud storage, accounts, file history on a server.
 - Wi-Fi Direct / Nearby / Multipeer (no shared network).
-- Manual offline-mode toggle (unless asked later).
 
 ## Roadmap
 

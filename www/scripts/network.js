@@ -26,7 +26,18 @@ class ServerConnection {
         Events.on('online', _ => this._connect());
 
         Events.on('local-message', e => this._onMessage(JSON.stringify(e.detail)));
+        Events.on('connection-mode-changed', _ => this._isOfflineMode() ? this._disconnect() : this._connect());
         this._connect();
+    }
+
+    // Sidebar "Connection Mode" set to offline: stay away from the signaling server (local mode only)
+    _isOfflineMode() {
+        try {
+            return !!window.localMode && localStorage.getItem('setting-mode') === 'offline';
+        }
+        catch (e) {
+            return false;
+        }
     }
 
     _getConfig() {
@@ -72,7 +83,7 @@ class ServerConnection {
 
     _connect() {
         clearTimeout(this._reconnectTimer);
-        if (this._isConnected() || this._isConnecting() || this._isOffline()) return;
+        if (this._isConnected() || this._isConnecting() || this._isOffline() || this._isOfflineMode()) return;
         if (this._isReconnect) {
             Events.fire('notify-user', {
                 message: Localization.getTranslation("notifications.connecting"),
@@ -519,7 +530,13 @@ class Peer {
         this.sendJSON({ type: 'partition', offset: offset });
     }
 
-    _onReceivedPartitionEnd(offset) {
+    async _onReceivedPartitionEnd(offset) {
+        // Native receivers write to storage slower than Wi-Fi: the sender may run at most one partition ahead of the disk
+        if (this._digester && this._digester.flush) {
+            const previous = this._lastPartitionWritten;
+            this._lastPartitionWritten = this._digester.flush();
+            await previous;
+        }
         this.sendJSON({ type: 'partition-received', offset: offset });
     }
 
@@ -578,8 +595,8 @@ class Peer {
             this.sendJSON({type: 'files-transfer-response', accepted: false});
             return;
         }
-        if (window.iOS && request.totalSize >= 200*1024*1024) {
-            // iOS Safari can only put 400MB at once to memory.
+        if (window.iOS && !window.nativeFileSink && request.totalSize >= 200*1024*1024) {
+            // iOS Safari can only put 400MB at once to memory (the native app streams to disk instead).
             // Request to send them in chunks of 200MB instead:
             this.sendJSON({type: 'files-transfer-response', accepted: false, reason: 'ios-memory-limit'});
             return;
@@ -604,6 +621,8 @@ class Peer {
         this.sendJSON({type: 'files-transfer-response', accepted: accepted});
         if (accepted) {
             this._requestAccepted = this._requestPending;
+            // Large transfers go straight to device storage instead of WebView memory
+            this._requestAccepted.streamToDisk = !!window.nativeFileSink && this._requestAccepted.totalSize >= NATIVE_STREAM_THRESHOLD;
             this._totalBytesReceived = 0;
             this._busy = true;
             this._filesReceived = [];
@@ -614,7 +633,8 @@ class Peer {
     _onFileHeader(header) {
         if (this._requestAccepted && this._requestAccepted.header.length) {
             this._lastProgress = 0;
-            this._digester = new FileDigester({size: header.size, name: header.name, mime: header.mime},
+            const Digester = this._requestAccepted.streamToDisk ? NativeFileDigester : FileDigester;
+            this._digester = new Digester({size: header.size, name: header.name, mime: header.mime},
                 this._requestAccepted.totalSize,
                 this._totalBytesReceived,
                 fileBlob => this._onFileReceived(fileBlob)
@@ -627,6 +647,7 @@ class Peer {
         Events.fire('notify-user', Localization.getTranslation("notifications.files-incorrect"));
         this._filesReceived = [];
         this._requestAccepted = null;
+        if (this._digester && this._digester.cancel) this._digester.cancel();
         this._digester = null;
         throw new Error("Received files differ from requested files. Abort!");
     }
@@ -1270,7 +1291,7 @@ class FileChunker {
     constructor(file, onChunk, onPartitionEnd) {
         this._chunkSize = 64000; // 64 KB
         this._readSize = 4 * 1024 * 1024; // 4 MB read block
-        this._maxPartitionSize = Infinity; // Disable partition pausing
+        this._maxPartitionSize = 16 * 1024 * 1024; // receiver acks each partition; native receivers wait for storage
         this._offset = 0;
         this._partitionSize = 0;
         this._file = file;
@@ -1322,6 +1343,68 @@ class FileChunker {
 
     isFileEnd() {
         return this._offset >= this._file.size;
+    }
+}
+
+const NATIVE_STREAM_THRESHOLD = 50 * 1024 * 1024;
+
+// Native app only: writes received chunks to storage in ~1 MB pieces while receiving, so a file of
+// any size never has to fit in WebView memory. Calls back with a stand-in {name, size, type, savedNatively}.
+class NativeFileDigester {
+
+    constructor(meta, totalSize, totalBytesReceived, callback) {
+        this._pending = [];
+        this._pendingBytes = 0;
+        this._bytesReceived = 0;
+        this._size = meta.size;
+        this._name = meta.name;
+        this._mime = meta.mime || "application/octet-stream";
+        this._totalSize = totalSize;
+        this._totalBytesReceived = totalBytesReceived;
+        this._callback = callback;
+        // Memory stays bounded because _onReceivedPartitionEnd holds the sender's next partition until
+        // the previous one is written. Old senders (no partitions) can still outrun storage.
+        this._queue = window.nativeFileSink.open(this._name, this._mime, this._size).then(sink => this._sink = sink);
+    }
+
+    unchunk(chunk) {
+        this._pending.push(chunk);
+        const bytes = chunk.byteLength || chunk.size;
+        this._pendingBytes += bytes;
+        this._bytesReceived += bytes;
+        this.progress = (this._totalBytesReceived + this._bytesReceived) / this._totalSize;
+        if (isNaN(this.progress)) this.progress = 1
+
+        const done = this._bytesReceived >= this._size;
+        if (this._pendingBytes >= 1024 * 1024 || done) this._writePending();
+        if (!done) return;
+
+        this._queue = this._queue
+            .then(() => this._sink.finish())
+            .then(() => this._callback({ name: this._name, size: this._bytesReceived, type: this._mime, savedNatively: true }))
+            .catch(e => {
+                console.error("Saving received file failed", e);
+                this.cancel();
+                Events.fire('notify-user', Localization.getTranslation("notifications.files-incorrect"));
+            });
+    }
+
+    // Resolves once everything received so far is on disk (never rejects; errors are handled in unchunk)
+    flush() {
+        if (this._pending.length) this._writePending();
+        return this._queue.catch(() => {});
+    }
+
+    _writePending() {
+        const blob = new Blob(this._pending);
+        this._pending = [];
+        this._pendingBytes = 0;
+        this._queue = this._queue.then(() => this._sink.write(blob));
+    }
+
+    cancel() {
+        this._pending = [];
+        this._queue = this._queue.then(() => this._sink && this._sink.cancel()).catch(() => {});
     }
 }
 

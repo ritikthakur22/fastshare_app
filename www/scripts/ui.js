@@ -920,6 +920,13 @@ class ReceiveFileDialog extends ReceiveDialog {
     }
 
     async _onFilesReceived(peerId, files, imagesOnly, totalSize) {
+        if (files[0].savedNatively) {
+            // Large transfer already written to storage while receiving: nothing to preview or download
+            window.blop.play();
+            Events.fire('set-progress', {peerId: peerId, progress: 1, status: 'process'});
+            Events.fire('notify-user', Localization.getTranslation("notifications.files-saved", null, {count: files.length}));
+            return;
+        }
         const displayName = $(peerId).ui._displayName();
         const connectionHash = $(peerId).ui._connectionHash;
         const badgeClassName = $(peerId).ui._badgeClassName();

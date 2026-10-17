@@ -43,7 +43,11 @@ function makeDevice(ip) {
         })
     };
 
+    const storage = {};
+    dev.storage = storage;
     const ctx = {
+        document: { hidden: false },
+        localStorage: { getItem: k => (k in storage ? storage[k] : null), setItem: (k, v) => storage[k] = String(v) },
         window: { Capacitor: { getPlatform: () => 'android', Plugins: { ZeroConf, HttpServer, CapacitorHttp } } },
         Events, console: { log() {}, warn() {}, error() {} },
         Localization: { getTranslation: k => k },
@@ -53,6 +57,7 @@ function makeDevice(ip) {
     vm.runInNewContext(SRC, ctx);
     dev._request = r => requestListener(r);
     dev.lm = ctx.window.localMode;
+    dev.plugins = { HttpServer, ZeroConf, CapacitorHttp };
     dev.Events = Events;
     network[ip] = dev;
     return dev;
@@ -129,6 +134,46 @@ function announce(from, to, action = 'resolved') {
     assert.ok(t2 && a.lm._startTimer === t2, 'start timer not reset by repeated disconnects');
     clearTimeout(t1); clearTimeout(t2);
     [a, b].forEach(d => clearTimeout(d.lm._startTimer));
+
+    // 9. Connection mode "online": never runs, even with the server down
+    const c = makeDevice('10.0.0.3');
+    c.storage['setting-mode'] = 'online';
+    c.Events.fire('connection-mode-changed');
+    c.Events.fire('ws-disconnected');
+    await tick(10);
+    assert.strictEqual(c.httpRunning, false, 'online mode never starts local mode');
+    assert.strictEqual(c.lm._startTimer, null, 'online mode schedules nothing');
+
+    // 10. Connection mode "offline": starts at once and ignores the server coming back
+    c.storage['setting-mode'] = 'offline';
+    c.Events.fire('connection-mode-changed');
+    await tick(10);
+    assert.ok(c.httpRunning, 'offline mode starts immediately');
+    c.Events.fire('ws-connected');
+    await tick(10);
+    assert.ok(c.httpRunning, 'offline mode keeps running when the server connects');
+
+    // 11. Switching back to online stops it
+    c.storage['setting-mode'] = 'online';
+    c.Events.fire('connection-mode-changed');
+    await tick(10);
+    assert.strictEqual(c.httpRunning, false, 'switching to online stops local mode');
+    clearTimeout(c.lm._startTimer);
+
+    // 12. Start rejected in the background (Android 12+) -> retried when the app becomes visible
+    const d = makeDevice('10.0.0.4');
+    d.storage['setting-mode'] = 'offline';
+    let blocked = true;
+    const { HttpServer } = d.plugins;
+    const origStart = HttpServer.start;
+    HttpServer.start = async opts => { if (blocked) throw new Error('startForegroundService() not allowed'); return origStart(opts); };
+    d.Events.fire('connection-mode-changed');
+    await tick(10);
+    assert.strictEqual(d.httpRunning, false, 'background start fails');
+    blocked = false;
+    d.Events.fire('visibilitychange');
+    await tick(10);
+    assert.ok(d.httpRunning, 'retried and running once visible');
 
     console.log('localmode self-check: OK');
     process.exit(0);

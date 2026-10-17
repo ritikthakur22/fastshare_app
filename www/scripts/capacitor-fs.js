@@ -1521,6 +1521,48 @@
           return false;
         }
       };
+      var blobToBase64 = (blob) => new Promise((resolve2, reject) => {
+        const reader = new FileReader();
+        reader.onerror = () => reject(new Error("Could not read the received file"));
+        reader.onload = () => resolve2(reader.result.split(",", 2)[1]);
+        reader.readAsDataURL(blob);
+      });
+      window.nativeFileSink = Capacitor.isNativePlatform() ? {
+        async open(name, mimeType, size) {
+          if (Capacitor.getPlatform() === "ios") {
+            let created = false;
+            const write = async (data) => {
+              if (created) return Filesystem.appendFile({ path: name, data, directory: Directory.Documents });
+              created = true;
+              return Filesystem.writeFile({ path: name, data, directory: Directory.Documents });
+            };
+            return {
+              write: async (blob) => write(await blobToBase64(blob)),
+              finish: async () => {
+                if (!created) await write("");
+                await Toast.show({ text: `Saved ${name}`, duration: "long" });
+              },
+              cancel: () => Filesystem.deleteFile({ path: name, directory: Directory.Documents }).catch(() => {
+              })
+            };
+          }
+          const started = await NativeFileSaver.start({
+            name,
+            mimeType,
+            size,
+            saveToGallery: localStorage.getItem("setting-gallery") === "true"
+          });
+          return {
+            write: async (blob) => NativeFileSaver.writeChunk({ token: started.token, data: await blobToBase64(blob) }),
+            finish: async () => {
+              await NativeFileSaver.finish({ token: started.token });
+              await Toast.show({ text: `Saved ${started.displayName}`, duration: "long" });
+            },
+            cancel: () => NativeFileSaver.cancel({ token: started.token }).catch(() => {
+            })
+          };
+        }
+      } : null;
       window.setNativeSystemBars = async function setNativeSystemBars(color) {
         if (!Capacitor.isNativePlatform() || Capacitor.getPlatform() === "ios") return;
         try {

@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.setNativeSystemBars?.(color);
     };
     // Inject Sidebar HTML
+    // Offline sharing only exists in the Android app for now (see localmode.js)
+    const offlineEligible = !!(window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlatform() === 'android');
     const sidebarHTML = `
         <div id="sidebar-overlay" class="sidebar-overlay"></div>
         <div id="sidebar" class="sidebar-drawer">
@@ -118,6 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div class="sidebar-section">
                 <div class="sidebar-section-title">Network</div>
+                ${offlineEligible ? `
+                <div class="sidebar-item">
+                    <div class="sidebar-item-text">
+                        <span class="sidebar-item-label">Connection Mode</span>
+                        <span class="sidebar-item-desc">Offline: same Wi-Fi or hotspot, no internet needed</span>
+                    </div>
+                    <select id="setting-mode" class="mat-select">
+                        <option value="auto">Auto</option>
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                    </select>
+                </div>` : ''}
                 <div class="sidebar-item">
                     <div class="sidebar-item-text">
                         <span class="sidebar-item-label">Device Icon</span>
@@ -198,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSetting('setting-autodownload', false, true);
     loadSetting('setting-icon', 'auto');
     loadSetting('setting-wss', '');
+    if (offlineEligible) loadSetting('setting-mode', 'auto');
 
     // Save Settings
     const saveSetting = (e) => {
@@ -218,6 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (el.id === 'setting-color') {
             applyColor();
+        }
+        if (el.id === 'setting-mode' && e.type === 'change') {
+            window.dispatchEvent(new CustomEvent('connection-mode-changed', { detail: el.value }));
         }
     };
 
