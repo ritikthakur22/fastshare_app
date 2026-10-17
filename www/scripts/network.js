@@ -309,7 +309,6 @@ class ServerConnection {
 
     _onVisibilityChange() {
         if (window.hiddenProperty) return;
-        Events.on('local-message', e => this._onMessage(JSON.stringify(e.detail)));
         this._connect();
     }
 
@@ -331,7 +330,6 @@ class ServerConnection {
 
     _reconnect() {
         this._disconnect();
-        Events.on('local-message', e => this._onMessage(JSON.stringify(e.detail)));
         this._connect();
     }
 }
@@ -745,7 +743,6 @@ class RTCPeer extends Peer {
         this.rtcConfig = rtcConfig
 
         if (!this._isCaller) return; // we will listen for a caller
-        Events.on('local-message', e => this._onMessage(JSON.stringify(e.detail)));
         this._connect();
     }
 
@@ -798,7 +795,6 @@ class RTCPeer extends Peer {
     }
 
     onServerMessage(message) {
-        Events.on('local-message', e => this._onMessage(JSON.stringify(e.detail)));
         if (!this._conn) this._connect();
 
         if (message.sdp) {
@@ -889,7 +885,6 @@ class RTCPeer extends Peer {
         console.log('RTC: channel closed', this._peerId);
         Events.fire('peer-disconnected', this._peerId);
         if (!this._isCaller) return;
-        Events.on('local-message', e => this._onMessage(JSON.stringify(e.detail)));
         this._connect(); // reopen the channel
     }
 
@@ -958,7 +953,6 @@ class RTCPeer extends Peer {
         // only reconnect if peer is caller
         if (!this._isCaller) return;
 
-        Events.on('local-message', e => this._onMessage(JSON.stringify(e.detail)));
         this._connect();
     }
 
