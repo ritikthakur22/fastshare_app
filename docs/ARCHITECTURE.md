@@ -23,6 +23,8 @@ All modules communicate through the `Events` bus (`window` CustomEvents, ui-main
 
 `index.html` loads `localization.js`, `persistent-storage.js`, `ui-main.js`, `main.js`, plus `capacitor-fs.js` and `sidebar.js`. `FastShare` (main.js) translates the page, fades in the UI, then lazy-loads `deferredScripts` (util, localmode, network, ui, libs) and calls `hydrate()`, which constructs every dialog, `ServerConnection` and `PeersManager`.
 
+No service worker on native: `main.js` skips registration, and the app's `service-worker.js` only deletes the cache-first worker older versions installed (it served cached v1.1.22 code after app updates), then unregisters itself and reloads once.
+
 The UI does not wait for the server: without a connection it just shows no peers and a "Loading…" placeholder for the own display name.
 
 ## Online flow (ip / secret / public-id rooms)

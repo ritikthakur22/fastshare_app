@@ -71,6 +71,9 @@ class FastShare {
     }
 
     registerServiceWorker() {
+        // The native app ships all files in the APK/IPA; a cache would only serve stale code after updates.
+        // service-worker.js removes the worker that older app versions installed.
+        if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()) return;
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker
                 .register('service-worker.js')
