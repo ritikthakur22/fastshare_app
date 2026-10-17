@@ -49,28 +49,26 @@ ServerConnection.send(signal to B) ── localMode.sendMessage ── POST http
 
 Hook points: `ServerConnection.send()` asks `window.localMode.sendMessage(msg.to, msg)` first; incoming messages arrive via the single `Events.on('local-message')` in the `ServerConnection` constructor.
 
-### Known bugs (as of 2026-10-17, Phase 1 not yet fixed)
+### How it behaves (Phase 1, Android only)
 
-| # | Problem | Effect |
-|---|---|---|
-| 1 | `HttpServer.start()` runs at every launch with no `android.notificationTitle` | Permanent Android foreground notification "HTTP server running", even online |
-| 2 | Uses `addListener('serverRequest')`, `request.url`, `request.body`, `sendResponse` — real API is `'request'`, `path`, `bodyText`, `respond` | Incoming messages never handled; sender waits until the plugin's 60 s timeout |
-| 3 | Android ZeroConf delivers results through the `watch(options, callback)` callback as `{action, service}`, not a `discover` event; `register` takes `props`, not `txtRecord` | No device is ever discovered; display name not advertised |
-| 4 | Synthetic `peer-joined` is `{peerId, displayName, roomType}`; PeersManager/PeersUI read `message.peer.id` | Would throw even if discovery worked |
-| 5 | `removed` action ignored | Departed devices never leave the list |
-| 6 | `fetch('http://<ip>')` from the `https://localhost` WebView | Blocked as mixed content; native HTTP (CapacitorHttp) also needs cleartext allowed on targetSdk 36 |
-| 7 | Android ZeroConf takes a `MulticastLock`; app manifest lacks `CHANGE_WIFI_MULTICAST_STATE` | Discovery may fail on real Wi-Fi |
-| 8 | `ios/App/App/Info.plist` has `NSLocalNetworkUsageDescription`/`NSBonjourServices` duplicated 4×, some inside scene dictionaries; no `NSAllowsLocalNetworking` | iOS scene config at risk; local HTTP blocked by ATS |
-| 9 | `/msg` accepts any sender | Spoofed signaling from anyone on the LAN (see SECURITY.md) |
+- **When:** `localmode.js` waits 10 s after the WebSocket is down (or `offline` fires) before starting, so a cold Render server doesn't trigger it. Repeated `ws-disconnected` events (one per failed reconnect) don't push that timer back. On `ws-connected` it stops everything, so the Android foreground notification ("FastShare offline sharing") appears only while offline.
+- **Discovery:** each device registers `_fastshare._tcp.` with id `local-xxxxxxxx` and `props.displayName`. Android delivers results through the `ZeroConf.watch(options, callback)` callback (`{action, service}`); `resolved` adds a peer, `removed` fires `peer-left`.
+- **Peer shape:** standard `{ peer: {id, name, rtcSupported}, roomType: 'local', roomId: 'local' }`. Both devices discover each other, so the lower id is the caller (`peers` event) and the other waits (`peer-joined`).
+- **Sending:** `Capacitor.Plugins.CapacitorHttp.post` (native, avoids WebView mixed-content blocking; needs `usesCleartextTraffic`). One queue per peer keeps SDP before ICE. A `409` means "they haven't discovered me yet", so it retries every 500 ms, up to 20 times.
+- **Receiving:** `/msg` only accepts `type: 'signal'` addressed to this device from a discovered sender.
+- **Display name:** offline, the server never sends one, so local mode uses the edited name or `FastShare xxxx` and fires `display-name` itself.
+- **Back online:** local peers are removed (an in-flight offline transfer is dropped; see the `shortcut:` comment).
+- Self-check: `npm test` (`test/localmode.test.js`, two simulated devices with mocked plugins).
 
-Fixed: duplicate `local-message` listeners (commit b6f054c).
+### Still open
 
-### Phase 1 plan (Android)
+| Problem | Effect |
+|---|---|
+| iOS: offline mode disabled; `Info.plist` has `NSLocalNetworkUsageDescription`/`NSBonjourServices` duplicated 4x, some inside scene dictionaries; no `NSAllowsLocalNetworking` | Phase 2 |
+| Not yet tested on real devices | WebView mDNS-obfuscated ICE candidates and Wi-Fi client isolation on some routers/hotspots could still block the WebRTC connection |
+| ZeroConf advertisements are unauthenticated | See SECURITY.md |
 
-1. Start HttpServer + ZeroConf only after the WebSocket has been down for a grace period (or `navigator.onLine` is false); stop both on `ws-connected`. Pass `android.notificationTitle/Text`.
-2. Rewrite `localmode.js` against the real plugin APIs; emit peers in the standard shape with `roomType: 'local'`; fire `peer-left` on `removed`.
-3. Send with `Capacitor.Plugins.CapacitorHttp` (core, no new dependency); allow cleartext for LAN; add the multicast permission.
-4. Accept `/msg` only from senders discovered via ZeroConf.
+Fixed: duplicate `local-message` listeners (b6f054c); Phase 1 rewrite of `localmode.js`.
 
 ## Native code
 

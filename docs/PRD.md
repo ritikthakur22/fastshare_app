@@ -45,5 +45,5 @@ Web users get the same first three modes through the website; offline local is a
 
 ## Roadmap
 
-1. **Phase 1 (in progress):** make offline local mode work on Android — see ARCHITECTURE.md "Known bugs".
+1. **Phase 1 (code done, needs device testing):** offline local mode on Android — see ARCHITECTURE.md "Offline local flow".
 2. **Phase 2:** iOS offline mode (Info.plist cleanup, ATS local networking), test on device.

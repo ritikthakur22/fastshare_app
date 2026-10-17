@@ -11,7 +11,7 @@
 
 - Never commit keystores, passwords, `releases/`, `play-store-key.json`, or `local.properties`. Signing secrets live in GitHub Actions secrets only.
 - Anything received from the network (signaling messages, `/msg` bodies, file names, text) is untrusted: never `innerHTML` it, never use it as a path without sanitizing.
-- The local HTTP server must run only while offline mode is needed, and must reject unknown senders.
+- The local HTTP server must run only while offline mode is needed, and must accept only signaling from discovered senders.
 - Keep cleartext HTTP limited to LAN signaling; everything else stays HTTPS/WSS.
 
 ## Known issues (2026-10-17)
@@ -19,9 +19,9 @@
 | Severity | Issue | Action |
 |---|---|---|
 | **High** | `fix_build.sh` (tracked in git) contains the release keystore password `fastshare123` in plain text | If that keystore signs Play builds: treat the password as leaked, remove it from the script (read from env), and consider Play App Signing key upgrade. Git history still contains it |
-| Medium | Local `/msg` endpoint accepts POSTs from anyone on the LAN → spoofed signaling / fake peers | Phase 1: accept only senders discovered via ZeroConf. Later: sign messages with a per-session key exchanged in the TXT record |
-| Medium | Local HTTP server starts on every launch, listening on the LAN even when online | Phase 1: start only when offline |
-| Low | Offline mode will need cleartext HTTP (Android `usesCleartextTraffic` / iOS `NSAllowsLocalNetworking`) | Accept; only LAN signaling uses it |
+| Medium | Anyone on the same LAN can advertise a fake `_fastshare._tcp` device or send `/msg` signals as a discovered id | Mitigated: `/msg` accepts only `type: 'signal'` to this device from a discovered sender, and every transfer still needs the receiver to accept. Not authenticated; a real fix would sign messages with a key exchanged in the TXT record |
+| Fixed | Local HTTP server started on every launch, listening on the LAN even when online | Now runs only while the signaling server is unreachable (Android); disabled on iOS |
+| Low | Android `usesCleartextTraffic="true"` is set for LAN signaling (iOS will need `NSAllowsLocalNetworking`) | Accepted; app content loads from `https://localhost` and the server is `wss://` |
 
 ## Reporting
 

@@ -583,7 +583,7 @@ class PeerUI {
         const roomTypes = Object.keys(this._peer._roomIds);
         return roomTypes.includes('secret')
             ? 'badge-room-secret'
-            : roomTypes.includes('ip')
+            : roomTypes.includes('ip') || roomTypes.includes('local')
                 ? 'badge-room-ip'
                 : 'badge-room-public-id';
     }
