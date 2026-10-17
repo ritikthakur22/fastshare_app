@@ -46,7 +46,7 @@ function makeDevice(ip) {
     const storage = {};
     dev.storage = storage;
     const ctx = {
-        document: { hidden: false },
+        document: { hidden: false, querySelector: () => null },
         localStorage: { getItem: k => (k in storage ? storage[k] : null), setItem: (k, v) => storage[k] = String(v) },
         window: { Capacitor: { getPlatform: () => 'android', Plugins: { ZeroConf, HttpServer, CapacitorHttp } } },
         Events, console: { log() {}, warn() {}, error() {} },

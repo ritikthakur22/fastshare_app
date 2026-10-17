@@ -37,7 +37,8 @@
         "activate-share-mode-shared-text": "shared text",
         "activate-share-mode-shared-file": "shared file",
         "activate-share-mode-shared-files-plural": "{{count}} shared files",
-        "webrtc-requirement": "To use this FastShare instance, WebRTC must be enabled!"
+        "webrtc-requirement": "To use this FastShare instance, WebRTC must be enabled!",
+        "no-peers-subtitle-offline": "Offline mode: only nearby phones on this Wi-Fi running FastShare offline can be found. Change it in Menu \u2192 Connection Mode."
     },
     "footer": {
         "known-as": "Your Device Name:",

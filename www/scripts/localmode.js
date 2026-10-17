@@ -37,6 +37,7 @@ if (window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlat
 
             // covers the case where the server never answers at all
             this._scheduleStart();
+            this._updateNoPeersHint();
         }
 
         // Sidebar "Connection Mode": auto (offline only when the server is unreachable), online, offline
@@ -50,11 +51,20 @@ if (window.Capacitor && window.Capacitor.getPlatform && window.Capacitor.getPlat
         }
 
         _applyMode() {
+            this._updateNoPeersHint();
             clearTimeout(this._startTimer);
             this._startTimer = null;
             const mode = this._mode();
             if (mode === 'online' || (mode === 'auto' && this._wsConnected)) this._enqueue(() => this._stop());
             else this._scheduleStart();
+        }
+
+        // Offline mode hides every server device, so say so where the user looks when the list is empty
+        _updateNoPeersHint() {
+            const $subtitle = document.querySelector('x-no-peers [data-i18n-key="instructions.no-peers-subtitle"]');
+            if (!$subtitle) return;
+            const key = this._mode() === 'offline' ? 'instructions.no-peers-subtitle-offline' : 'instructions.no-peers-subtitle';
+            $subtitle.textContent = Localization.getTranslation(key);
         }
 
         _onWsConnected() {
