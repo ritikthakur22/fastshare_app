@@ -71,10 +71,6 @@ While FastShare is inspired by the amazing work of PairDrop and Snapdrop, it int
 - **FastShare Core Source Code**: [ritikthakur22/FastShare](https://github.com/ritikthakur22/FastShare)
 - **My Portfolio**: [ritikthakur.com.np](https://ritikthakur.com.np)
 
-### Human-Centric Intelligent Engineering
-
-A human-driven engineering approach enhanced by intelligent computational assistance throughout the software development lifecycle, with human judgment governing architecture, implementation, validation, and final outcomes.
-
 
 ## 🛠️ Build it yourself
 

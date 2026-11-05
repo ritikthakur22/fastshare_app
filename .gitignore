@@ -12,3 +12,8 @@ releases/
 
 # Fastlane
 play-store-key.json
+
+# Temporary scripts
+fix_*.sh
+fix_*.py
+docs/
