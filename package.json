@@ -2,6 +2,8 @@
   "name": "fastshare",
   "version": "1.1.25",
   "description": "Cross-platform file sharing app",
+  "author": "Ritik Thakur",
+  "license": "SEE LICENSE IN LICENSE",
   "main": "index.js",
   "scripts": {
     "test": "node test/localmode.test.js && node test/native-digester.test.js && node test/transfer-backpressure.test.js"

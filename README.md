@@ -5,7 +5,9 @@
   
   **The official native Android App for FastShare**
 
+  [![Google Play](https://img.shields.io/badge/Google_Play-Get_It_On_Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.crdy.fastshare)
   [![Download APK](https://img.shields.io/badge/Download-APK-success.svg?style=for-the-badge&logo=android)](https://github.com/ritikthakur22/fastshare_app/releases/latest)
+  [![License](https://img.shields.io/badge/License-Proprietary-blue.svg?style=for-the-badge)](LICENSE)
 </div>
 
 <div align="center">
@@ -66,11 +68,10 @@ While FastShare is inspired by the amazing work of PairDrop and Snapdrop, it int
 
 ## 🔗 Links
 
-
+- **Google Play Store**: [FastShare on Google Play](https://play.google.com/store/apps/details?id=com.crdy.fastshare)
 - **Main Web App**: [https://fastshare.ritikthakur.com.np](https://fastshare.ritikthakur.com.np)
 - **FastShare Core Source Code**: [ritikthakur22/FastShare](https://github.com/ritikthakur22/FastShare)
-- **My Portfolio**: [ritikthakur.com.np](https://ritikthakur.com.np)
-
+- **Developer Portfolio**: [https://www.ritikthakur.com.np](https://www.ritikthakur.com.np)
 
 ## 🛠️ Build it yourself
 
@@ -83,6 +84,19 @@ cd fastshare_app
 npm install
 npx cap sync android
 
-
 # Build the app using Android Studio
 ```
+
+## 📄 License & Terms of Use
+
+FastShare is proprietary software developed and maintained by **[Ritik Thakur](https://www.ritikthakur.com.np)**.
+
+- **Personal & Evaluation Use:** Free to view, download, study, and execute for personal, non-commercial, and educational evaluation purposes.
+- **App Store & Redistribution Restrictions:** You may **not** publish, redistribute, rebrand, or upload FastShare or any derivative works to app stores (including the Google Play Store, Apple App Store, or third-party marketplaces) or exploit it commercially without prior written authorization from Ritik Thakur.
+- For complete terms and licensing inquiries, refer to the [LICENSE](LICENSE) file.
+
+---
+
+<div align="center">
+Made with ❤️ by <a href="https://www.ritikthakur.com.np">Ritik Thakur</a>
+</div>
