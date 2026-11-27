@@ -37,6 +37,18 @@
 
 ---
 
+## Documentation & Guides
+
+| Document | Description |
+|---|---|
+| [CHANGELOG.md](CHANGELOG.md) | Release history and version notes (`v2.0.0` – `v2.0.2`) |
+| [FAQ.md](FAQ.md) | iOS `.ipa` sideloading steps, LocalSend setup, and Offline Hotspot guide |
+| [docs/PROTOCOL.md](docs/PROTOCOL.md) | High-level overview of LAN (mTLS / LocalSend v2.2) & WebRTC protocols |
+| [SECURITY.md](SECURITY.md) | Encryption model, threat mitigations, and vulnerability reporting |
+| [PRIVACY.md](PRIVACY.md) | Zero-tracking privacy policy and app permissions breakdown |
+
+---
+
 ## App Showcase
 
 <p align="center">
