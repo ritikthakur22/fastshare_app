@@ -1,0 +1,8 @@
+FastShare Play Store screenshot alt text suggestions
+
+01_nearby_discovery.png — Nearby screen showing a radar-style device discovery area, a visible phone profile, and Send and Receive actions.
+02_transfer_activity.png — Activity screen showing sent and received text messages and files with transfer details.
+03_personalize_settings.png — Settings screen showing device type, visibility choices, appearance modes, and accent colour.
+04_receiving_controls.png — Receiving settings showing gallery saving, automatic downloads, ZIP bundling, notifications, and sound.
+05_storage_management.png — Storage screen showing the received-file folder, temporary cache, and additional app controls.
+06_dark_mode.png — Dark appearance settings showing theme selection and accent-colour customization.
